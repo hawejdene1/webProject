@@ -1,7 +1,8 @@
 <?php
 
 
-require '../StationManagementAPI.php';
+require dirname(dirname(__FILE__)) . "/StationManagementAPI.php";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $linename=htmlspecialchars($_POST['linename']);
     $name1=htmlspecialchars($_POST['name1']);

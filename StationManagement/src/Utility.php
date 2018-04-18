@@ -1,6 +1,6 @@
 <?php
 
-require_once "/DBinteraction/Operations.php";
+require_once dirname(__FILE__) . "\DBOperations.php";
 
 function getisTerminalUtility($station)
 {

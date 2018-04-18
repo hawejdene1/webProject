@@ -1,8 +1,8 @@
 <?php
 
-require_once "/../src/Station.php" ;
-//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\src\Station.php";
-require_once "Connection.php";
+
+require_once dirname(__FILE__) . "\Station.php" ;
+require_once dirname(dirname(dirname(__FILE__))) . "\DBConnection.php";
 
 
 function insertStationDB($station){

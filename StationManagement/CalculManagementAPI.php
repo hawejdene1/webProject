@@ -1,10 +1,9 @@
 <?php
 
-//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\DBinteraction\Operations.php";
-//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\src\Utility.php";
-//require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\DBinteraction\CalculOperation.php";
-require_once "./DBinteraction/Operations.php";
-require_once "./src/Utility.php";
+
+require_once dirname(__FILE__) . "/src/DBOperations.php";
+require_once dirname(__FILE__) . "/src/Utility.php";
+require_once dirname(__FILE__) . "/src/CalculOperation.php";
 
 /**
  * This file is what you will use for calcul prix and ditance
