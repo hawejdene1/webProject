@@ -1,6 +1,7 @@
 
 <?php
-require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\src\Station.php" ;
+//require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\src\Station.php" ;
+require_once "/../src/Station.php" ;
 require_once "Connection.php";
 
 /**

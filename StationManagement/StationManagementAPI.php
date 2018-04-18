@@ -1,9 +1,11 @@
 <?php
 
 
-require_once "/DBinteraction/Operations.php";
-require_once "/src/Utility.php";
+require_once "./DBinteraction/Operations.php";
+require_once "./src/Utility.php";
 
+//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\DBinteraction\Operations.php";
+//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\src\Utility.php";
 
 /**
 * This file is what you will use for managing stations
@@ -20,7 +22,7 @@ require_once "/src/Utility.php";
 
 
 
-function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
+function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price){
 
     /**
      * Parameters:
@@ -56,7 +58,7 @@ function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,
 
 
 
-function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=array(0,0,0)){
+function addLine($linename,$name1,$name2,$dist,$price1,$price2){
     
     /**
      * a line is simply two terminal stations with the same linename attribute
@@ -68,7 +70,7 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
 
     //check if line exists
-    if (countStationsinLineDB($linename)) return "Line already exists ";
+    if (countStationsinLineDB($linename)) return false;
 
     //create terminal stations;
     $station1 = new Station($name1,$linename,0,$price1);
@@ -77,15 +79,17 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
     //add to DB
     insertStationDB($station1);
     insertStationDB($station2);
-    return false;
+    return true;
 
 }
 
-function appendTerminalStation($new,$old,$linename,$dist,$price=array(0,0,0)){
-
+function appendTerminalStation($new,$old,$linename,$dist,$price){
+     echo $old;
+     echo 'lin'.$linename;
     //check if old terminal exists
     $oldterminal = getStationDB($old,$linename);
-    if (! $oldterminal) return "terminal to replace doesn't exist";
+    echo $oldterminal->toString();
+    //if (! $oldterminal) return "terminal to replace doesn't exist";
 
     //check if old terminal is terminal
     if (! getisTerminalUtility($oldterminal)) return "station to replace is not terminal";
@@ -175,4 +179,33 @@ function deleteLine($line){
 
     deleteLineDB($line);
     return false;
+}
+
+
+/**
+ * @return array of all line names
+ */
+
+function allLine()
+{
+    return allLineDB();
+}
+
+/**
+ * @param $linename
+ * @return array content two terminal stations
+ */
+function getTerminalsNames($linename){
+
+    $stations=getTerminalsStationsDB($linename);
+    $i=0;
+    foreach ($stations as $station){
+        $nameStations[$i]=$station->getName();
+        $i+=1;
+    }
+    return $nameStations;
+}
+
+function lineExit($linename){
+    return (countStationsinLineDB($linename)!=0);
 }

@@ -1,6 +1,7 @@
 <?php
 
 require_once "/../src/Station.php" ;
+//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\src\Station.php";
 require_once "Connection.php";
 
 
@@ -103,3 +104,48 @@ function deleteLineDB($linename){
     $req->execute(array($linename));
     
 }
+
+function allLineBD(){
+    $bdd= Connection::getInstance();
+    $req = $bdd->query('SELECT DISTINCT linename FROM `stations` ');
+    $i=0;
+    while ($result=$req->fetch()){
+        $line[$i]=$result['linename'];
+        $i+=1;
+    }
+
+    return $line;
+}
+
+function getTerminalsStationsDB($linename)
+{
+    $bdd = Connection::getInstance();
+
+    $req = $bdd->prepare('SELECT * FROM  stations WHERE  
+    ((dist=(SELECT max(dist) FROM stations WHERE linename=?  ))
+     OR (dist=(  SELECT min(dist) FROM stations WHERE linename=?)))
+      AND linename=?');
+
+    $req->execute(array($linename,$linename,$linename));
+    $i=0;
+    while($result=$req->fetch()){
+        $stations[$i] = new Station($result[0],$result[1],$result[2],array($result[3],$result[4],$result[5]));
+        $i+=1;
+    }
+
+   return $stations;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

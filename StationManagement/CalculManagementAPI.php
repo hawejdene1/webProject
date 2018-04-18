@@ -1,7 +1,11 @@
 <?php
-require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\DBinteraction\Operations.php";
-require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\src\Utility.php";
-require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\DBinteraction\CalculOperation.php";
+
+//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\DBinteraction\Operations.php";
+//require_once "C:\Users\ASUS\Desktop\gitHub\webProject\StationManagement\src\Utility.php";
+//require_once "C:\Users\ASUS\Desktop\git\gestion_autoroute\StationManagement\DBinteraction\CalculOperation.php";
+require_once "./DBinteraction/Operations.php";
+require_once "./src/Utility.php";
+
 /**
  * This file is what you will use for calcul prix and ditance
 
