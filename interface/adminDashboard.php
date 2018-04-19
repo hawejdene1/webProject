@@ -31,21 +31,8 @@
 
         <p>Choose one of the functionnalities</p>
         
-        
-     <div class="cd-panel cd-panel--from-right js-cd-panel-main">
-   <header class="cd-panel__header">
-      <h1>Title Goes Here</h1>
-      <a href="#0" class="cd-panel__close js-cd-close">Close</a>
-   </header>
-
-   <div class="cd-panel__container">
-      <div class="cd-panel__content">
-         <!-- your side panel content here -->
-      </div> <!-- cd-panel__content -->
-   </div> <!-- cd-panel__container -->
-</div> <!-- cd-panel -->
-      
-
+     
+   
 <!-- Options for addind NEW STATIONS OR LINES -->
       <div class="panel panel-default">
         <div class="panel-heading">New Stations/Lines</div>
@@ -74,8 +61,27 @@
             <button type="button" class="btn btn-default">Delete Station</button>
           </div>
           <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Delete Line</button>
+          </div>
+          <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">Update Distance</button>
           </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Update Price per Station</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Update Price for all</button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+<!-- Options to manage the prices-->
+<div class="panel panel-default">
+        <div class="panel-heading">Prices management</div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">Update Price per Station</button>
           </div>
