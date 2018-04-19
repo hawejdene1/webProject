@@ -28,9 +28,7 @@
     <div class="container-fluid">
       <div class="row">
       <div class="col-sm-3 col-lg-2">
-        <nav class="navbar navbar-default navbar-fixed-side">
          <?php include "..\includes\interface\\sideNavAgentInfo.php"; ?>     
-        </nav>
       </div>
       <div class="col-sm-9 col-lg-10 ">
       <!-- your page content -->
@@ -40,7 +38,7 @@
         <p>Choose one of the functionnalities</p>
         <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
         <div class="btn-group" role="group">  
-          <button type="button" class="btn btn-default" id="entryBtn">Station Entry</button>
+          <button type="button" class="btn btn-default" href="#entryPanel" id="entryBtn">Station Entry</button>
         </div>
         <div class="btn-group" role="group">
           <button type="button" class="btn btn-default" id="exitBtn">Station Exit</button>
@@ -50,28 +48,32 @@
       </div>
     </div>
 
-    <div class="container-fluid inputPanel row hidden" id="entryPanel">
-      <!--Form that's going to be here-->
-      <div class="col-md-4"></div>
-      <div class="entryForm col-md-4">
-      </div>
-      <div class="col-md-4"></div> 
-    </div>
 
 
   <div class="container-fluid row">
         <div class="col-md-4"></div>
         <!--Form that's going to be here-->
-        <div class="col-md-4 panel">
+        <div class="col-md-4">
+        <div class="panel panel-default hidden" id="entryPanel">          
+          <div class="panel-heading"></div>
+          <div class="panel-body">
                 <form action="" method="post" class="exitForm">
                   <div class="form-group">
                   <label for="ticketNum">Ticket Number</label>
                   <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" />
-                  <button type="submit" class="btn btn-default">Check Ticket</button>
+                  <button type="submit" class="btn btn-success">Check Ticket</button>
+                  <button type="reset" class="btn btn-default">Reset</button>
+                  </div>
                 </form>
-
-                <form action="" method="post" class="entryForm hidden">
-                  <select name="carType" id="selectCarType">
+          </div>
+         </div>
+          <div class="panel panel-default hidden" id="exitPanel">          
+          <div class="panel-heading"> </div>
+          <div class="panel-body">
+                <form action="" method="post" class="entryForm">
+                  <div class="form-group">
+                  <label for="selectCarType">Ticket Number</label>
+                  <select name="carType" id="selectCarType" class="form-control">
                     <option value="touristic">Touristic</option>
                     <option value="van">Van</option>
                     <option value="truck">Truck</option>
@@ -79,12 +81,14 @@
                     <option value="personal">Personal</option>
                   </select>
                   <button type="submit" class="btn btn-default">Get Ticket</button>
+                  </div>
                 </form>
           </div>
-        </div> 
-        <div class="col-md-4"></div>
-      </div>
-
+        </div>
+       <div class="col-md-4"></div>
+        </div>
+    </div> 
+      
 
       
      
@@ -92,9 +96,9 @@
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../res/js/bootstrap.min.js"></script> 
-    <script src="../res/js/dashboard.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../res/js/agentDashboard.js"></script>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../res/js/bootstrap.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
   </body>
 </html>

@@ -4,7 +4,7 @@
 
 echo ' 
 
-<ul class="list-group">
+<ul class="list-group navbar navbar-default navbar-fixed-side">
     <li class="list-group-item list-group-item-info">Agent Infos</li>
     <li class="list-group-item"> Agent ID       : </li>
     <li class="list-group-item"> Name           : </li>

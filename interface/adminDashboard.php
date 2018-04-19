@@ -8,9 +8,9 @@
     <title>Admin Dashboard</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="../res/css/styleDashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../res/css/styleDashboard.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,13 +27,23 @@
 
     <div class="container-fluid">
      <!-- your page content -->
-        <h2>Welcome to the Highway Station</h2>
+        <h2>Welcome to the Highway administration page</h2>
 
         <p>Choose one of the functionnalities</p>
         
         
-          
+     <div class="cd-panel cd-panel--from-right js-cd-panel-main">
+   <header class="cd-panel__header">
+      <h1>Title Goes Here</h1>
+      <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+   </header>
 
+   <div class="cd-panel__container">
+      <div class="cd-panel__content">
+         <!-- your side panel content here -->
+      </div> <!-- cd-panel__content -->
+   </div> <!-- cd-panel__container -->
+</div> <!-- cd-panel -->
       
 
 <!-- Options for addind NEW STATIONS OR LINES -->
@@ -46,6 +56,9 @@
           </div>
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">Add Station</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Add Machine</button>
           </div>
         </div>
         </div>
@@ -94,6 +107,7 @@
 
     
 
+    <script src="../res/js/adminDashboard.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../res/js/bootstrap.min.js"></script> 
