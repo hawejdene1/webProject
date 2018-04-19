@@ -1,7 +1,12 @@
-body {
-  background: #ecf0f1;
-}
+
 
 h1, h2 {
 	text-align: center;
 }
+
+
+.inputPanel {
+
+	padding: 30px;
+
+} 

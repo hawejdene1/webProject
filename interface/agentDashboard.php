@@ -8,9 +8,9 @@
     <title>Agent Dashboard</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="../res/css/styleDashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../res/css/styleDashboard.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,43 +22,14 @@
   <body>
 
 
-
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">User Profile</a></li>
-        <li><a href="#">Disconnect</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<?php include "..\includes\interface\\navbar.php"; ?>
+   
 
     <div class="container-fluid">
       <div class="row">
       <div class="col-sm-3 col-lg-2">
         <nav class="navbar navbar-default navbar-fixed-side">
-             <ul class="list-group">
-              <li class="list-group-item list-group-item-info">Agent Infos</li>
-              <li class="list-group-item"> Agent ID       : </li>
-              <li class="list-group-item"> Name           : </li>
-              <li class="list-group-item"> Lastname       : </li>
-              <li class="list-group-item"> Last connection: </li>
-              <a class="list-group-item list-group-item-warning" href="#">Account configuration</a>
-             </ul>
+         <?php include "..\includes\interface\\sideNavAgentInfo.php"; ?>     
         </nav>
       </div>
       <div class="col-sm-9 col-lg-10 ">
@@ -68,16 +39,53 @@
 
         <p>Choose one of the functionnalities</p>
         <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default">Add Ticket</button>
+        <div class="btn-group" role="group">  
+          <button type="button" class="btn btn-default" id="entryBtn">Station Entry</button>
         </div>
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default">Pay Ticket</button>
+          <button type="button" class="btn btn-default" id="exitBtn">Station Exit</button>
         </div>
         </div>
       </div>
       </div>
     </div>
+
+    <div class="container-fluid inputPanel row hidden" id="entryPanel">
+      <!--Form that's going to be here-->
+      <div class="col-md-4"></div>
+      <div class="entryForm col-md-4">
+      </div>
+      <div class="col-md-4"></div> 
+    </div>
+
+
+  <div class="container-fluid row">
+        <div class="col-md-4"></div>
+        <!--Form that's going to be here-->
+        <div class="col-md-4 panel">
+                <form action="" method="post" class="exitForm">
+                  <div class="form-group">
+                  <label for="ticketNum">Ticket Number</label>
+                  <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" />
+                  <button type="submit" class="btn btn-default">Check Ticket</button>
+                </form>
+
+                <form action="" method="post" class="entryForm hidden">
+                  <select name="carType" id="selectCarType">
+                    <option value="touristic">Touristic</option>
+                    <option value="van">Van</option>
+                    <option value="truck">Truck</option>
+                    <option value="bus">Bus</option>
+                    <option value="personal">Personal</option>
+                  </select>
+                  <button type="submit" class="btn btn-default">Get Ticket</button>
+                </form>
+          </div>
+        </div> 
+        <div class="col-md-4"></div>
+      </div>
+
+
       
      
 
@@ -86,6 +94,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../res/js/bootstrap.min.js"></script> 
+    <script src="../res/js/dashboard.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
   </body>
 </html>
