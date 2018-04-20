@@ -9,7 +9,7 @@
   <body>
 
 
-    <form action="" method="post">
+    <form action="" method="post" class="loginForm">
     <div class="form-group">
     <div class="row">
       <label class="col-md-4" id="inputAgentLogin">Login</label>
@@ -54,3 +54,16 @@
 
   </body>
 </html>
+
+
+<ul>
+    <li><a href="interface/adminDashboard.php">AdminDashboard</a></li>
+    <li><a href="interface/allAdminForms.html">AllAdminForms</a></li>
+    <li><a href="interface/agentDashboard.php">AgentDashboard</a></li>
+    <li><a href="interface/entryButton.php">EntryButton</a></li>
+    <li><a href="interface/exitButton.php">ExitButton</a></li>
+    <li><a href="interface/login.php">Login</a></li>
+
+
+
+</ul>

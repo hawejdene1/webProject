@@ -8,9 +8,9 @@
     <title>Admin Dashboard</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../res/css/styleDashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../res/css/styleDashboard.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,13 +39,13 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Add Line</button>
+           <a href="adminDashboard/addLine.php"> <button type="button" class="btn btn-default choiceBtn" id="addLine">Add Line</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Add Station</button>
+            <a href="adminDashboard/addStation.php"><button type="button" class="btn btn-default choiceBtn" id="addStation">Add Station</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Add Machine</button>
+            <button type="button" class="btn btn-default choiceBtn" id="addMachine">Add Machine</button>
           </div>
         </div>
         </div>
@@ -58,19 +58,13 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Delete Station</button>
+            <button type="button" class="btn btn-default choiceBtn" id="deleteStation">Delete Station</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Delete Line</button>
+            <button type="button" class="btn btn-default choiceBtn" id="deleteLine">Delete Line</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Update Distance</button>
-          </div>
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Update Price per Station</button>
-          </div>
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Update Price for all</button>
+            <button type="button" class="btn btn-default choiceBtn" id="updateDistance">Update Distance</button>
           </div>
         </div>
         </div>
@@ -83,10 +77,10 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Update Price per Station</button>
+            <button type="button" class="btn btn-default choiceBtn" id="updatePrice">Update Price</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Update Price for all</button>
+            <button type="button" class="btn btn-default choiceBtn" id="updateGPrice">Update General Price</button>
           </div>
         </div>
         </div>
@@ -99,15 +93,37 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default">Add Agent</button>
+              <button type="button" class="btn btn-default choiceBtn" id="addAgent">Add Agent</button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default">Update Agent</button>
+              <button type="button" class="btn btn-default choiceBtn" id="updateAgent">Update Agent</button>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default">Delete Agent</button>
+              <button type="button" class="btn btn-default choiceBtn" id="deleteAgent">Delete Agent</button>
             </div>
           </div>
+        </div>
+      </div>
+
+
+
+
+<!-- This is a one Page Website -->
+
+
+
+      <div class="modal">
+        <div class="modal-content">
+        <span class="close">&times</span>
+        <!-- The forms that are going to be charged-->
+        <div class="model-content-main">
+          
+        
+        </div>
+        
+
+
+
         </div>
       </div>
 
@@ -115,8 +131,8 @@
 
     <script src="../res/js/adminDashboard.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../res/js/bootstrap.min.js"></script> 
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../res/js/bootstrap.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
   </body>
 </html>
