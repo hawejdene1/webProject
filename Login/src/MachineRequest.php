@@ -3,7 +3,6 @@
 require_once dirname(__FILE__) . "/DBOperations.php"; 
 
 session_start();
-$_SESSION['block']=false;
 
 function machineRequest($agentid){
 
@@ -11,8 +10,8 @@ function machineRequest($agentid){
     if ($_SESSION['block']) {return false;}
     $_SESSION['block'] = true;
 
-    //sets/gets machine id cookie
-    if (! isset($_COOKIE["machineid"])) {$machineid= preg_replace("{}",'',com_create_guid());
+    //sets or gets machine id cookie
+    if (! isset($_COOKIE["machineid"])) {$machineid= substr(com_create_guid(),1,-2);
     } else {$machineid=$_COOKIE["machineid"];}
 
     setcookie("machineid",$machineid,time()+(365 * 24 * 60 * 60));
