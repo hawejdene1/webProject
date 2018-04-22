@@ -7,14 +7,11 @@
       <title> La page de la sortie </title>
    
 </head>
-<body background="images/autoroute.jpg">
-       <fieldset style=" Background-Color:#008080; width:30%; padding:20px; width:800px; margin:auto;" 	>
-
-	   <div id="npara" style="color: #00008B; text-align: center;">
-
-	     <p > <h1> <strong> Sortie de l'autouroute </strong> </h1> </p>
-	    </div>
-	    
+<body background="autoroute.jpg" style=" background-size: 115% 660px;  background-repeat: no-repeat; opacity: 0.9 ";>
+       <fieldset style=" Background-Color:#008080; width:30%; padding:20px; width:800px; margin:auto; opacity: 0.8" 	>
+       
+     <p > <h1> <center> Sortie de l'autouroute </center> </h1> </p>
+	   </br>  </br> 
 
 	   
 		   <p >
