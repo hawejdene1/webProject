@@ -1,45 +1,47 @@
 <?php
 
-session_start();
 
-require "Connection.php" ;
+public function addAgent($cin,$l_name,$f_name,$id_station){
+  session_start();
+  require "Connection.php" ;
 
-class AgentAPI{
+  $db = Connection::getInstance();
 
-  public function addAgent($cin,$l_name,$f_name,$id_station){
-    $db = Connection::getInstance();
+  $request = $db->prepare('INSERT INTO agent(cin,l_name,f_name,id_station) VALUES (?,?,?,?)');
+  $response = $request->execute(array($cin,$l_name,$f_name,$id_station));
 
-    $request = $db->prepare('INSERT INTO agent(cin,l_name,f_name,id_station) VALUES (?,?,?,?)');
-    $response = $request->execute(array($cin,$l_name,$f_name,$id_station));
-
-    if(!$response){
-      die(print_r('Error : '.$db->errorInfo()));
-    }
-
+  if(!$response){
+    die(print_r('Error : '.$db->errorInfo()));
   }
 
-  public function deleteAgent($cin){
-    $db = Connection::getInstance();
+}
 
-    $request = $db->prepare('DELETE FROM agent WHERE cin = ?');
-    $response = $request->execute(array($cin));
+public function deleteAgent($cin){
+  session_start();
+  require "Connection.php" ;
 
-    if(!$response){
-      die('Error : ').$db->errorInfo();
-    }
+  $db = Connection::getInstance();
 
+  $request = $db->prepare('DELETE FROM agent WHERE cin = ?');
+  $response = $request->execute(array($cin));
+
+  if(!$response){
+    die('Error : ').$db->errorInfo();
   }
 
-  public function changeAgent($cin,$id_station){
-    $db = Connection::getInstance();
+}
 
-    $request = $db->prepare('UPDATE agent SET id_station = ? WHERE cin = ?');
-    $response = $request->execute(array($id_station,$cin));
+public function changeAgent($cin,$id_station){
+  session_start();
+  require "Connection.php" ;
+  
+  $db = Connection::getInstance();
 
-    if(!$response){
-      die('Error : ').$db->errorInfo();
-    }
+  $request = $db->prepare('UPDATE agent SET id_station = ? WHERE cin = ?');
+  $response = $request->execute(array($id_station,$cin));
 
+  if(!$response){
+    die('Error : ').$db->errorInfo();
   }
 
 }
