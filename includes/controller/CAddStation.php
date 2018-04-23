@@ -1,5 +1,6 @@
 <?php
-	$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
+	
+    $linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
 
 	$form = "";
@@ -10,8 +11,8 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
     // IF the user had already chosen a Line to update
     //Do something to get the station on the line 
-    $formButton = 'Add Station';
-    $form .= "<div class='radio list-group'>";
+    $formButton = '<button class="btn btn-primary" name="station" type="submit">Add Station</button>';
+    $form .= "<div class='radio'>";
     var_dump($_POST['linename']);
     foreach ($linename[$_POST['linename']] as $value) {
         $form .= "<label class='checkbox list-group-item'>
@@ -34,7 +35,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
     } else {
 
-        $formButton = 'Select Line';
+        $formButton = '<button class="btn btn-primary" type="submit" name="line">Select Line</button>';
         $form .='<select class="form-control" name="linename" form="addStation">';
         foreach ($linename as $key => $value) {
             $form .="<option value='{$key}'>{$key}</option>";

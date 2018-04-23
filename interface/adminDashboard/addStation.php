@@ -35,7 +35,7 @@
 
                 <div class="panel-footer">
                     <div class="text-center">
-                    <button class="btn btn-primary" type="submit"><?=$formButton?></button>
+                    <?=$formButton?>
                     <br /><br />
                     <a class="text-center" href="../adminDashboard.php">Get back to the Homepage</a></div>
                 </div>
