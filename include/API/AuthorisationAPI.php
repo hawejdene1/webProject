@@ -2,7 +2,7 @@
 
     session_start();
 
-    require_once dirname(__FILE__) . "/src/MachineRequest.php";
+    require_once dirname(dirname(dirname(__FILE__))) . "/src/Authorisation/MachineRequest.php";
 
 $addmachines = true;
 

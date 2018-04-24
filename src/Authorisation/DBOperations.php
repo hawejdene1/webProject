@@ -1,5 +1,5 @@
 <?php
-require_once dirname(dirname(dirname(__FILE__))) . "\DBConnection.php";
+require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
 
     function insertMachineRequestDB($machineID,$agentID,$time){
 
