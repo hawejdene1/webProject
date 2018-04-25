@@ -2,9 +2,8 @@
 
 require_once dirname(__FILE__) . "/DBOperations.php"; 
 
-session_start();
 
-function machineRequest($agentid){
+function machineRequest($cin){
 
     //prevents saving the same request within a short period of time
     if ($_SESSION['block']) {return false;}
@@ -18,7 +17,7 @@ function machineRequest($agentid){
 
     //logs request
     $time= preg_replace("/[^0-9]/", '', microtime());
-    insertMachineRequestDB($machineid,$agentid,$time);
+    insertMachineRequestDB($machineid,$cin,$time);
 
     }
 

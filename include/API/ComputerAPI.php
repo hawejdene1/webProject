@@ -23,5 +23,17 @@ function deleteComputer($id){
   if(!$response){
     die('Error : ').$db->errorInfo();
   }
-
 }
+
+  function getComputer($id){
+    
+    $db = Connection::getInstance();
+    $req= $db->prepare("SELECT `id_station` FROM `computer` WHERE `id`=? ");
+    $req->execute(array($id));
+    $rep = $req->fetch(PDO::FETCH_ASSOC);
+    
+    return $rep;
+  }
+  
+
+

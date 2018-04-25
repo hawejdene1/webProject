@@ -20,7 +20,7 @@ require_once dirname(dirname(dirname(__FILE__))) . "/src/StationModule/Utility.p
 
 
 
-function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price){
+function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
 
     /**
      * Parameters:
@@ -56,7 +56,7 @@ function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price){
 
 
 
-function addLine($linename,$name1,$name2,$dist,$price1,$price2){
+function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=array(0,0,0)){
     
     /**
      * a line is simply two terminal stations with the same linename attribute
@@ -68,7 +68,7 @@ function addLine($linename,$name1,$name2,$dist,$price1,$price2){
 
 
     //check if line exists
-    if (countStationsinLineDB($linename)) return false;
+    if (countStationsinLineDB($linename)) return "Line already exists";
 
     //create terminal stations;
     $station1 = new Station($name1,$linename,0,$price1);
@@ -77,11 +77,11 @@ function addLine($linename,$name1,$name2,$dist,$price1,$price2){
     //add to DB
     insertStationDB($station1);
     insertStationDB($station2);
-    return true;
+    return false;
 
 }
 
-function appendTerminalStation($new,$old,$linename,$dist,$price){
+function appendTerminalStation($new,$old,$linename,$dist,$price=array(0,0,0)){
      echo $old;
      echo 'lin'.$linename;
     //check if old terminal exists
@@ -184,9 +184,13 @@ function deleteLine($line){
  * @return array of all line names
  */
 
-function allLine()
+function getLines()
 {
-    return allLineDB();
+    return allLineBD();
+}
+
+function lineExists($linename){
+    return (countStationsinLineDB($linename)!=0);
 }
 
 /**
@@ -195,15 +199,33 @@ function allLine()
  */
 function getTerminalsNames($linename){
 
+    if (! lineExists($linename)) return "line does not exist";
+
     $stations=getTerminalsStationsDB($linename);
     $i=0;
     foreach ($stations as $station){
-        $nameStations[$i]=$station->getName();
+        $nameStations[$i]=$linename . ":" .$station->getName();
         $i+=1;
     }
     return $nameStations;
 }
 
-function lineExit($linename){
-    return (countStationsinLineDB($linename)!=0);
-}
+
+
+function getStationBetween($line,$name1,$name2){
+    
+        if ( ! (($stationStart= getStationDB($name1,$line)) && ($stationEnd= getStationDB($name2,$line)))) return "stations do not exist";
+    
+        //check direction
+        if ($stationStart->getDist()>$stationEnd->getDist()) $keyword='DESC' ;
+        else  $keyword='ASC';
+    
+        $stations=stationBetweenDB($stationStart,$stationEnd,$keyword);
+        $result = array();
+        foreach($stations as $station){
+            array_push($result,$line.":".$station->getName());
+        }
+        return $result;
+    
+    
+    }

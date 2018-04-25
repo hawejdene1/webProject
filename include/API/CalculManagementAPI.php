@@ -51,25 +51,3 @@ function caluculPrix($line,$nameStart,$nameEnd,$cat){
 
 
 
-
-
-
-
-
-
-
-
-function stationBetween($line,$name1,$name2){
-
-    if ( ! (($stationStart= getStationDB($name1,$line)) && ($stationEnd= getStationDB($name2,$line)))) return "stations do not exist";
-
-    //check direction
-    if ($stationStart->getDist()>$stationEnd->getDist()) $keyword='DESC' ;
-    else  $keyword='ASC';
-
-    $stations=stationBetweenBD($stationStart,$stationEnd,$keyword);
-
-    return $stations;
-
-
-}

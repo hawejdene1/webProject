@@ -2,14 +2,12 @@
 
 
     require_once dirname(dirname(dirname(__FILE__))) . "/src/Authorisation/MachineRequest.php";
-
+    require_once dirname(__FILE__) . "/AgentAPI.php";
+    require_once dirname(__FILE__) . "/ComputerAPI.php";
 
     function acceptMachineRequest($machineid,$location){
-
-        addMachine($machineid,$location);
+        addComputer($machineid,$location);
         deleteMachineRequestDB($machineid);
-
-
     }
 
     function denyMachineRequest($machineid){
@@ -25,13 +23,13 @@
             $time = $time . ":" . substr($value['time'],0,-10);
             $log[$key]['time'] = $time;
 
-            //$agent= getAgentNameByID($event['agentID']);
-            //$location = getAgentLocationByID($event['agentID']);
-            $agent = "hammadi " .  $value['agentID'];
-            $location = "marsa";
+            $agent= getAgent($value['cin']);
 
-            $log[$key]['agentname']=$agent;
-            $log[$key]['location']=$location;
+            $log[$key]['time'] = $time;
+            $log[$key]['AgentFirstName']=$agent['f_name'];
+            $log[$key]['AgentLastName']= $agent['l_name'];
+            $log[$key]['Location']=$agent['id_station'];
+            $log[$key]['AgentCIN']=$value['cin'];
         }
 
         return $log;
@@ -53,9 +51,9 @@
          * "time" = Date and time of login (in milliseconds)
          * 
          * 
-         * getAllMachineLogs return = { "machineID"=> [ { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,
-         *                            { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc }, 
-         *                            {} , {} etc  ]}
+         * getAllMachineLogs return = ( "machineID"=> [ { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,
+         *                                              { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc }, 
+         *                                              {} , {} etc  ] )
          * 
          */
 

@@ -1,11 +1,11 @@
 <?php
 require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
 
-    function insertMachineRequestDB($machineID,$agentID,$time){
+    function insertMachineRequestDB($machineID,$cin,$time){
 
         $bdd= Connection::getInstance();
-        $req = $bdd->prepare('INSERT INTO `machinerequest`(`machineID`, `agentID`, `time`) VALUES (?,?,?)');
-        $req->execute(array($machineID,$agentID,$time));
+        $req = $bdd->prepare('INSERT INTO `machinerequest`(`machineID`, `cin`, `time`) VALUES (?,?,?)');
+        $req->execute(array($machineID,$cin,$time));
         
     }
 
@@ -20,7 +20,7 @@ require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
     function getMachineLogDB($machineID){
         
             $bdd= Connection::getInstance();
-            $req = $bdd->prepare('SELECT `agentID`,`time` FROM `machinerequest` WHERE `machineID`=? ORDER BY `time` DESC ');
+            $req = $bdd->prepare('SELECT `cin`,`time` FROM `machinerequest` WHERE `machineID`=? ORDER BY `time` DESC ');
             $req->execute(array($machineID));
             $log = array();
 
