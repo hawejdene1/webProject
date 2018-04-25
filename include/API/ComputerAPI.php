@@ -1,5 +1,7 @@
 <?php
 
+require_once dirname(dirname(dirnmae(__FILE__))) . "/src/DBConnection.php" ;
+
 function addComputer($id_station){
   $db = Connection::getInstance();
 
