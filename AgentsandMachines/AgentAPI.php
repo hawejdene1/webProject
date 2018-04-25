@@ -1,10 +1,10 @@
 <?php
 
 
-require_once dirname(dirname(dirname(__FILE__))) . "/src/DBConnection.php" ;
-
-
 public function addAgent($cin,$l_name,$f_name,$id_station){
+  session_start();
+  require "Connection.php" ;
+
   $db = Connection::getInstance();
 
   $request = $db->prepare('INSERT INTO agent(cin,l_name,f_name,id_station) VALUES (?,?,?,?)');
@@ -17,6 +17,8 @@ public function addAgent($cin,$l_name,$f_name,$id_station){
 }
 
 public function deleteAgent($cin){
+  session_start();
+  require "Connection.php" ;
 
   $db = Connection::getInstance();
 
@@ -30,6 +32,8 @@ public function deleteAgent($cin){
 }
 
 public function changeAgent($cin,$id_station){
+  session_start();
+  require "Connection.php" ;
   
   $db = Connection::getInstance();
 
@@ -41,4 +45,3 @@ public function changeAgent($cin,$id_station){
   }
 
 }
-
