@@ -5,7 +5,7 @@ class Connection{
 
     private function __construct(){
         try{
-            self::$db = new PDO("mysql:host=localhost;dbname=highway","root","");
+            self::$db = new PDO("mysql:host=localhost;dbname=webproject","root","");
         }catch (PDOException $e){
             die('Erreur de connexion : '.$e->getMessage());
         }
