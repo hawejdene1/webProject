@@ -1,9 +1,18 @@
 <?php
 
 
-    require_once dirname(dirname(dirname(__FILE__))) . "/src/Authorisation/MachineRequest.php";
+    require_once dirname(dirname(dirname(__FILE__))) . "/src/MachineRequest/MachineRequest.php";
     require_once dirname(__FILE__) . "/AgentAPI.php";
     require_once dirname(__FILE__) . "/ComputerAPI.php";
+
+    function setRecieveMachines($b){
+        $_SESSION['addmachines']=$b;
+    }
+    
+    function getRecieveMachines(){
+        if (isset($_SESSION['addmachines'])) return $_SESSION['addmachines'];
+        return false;
+    }
 
     function acceptMachineRequest($machineid,$location){
         addComputer($machineid,$location);

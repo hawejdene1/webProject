@@ -1,16 +1,10 @@
 <?php
 
-    require_once dirname(__FILE__) . "/AgentAPI.php";
-    require_once dirname(__FILE__) . "/ComputerAPI.php";
-    require_once dirname(dirname(dirname(__FILE__))) . "/src/Authorisation/MachineRequest.php";
+    require_once dirname(__FILE__) . "/MachineRequestAPI.php";
+    require_once dirname(__FILE__) . "/AdminAPI.php";
 
+    
 
-if (! isset($GLOBALS['addmachines'])) $GLOBALS['addmachines'] = true;
-
-
-function setRecieveMachines($b){
-    $GLOBALS['addmachines']=(bool) $b;
-}
 
 function authoriseAgent($cin,$pass) {
     session_start();    
@@ -23,7 +17,7 @@ function authoriseAgent($cin,$pass) {
         $machine= getComputer($_COOKIE["machineid"]);
 
         if (! $machine){ 
-            if (! $GLOBALS['addmachines']) return "unregistred machine";
+            if (! getRecieveMachines()) return "unregistred machine";
             $_SESSION['block']=false;
             machineRequest($cin);
             return "Machine Waiting Approval";
@@ -39,9 +33,19 @@ function authoriseAgent($cin,$pass) {
         return false;
     }
 
-    if (! $GLOBALS['addmachines']) return "unregistred machine";
+    if (! getRecieveMachines()) return "unregistred machine";
     $_SESSION['block']=false;
     machineRequest($cin);
     return "Machine Waiting Approval";
 
 }
+
+function authoriseAdmin($user,$pass){
+    session_start();
+    $admin = getAdmin($user,$pass);
+    if (!$admin) return "false credentials";
+    else return false;
+}
+
+
+?>
