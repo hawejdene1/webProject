@@ -1,5 +1,10 @@
 <?php
 	
+
+    //Session Check
+
+
+
     $linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
 
@@ -36,14 +41,11 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     } else {
 
         $formButton = '<button class="btn btn-primary" type="submit" name="line">Select Line</button>';
-        $form .='<select class="form-control" name="linename" form="addStation">';
+        $form .='<select class="form-control" name="linename" form="deleteStation">';
         foreach ($linename as $key => $value) {
             $form .="<option value='{$key}'>{$key}</option>";
         }     
         $form .="</select>";
-
-    
-
 
 
 }
