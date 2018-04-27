@@ -30,6 +30,12 @@ require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
             
         }
 
+    function clearMachineLogDB(){
+        $bdd= Connection::getInstance();
+        $req = $bdd->prepare('DELETE FROM `machinerequest` WHERE 1');
+        $req->execute();
+    }
+
     function getMachineRequestsDB(){
 
         $bdd= Connection::getInstance();

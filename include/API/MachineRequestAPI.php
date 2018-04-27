@@ -14,8 +14,8 @@
         return false;
     }
 
-    function acceptMachineRequest($machineid,$location){
-        addComputer($machineid,$location);
+    function acceptMachineRequest($machineid,$line,$station){
+        addComputer($machineid,$line,$station);
         deleteMachineRequestDB($machineid);
     }
 
@@ -37,7 +37,8 @@
             $log[$key]['time'] = $time;
             $log[$key]['AgentFirstName']=$agent['f_name'];
             $log[$key]['AgentLastName']= $agent['l_name'];
-            $log[$key]['Location']=$agent['id_station'];
+            $log[$key]['Line']=$agent['line'];
+            $log[$key]['Station']=$agent['station'];
             $log[$key]['AgentCIN']=$value['cin'];
         }
 
@@ -73,6 +74,10 @@
             $logs[$machineid]= getMachineLog($machineid);
         }
         return $logs;
+    }
+
+    function clearMachineLog(){
+        clearMachineLogDB();
     }
 
 ?>

@@ -6,11 +6,20 @@
 
 require_once dirname(dirname(dirname(__FILE__))) . "/src/DBConnection.php" ;
 
-function getAgent($cin,$pass){
+function checkAgent($cin,$pass){
   
   $db = Connection::getInstance();
   $req= $db->prepare("SELECT `cin`,`f_name`,`l_name`,`station`,`line` FROM `agent` WHERE `cin`=? AND `pass`=? ");
   $req->execute(array($cin,$pass));
+  $rep = $req->fetch(PDO::FETCH_ASSOC);
+  return $rep;
+}
+
+function getAgent($cin){
+  
+  $db = Connection::getInstance();
+  $req= $db->prepare("SELECT `cin`,`f_name`,`l_name`,`station`,`line` FROM `agent` WHERE `cin`=? ");
+  $req->execute(array($cin));
   $rep = $req->fetch(PDO::FETCH_ASSOC);
   return $rep;
 }
