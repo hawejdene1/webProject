@@ -45,7 +45,7 @@
             <a href="adminDashboard/addStation.php"><button type="button" class="btn btn-default choiceBtn" id="addStation">Add Station</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="addMachine">Add Machine</button>
+            <a href="adminDashboard/addMachine.php"><button type="button" class="btn btn-default choiceBtn" id="addMachine">Add Machine</button></a>
           </div>
         </div>
         </div>
@@ -58,13 +58,13 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="deleteStation">Delete Station</button>
+              <a href="adminDashboard/deleteStation.php"><button type="button" class="btn btn-default choiceBtn" id="deleteStation">Delete Station</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="deleteLine">Delete Line</button>
+            <a href="adminDashboard/deleteLine.php"><button type="button" class="btn btn-default choiceBtn" id="deleteLine">Delete Line</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="updateDistance">Update Distance</button>
+            <a href="adminDashboard/updateDistance.php"><button type="button" class="btn btn-default choiceBtn" id="updateDistance">Update Distance</button></a>
           </div>
         </div>
         </div>
@@ -77,10 +77,10 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="updatePrice">Update Price</button>
+           <a href="administration/updatePrice.php"> <button type="button" class="btn btn-default choiceBtn" id="updatePrice">Update Price</button></a>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default choiceBtn" id="updateGPrice">Update General Price</button>
+            <a href="adminDashboard/updateGPrice.php"><button type="button" class="btn btn-default choiceBtn" id="updateGPrice">Update General Price</button></a>
           </div>
         </div>
         </div>
@@ -93,13 +93,13 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default choiceBtn" id="addAgent">Add Agent</button>
+              <a href="adminDashboard/addAgent.php"><button type="button" class="btn btn-default choiceBtn" id="addAgent">Add Agent</button></a>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default choiceBtn" id="updateAgent">Update Agent</button>
+              <a href="adminDashboard/updateAgent.php"><button type="button" class="btn btn-default choiceBtn" id="updateAgent">Update Agent</button></a>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default choiceBtn" id="deleteAgent">Delete Agent</button>
+              <a href=adminDashboard/deleteAgent.php"><button type="button" class="btn btn-default choiceBtn" id="deleteAgent">Delete Agent</button></a>
             </div>
           </div>
         </div>
