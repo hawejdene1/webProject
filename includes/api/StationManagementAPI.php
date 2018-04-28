@@ -154,6 +154,7 @@ function modifyStationDist($name,$linename,$dist){
 
 }
 
+
 function deleteStation($name,$line){
     
      //check if station exists
@@ -173,10 +174,14 @@ function deleteStation($name,$line){
     return false;
 }
 
+/**
+ * @param $line the line has been choosen from a select option
+ * @return resultat of delete
+ */
 function deleteLine($line){
-
+    if(!lineExists($line)){return "line already deleted";}
     deleteLineDB($line);
-    return false;
+    return "Result of Line deletion";
 }
 
 
