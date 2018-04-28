@@ -19,7 +19,11 @@
             </div>
    
 
+<<<<<<< HEAD
+            <form id="deleteAgent" action="" method="POST">
+=======
             <form id="deleteAgent" action="" method="POST" class="form-horizontal">
+>>>>>>> 96c1fae99a209ed8d73e65a93efcd6f25a99afdc
             <div class="panel panel-default">
               
                 <div class="panel-body">

@@ -68,7 +68,7 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
 
     //check if line exists
-    if (countStationsinLineDB($linename)) return "Line already exists";
+    if (countStationsinLineDB($linename)) return true;
 
     //create terminal stations;
     $station1 = new Station($name1,$linename,0,$price1);
@@ -154,6 +154,7 @@ function modifyStationDist($name,$linename,$dist){
 
 }
 
+
 function deleteStation($name,$line){
     
      //check if station exists
@@ -173,8 +174,12 @@ function deleteStation($name,$line){
     return false;
 }
 
+/**
+ * @param $line the line has been choosen from a select option
+ * @return resultat of delete
+ */
 function deleteLine($line){
-
+    if(!lineExists($line)){return true;}
     deleteLineDB($line);
     return false;
 }
