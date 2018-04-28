@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9bc7ad1-886a-4c3a-b55b-010a9f8d3dfb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/includes/api/CalculManagementAPI.php" afterPath="$PROJECT_DIR$/includes/api/CalculManagementAPI.php" />
-      <change beforePath="$PROJECT_DIR$/includes/api/StationManagementAPI.php" afterPath="$PROJECT_DIR$/includes/api/StationManagementAPI.php" />
-      <change beforePath="$PROJECT_DIR$/includes/api/test.php" afterPath="$PROJECT_DIR$/includes/api/test.php" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/CDeleteLine.php" afterPath="$PROJECT_DIR$/includes/controller/CDeleteLine.php" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/CDeleteStation.php" afterPath="$PROJECT_DIR$/includes/controller/CDeleteStation.php" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/creerPeage.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/listeLigne.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/StationModule/CalculOperation.php" afterPath="$PROJECT_DIR$/src/StationModule/CalculOperation.php" />
-      <change beforePath="$PROJECT_DIR$/src/StationModule/DBOperations.php" afterPath="$PROJECT_DIR$/src/StationModule/DBOperations.php" />
-    </list>
+    <list default="true" id="e9bc7ad1-886a-4c3a-b55b-010a9f8d3dfb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +15,17 @@
         <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2108">
-              <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+              <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminDashboard.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interface/adminDashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -36,13 +35,49 @@
         <entry file="file://$PROJECT_DIR$/src/StationModule/Utility.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalculManagementAPI.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBOperation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Admin/DBOperation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBOperations.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MachineRequest/DBOperations.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-402">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1524900935144" expanded="true" signature="202:273" ph="INSERT INTO `machinerequest`... " />
+                <marker date="1524900935144" expanded="true" signature="467:534" ph="DELETE FROM `machinerequest`... " />
+                <marker date="1524900935144" expanded="true" signature="715:797" ph="SELECT `cin`... machinerequest" />
+                <marker date="1524900935144" expanded="true" signature="1125:1161" ph="DELETE FROM `machinerequest`... " />
+                <marker date="1524900935144" expanded="true" signature="1306:1354" ph="SELECT `mach... machinerequest" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MachineRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MachineRequest/MachineRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculManagementAPI.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -56,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/StationModule/CalculOperation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-470">
-              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+              <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding>
                 <marker date="1524936243317" expanded="true" signature="447:545" ph="SELECT * FRO... stations" />
                 <marker date="1524936243317" expanded="true" signature="709:812" ph="SELECT * FRO... stations" />
@@ -71,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/includes/api/test.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,12 +195,29 @@
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
               <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="interface" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="res" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
               <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MachineRequest" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
@@ -216,18 +268,18 @@
       <option name="presentableId" value="Default" />
       <updated>1524901633733</updated>
       <workItem from="1524901637545" duration="13854000" />
-      <workItem from="1524933792215" duration="2572000" />
+      <workItem from="1524933792215" duration="3496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16426000" />
+    <option name="totallyTimeSpent" value="17350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23206443" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -349,7 +401,7 @@
         <state relative-caret-position="340">
           <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <marker date="1524900935034" expanded="true" signature="683:789" ph="..." />
+            <marker date="1524936448927" expanded="true" signature="683:789" ph="..." />
           </folding>
         </state>
       </provider>
@@ -399,7 +451,7 @@
         <state relative-caret-position="340">
           <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <marker date="1524900935034" expanded="true" signature="683:789" ph="..." />
+            <marker date="1524936448927" expanded="true" signature="683:789" ph="..." />
           </folding>
         </state>
       </provider>
@@ -419,22 +471,6 @@
           <folding>
             <marker date="1524919338391" expanded="true" signature="773:967" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interface/adminDashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin/DBOperation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -468,7 +504,7 @@
     <entry file="file://$PROJECT_DIR$/src/StationModule/Utility.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -476,7 +512,7 @@
     <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2108">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -484,7 +520,45 @@
     <entry file="file://$PROJECT_DIR$/includes/api/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin/DBOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MachineRequest/DBOperations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1524900935144" expanded="true" signature="202:273" ph="INSERT INTO `machinerequest`... " />
+            <marker date="1524900935144" expanded="true" signature="467:534" ph="DELETE FROM `machinerequest`... " />
+            <marker date="1524900935144" expanded="true" signature="715:797" ph="SELECT `cin`... machinerequest" />
+            <marker date="1524900935144" expanded="true" signature="1125:1161" ph="DELETE FROM `machinerequest`... " />
+            <marker date="1524900935144" expanded="true" signature="1306:1354" ph="SELECT `mach... machinerequest" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MachineRequest/MachineRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -492,7 +566,7 @@
     <entry file="file://$PROJECT_DIR$/src/StationModule/CalculOperation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-470">
-          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding>
             <marker date="1524936243317" expanded="true" signature="447:545" ph="SELECT * FRO... stations" />
             <marker date="1524936243317" expanded="true" signature="709:812" ph="SELECT * FRO... stations" />
@@ -502,10 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
+    <entry file="file://$PROJECT_DIR$/interface/adminDashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
