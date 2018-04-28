@@ -30,8 +30,16 @@ if($linename===true) {
             //Do something to get the station on the line
             if (isset($_POST['linename'])) {
 
+<<<<<<< HEAD
                 $message = deleteLine($_POST['linename']);
                 $form = "<div><h1>" . $message . "</h1></div>";
+=======
+    // IF the user had already chosen a Line to update
+    //Do something to get the station on the line 
+    
+    if(isset($_POST['linename'])) 
+            $form="<div><h1>Result of Line deletion</h1></div>";
+>>>>>>> 96c1fae99a209ed8d73e65a93efcd6f25a99afdc
 
             }
         } else {

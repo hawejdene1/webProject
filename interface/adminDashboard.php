@@ -99,7 +99,7 @@
               <a href="adminDashboard/updateAgent.php"><button type="button" class="btn btn-default choiceBtn" id="updateAgent">Update Agent</button></a>
             </div>
             <div class="btn-group" role="group">
-              <a href=adminDashboard/deleteAgent.php"><button type="button" class="btn btn-default choiceBtn" id="deleteAgent">Delete Agent</button></a>
+              <a href="adminDashboard/deleteAgent.php"><button type="button" class="btn btn-default choiceBtn" id="deleteAgent">Delete Agent</button></a>
             </div>
           </div>
         </div>
