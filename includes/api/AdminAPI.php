@@ -1,25 +1,20 @@
 <?php
-require_once dirname(dirname(dirname(__FILE__))) . "\src\Admin\DBOperations.php";
+require_once dirname(dirname(dirname(__FILE__))) . "\src\Admin\DBOperation.php";
 
 
-function verifyAdmin($user,$pass){
-    return verifyAdminDB($user,$pass);
+function verifyAdmin($username,$pass){
+   return verifyAdminDB($username,$pass);
 }
 
-function addAdmin($user,$pass){
-    if getAdminDB($user) return "admin already exists";
-    addAdminDB($user,$pass);
-    return false;
+function setAdminPass($username,$pass,$newpass){
+    if (verifyAdmin($username,$pass)) {setAdminPassDB($newpass);return false;}
+    else return "Invalid Credentials";
 }
 
-function deleteAdmin($user,$pass){
-    if (getAdminsDB()==1) return "You can't delete all admins";
-    deleteAdminDB($user,$pass);
-    if ($_SESSION['admin']==$user) {
-        session_unset(); 
-        session_destroy(); 
-    }
+function setAdminUserName($username,$pass,$newusername){
+    if ($username == $newusername) return false;
+    if (verifyAdmin($username,$pass)) {setAdminUserNameDB($newusername);return false;}
+    else return "Invalid Credentials";
 }
-
 
 ?>

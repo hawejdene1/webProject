@@ -39,7 +39,7 @@ require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
     function getMachineRequestsDB(){
 
         $bdd= Connection::getInstance();
-        $req = $bdd->prepare('SELECT `machineID` FROM `machinerequest` WHERE 1');
+        $req = $bdd->prepare('SELECT DISTINCT `machineID` FROM `machinerequest` WHERE 1');
         $req->execute();
         $reqs = array();
         while($rep = $req->fetch()) {array_push($reqs,$rep[0]);}
