@@ -109,7 +109,7 @@ function allLineBD(){
     $bdd= Connection::getInstance();
     $req = $bdd->query('SELECT DISTINCT linename FROM `stations` ');
     $i=0;
-    $line=true;
+
      if(!$req) return "data base empty" ;
     while ($result=$req->fetch()){
         $line[$i]=$result['linename'];

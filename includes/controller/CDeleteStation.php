@@ -2,8 +2,6 @@
 
     //Session check
     
-    //This array is just for testing purposes 
-     $linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
 
 
@@ -12,6 +10,15 @@
 
 $form = "";
 $formButton = "";
+
+$linename=getLines();
+
+
+if($linename===true) {
+
+    $form = "<div><h1>" . "empty Data Base" . "</h1></div>";
+}else{
+
 
 if($_SERVER['REQUEST_METHOD']=='POST') {
 
@@ -23,6 +30,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         $formButton = '<button class="btn btn-primary" name="deleteStationBtn" type="submit">Delete Station</button>';
         $form .= "<div class='radio'>";
         var_dump($_POST['linename']);
+        $stations=
         foreach ($linename[$_POST['linename']] as $value) {
             $form .= "<label class='checkbox list-group-item'>
                   <input name='optionsStation' type='radio' value='{$value}'> {$value}
@@ -43,10 +51,10 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
         $formButton = '<button class="btn btn-primary" type="submit" name="selectLineBtn">Select Line</button>';
         $form .='<select class="form-control" name="linename" form="deleteStation">';
-        foreach ($linename as $key => $value) {
-            $form .="<option value='{$key}'>{$key}</option>";
+        foreach ($linename as $value) {
+            $form .="<option value='{$value}'>{$value}</option>";
         }     
         $form .="</select>";
 
 
-}
+}}

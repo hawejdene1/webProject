@@ -37,8 +37,7 @@ function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,
     if ( ! (($station1= getStationDB($name1,$line)) && ($station2= getStationDB($name2,$line)))) return "stations do not exist";
     if (getStationDB($name,$line)) return "station already exists";
 
-    // check if the new proposed station is actually between Station1 and Station2
-    if ($distfromS1 >= $station1->dist($station2)) return "invalid distance";
+
 
     // calculate distance
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}

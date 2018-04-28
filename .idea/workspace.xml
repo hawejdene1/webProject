@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9bc7ad1-886a-4c3a-b55b-010a9f8d3dfb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/includes/controller/CCreateLine.php" />
-      <change beforePath="$PROJECT_DIR$/includes/api/AdminAPI.php" afterPath="$PROJECT_DIR$/includes/api/AdminAPI.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/includes/api/CalculManagementAPI.php" afterPath="$PROJECT_DIR$/includes/api/CalculManagementAPI.php" />
       <change beforePath="$PROJECT_DIR$/includes/api/StationManagementAPI.php" afterPath="$PROJECT_DIR$/includes/api/StationManagementAPI.php" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/CDeleteAgent.php" afterPath="$PROJECT_DIR$/includes/controller/CDeleteAgent.php" />
+      <change beforePath="$PROJECT_DIR$/includes/api/test.php" afterPath="$PROJECT_DIR$/includes/api/test.php" />
       <change beforePath="$PROJECT_DIR$/includes/controller/CDeleteLine.php" afterPath="$PROJECT_DIR$/includes/controller/CDeleteLine.php" />
-      <change beforePath="$PROJECT_DIR$/includes/controller/creerLigne.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/interface/adminDashboard/addLine.php" afterPath="$PROJECT_DIR$/interface/adminDashboard/addLine.php" />
-      <change beforePath="$PROJECT_DIR$/interface/adminDashboard/deleteAgent.php" afterPath="$PROJECT_DIR$/interface/adminDashboard/deleteAgent.php" />
-      <change beforePath="$PROJECT_DIR$/src/DBConnection.php" afterPath="$PROJECT_DIR$/src/DBConnection.php" />
+      <change beforePath="$PROJECT_DIR$/includes/controller/CDeleteStation.php" afterPath="$PROJECT_DIR$/includes/controller/CDeleteStation.php" />
+      <change beforePath="$PROJECT_DIR$/includes/controller/creerPeage.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/includes/controller/listeLigne.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/StationModule/CalculOperation.php" afterPath="$PROJECT_DIR$/src/StationModule/CalculOperation.php" />
       <change beforePath="$PROJECT_DIR$/src/StationModule/DBOperations.php" afterPath="$PROJECT_DIR$/src/StationModule/DBOperations.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,41 +21,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="StationManagementAPI.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="-2108">
+              <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBOperations.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/StationModule/DBOperations.php">
+      <file leaf-file-name="Utility.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StationModule/Utility.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculManagementAPI.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculOperation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StationModule/CalculOperation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-470">
+              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding>
-                <marker date="1524907940443" expanded="true" signature="219:327" ph="INSERT INTO `stations`... " />
-                <marker date="1524907940443" expanded="true" signature="594:674" ph="DELETE FROM `stations`... " />
-                <marker date="1524907940443" expanded="true" signature="857:909" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="1254:1345" ph="UPDATE `stations`... " />
-                <marker date="1524907940443" expanded="true" signature="1568:1626" ph="UPDATE `stations`... " />
-                <marker date="1524907940443" expanded="true" signature="1833:1879" ph="SELECT count... stations" />
-                <marker date="1524907940443" expanded="true" signature="2076:2157" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="2111:2156" ph="SELECT MIN(d... stations" />
-                <marker date="1524907940443" expanded="true" signature="2516:2597" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="2551:2596" ph="SELECT MAX(d... stations" />
-                <marker date="1524907940443" expanded="true" signature="2977:3029" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="3359:3398" ph="DELETE FROM `stations`... " />
-                <marker date="1524907940443" expanded="true" signature="3531:3571" ph="SELECT DISTI... stations" />
-                <marker date="1524907940443" expanded="true" signature="3867:4051" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="3911:3958" ph="SELECT max(d... stations" />
-                <marker date="1524907940443" expanded="true" signature="3980:4027" ph="SELECT min(d... stations" />
-                <marker date="1524907940443" expanded="true" signature="4473:4571" ph="SELECT * FRO... stations" />
-                <marker date="1524907940443" expanded="true" signature="4732:4835" ph="SELECT * FRO... stations" />
+                <marker date="1524936243317" expanded="true" signature="447:545" ph="SELECT * FRO... stations" />
+                <marker date="1524936243317" expanded="true" signature="709:812" ph="SELECT * FRO... stations" />
+                <marker date="1524936243317" expanded="true" signature="1388:1486" ph="SELECT * FRO... stations" />
+                <marker date="1524936243317" expanded="true" signature="1650:1753" ph="SELECT * FRO... stations" />
               </folding>
             </state>
           </provider>
@@ -64,80 +70,8 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/api/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CDeleteStation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteStation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1524900935034" expanded="true" signature="927:1041" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CDeleteLine.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteLine.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-334">
-              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deleteLine.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interface/adminDashboard/deleteLine.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCreateLine.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/controller/CCreateLine.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listeLigne.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/controller/listeLigne.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addLine.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/interface/adminDashboard/addLine.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="creerPeage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/controller/creerPeage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,13 +86,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/includes/api/test.php" />
-        <option value="$PROJECT_DIR$/src/StationModule/DBOperations.php" />
-        <option value="$PROJECT_DIR$/includes/controller/CDeleteLine.php" />
-        <option value="$PROJECT_DIR$/includes/api/StationManagementAPI.php" />
         <option value="$PROJECT_DIR$/includes/controller/creerLigne.php" />
         <option value="$PROJECT_DIR$/includes/controller/CCreateLine.php" />
         <option value="$PROJECT_DIR$/interface/adminDashboard/addLine.php" />
+        <option value="$PROJECT_DIR$/includes/api/StationManagementAPI.php" />
+        <option value="$PROJECT_DIR$/src/StationModule/DBOperations.php" />
+        <option value="$PROJECT_DIR$/includes/controller/CDeleteLine.php" />
+        <option value="$PROJECT_DIR$/includes/controller/CDeleteStation.php" />
+        <option value="$PROJECT_DIR$/src/StationModule/CalculOperation.php" />
+        <option value="$PROJECT_DIR$/includes/api/test.php" />
+        <option value="$PROJECT_DIR$/includes/api/CalculManagementAPI.php" />
       </list>
     </option>
   </component>
@@ -170,9 +107,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="668" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectView">
@@ -190,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,24 +154,29 @@
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
               <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="interface" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
               <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="interface" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="adminDashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="res" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
               <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="project autoroute" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project autoroute" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="StationModule" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -273,35 +215,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524901633733</updated>
-      <workItem from="1524901637545" duration="8636000" />
+      <workItem from="1524901637545" duration="13854000" />
+      <workItem from="1524933792215" duration="2572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8636000" />
+    <option name="totallyTimeSpent" value="16426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -316,39 +259,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/interface/agentDashboard.php">
+    <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StationModule/CalculOperation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="49" />
-          <folding>
-            <marker date="1524900935159" expanded="true" signature="518:616" ph="SELECT * FRO... stations" />
-            <marker date="1524900935159" expanded="true" signature="780:883" ph="SELECT * FRO... stations" />
-            <marker date="1524900935159" expanded="true" signature="1649:1783" ph="SELECT price... stations" />
-            <marker date="1524900935159" expanded="true" signature="1946:2082" ph="SELECT price... stations" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -361,111 +275,237 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/api/test.php">
+    <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interface/adminDashboard/deleteLine.php">
+    <entry file="file://$PROJECT_DIR$/src/Admin/DBOperation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StationModule/DBOperations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <marker date="1524907940443" expanded="true" signature="219:327" ph="INSERT INTO `stations`... " />
-            <marker date="1524907940443" expanded="true" signature="594:674" ph="DELETE FROM `stations`... " />
-            <marker date="1524907940443" expanded="true" signature="857:909" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="1254:1345" ph="UPDATE `stations`... " />
-            <marker date="1524907940443" expanded="true" signature="1568:1626" ph="UPDATE `stations`... " />
-            <marker date="1524907940443" expanded="true" signature="1833:1879" ph="SELECT count... stations" />
-            <marker date="1524907940443" expanded="true" signature="2076:2157" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="2111:2156" ph="SELECT MIN(d... stations" />
-            <marker date="1524907940443" expanded="true" signature="2516:2597" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="2551:2596" ph="SELECT MAX(d... stations" />
-            <marker date="1524907940443" expanded="true" signature="2977:3029" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="3359:3398" ph="DELETE FROM `stations`... " />
-            <marker date="1524907940443" expanded="true" signature="3531:3571" ph="SELECT DISTI... stations" />
-            <marker date="1524907940443" expanded="true" signature="3867:4051" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="3911:3958" ph="SELECT max(d... stations" />
-            <marker date="1524907940443" expanded="true" signature="3980:4027" ph="SELECT min(d... stations" />
-            <marker date="1524907940443" expanded="true" signature="4473:4571" ph="SELECT * FRO... stations" />
-            <marker date="1524907940443" expanded="true" signature="4732:4835" ph="SELECT * FRO... stations" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/controller/creerLigne.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/controller/CCreateLine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="578">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/controller/listeLigne.php">
+    <entry file="file://$PROJECT_DIR$/src/StationModule/DBOperations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/controller/creerPeage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteStation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1887">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
-            <marker date="1524900935034" expanded="true" signature="927:1041" ph="..." />
+            <marker date="1524918867249" expanded="true" signature="219:327" ph="INSERT INTO `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="594:674" ph="DELETE FROM `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="857:909" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="1254:1345" ph="UPDATE `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="1568:1626" ph="UPDATE `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="1833:1879" ph="SELECT count... stations" />
+            <marker date="1524918867249" expanded="true" signature="2076:2157" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="2111:2156" ph="SELECT MIN(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="2516:2597" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="2551:2596" ph="SELECT MAX(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="2977:3029" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="3359:3398" ph="DELETE FROM `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="3531:3571" ph="SELECT DISTI... stations" />
+            <marker date="1524918867249" expanded="true" signature="3852:4036" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="3896:3943" ph="SELECT max(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="3965:4012" ph="SELECT min(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="4458:4556" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="4717:4820" ph="SELECT * FRO... stations" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteLine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="22" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteStation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="18" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <marker date="1524919338391" expanded="true" signature="773:967" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/CAddStation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <marker date="1524900935034" expanded="true" signature="683:789" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/agentDashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/creerLigne.php" />
+    <entry file="file://$PROJECT_DIR$/interface/adminDashboard/deleteLine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/listeLigne.php" />
     <entry file="file://$PROJECT_DIR$/interface/adminDashboard/addLine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/creerPeage.php" />
+    <entry file="file://$PROJECT_DIR$/includes/controller/CCreateLine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/CAddStation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <marker date="1524900935034" expanded="true" signature="683:789" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteLine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controller/CDeleteStation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <marker date="1524919338391" expanded="true" signature="773:967" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/adminDashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin/DBOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StationModule/DBOperations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <marker date="1524918867249" expanded="true" signature="219:327" ph="INSERT INTO `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="594:674" ph="DELETE FROM `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="857:909" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="1254:1345" ph="UPDATE `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="1568:1626" ph="UPDATE `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="1833:1879" ph="SELECT count... stations" />
+            <marker date="1524918867249" expanded="true" signature="2076:2157" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="2111:2156" ph="SELECT MIN(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="2516:2597" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="2551:2596" ph="SELECT MAX(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="2977:3029" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="3359:3398" ph="DELETE FROM `stations`... " />
+            <marker date="1524918867249" expanded="true" signature="3531:3571" ph="SELECT DISTI... stations" />
+            <marker date="1524918867249" expanded="true" signature="3852:4036" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="3896:3943" ph="SELECT max(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="3965:4012" ph="SELECT min(d... stations" />
+            <marker date="1524918867249" expanded="true" signature="4458:4556" ph="SELECT * FRO... stations" />
+            <marker date="1524918867249" expanded="true" signature="4717:4820" ph="SELECT * FRO... stations" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StationModule/Utility.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/api/StationManagementAPI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2108">
+          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/api/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StationModule/CalculOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-470">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <marker date="1524936243317" expanded="true" signature="447:545" ph="SELECT * FRO... stations" />
+            <marker date="1524936243317" expanded="true" signature="709:812" ph="SELECT * FRO... stations" />
+            <marker date="1524936243317" expanded="true" signature="1388:1486" ph="SELECT * FRO... stations" />
+            <marker date="1524936243317" expanded="true" signature="1650:1753" ph="SELECT * FRO... stations" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/api/CalculManagementAPI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="137" lean-forward="false" selection-start-line="16" selection-start-column="137" selection-end-line="16" selection-end-column="137" />
           <folding />
         </state>
       </provider>
