@@ -19,7 +19,7 @@
             </div>
    
 
-            <form id="deleteLine" action="" method="POST">
+            <form id="deleteAgent" action="" method="POST">
             <div class="panel panel-default">
               
                 <div class="panel-body">

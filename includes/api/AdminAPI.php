@@ -1,5 +1,5 @@
 <?php
-require_once dirname(dirname(dirname(__FILE__))) . "\src\Authorisation\DBOperations.php";
+require_once dirname(dirname(dirname(__FILE__))) . "\src\Admin\DBOperations.php";
 
 
 function verifyAdmin($user,$pass){
@@ -20,3 +20,6 @@ function deleteAdmin($user,$pass){
         session_destroy(); 
     }
 }
+
+
+?>
