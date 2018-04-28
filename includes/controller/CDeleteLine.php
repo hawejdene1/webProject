@@ -1,9 +1,10 @@
 <?php
-
+require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
     //Session check
     
-    //This array is just for testing purposes 
-     $linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
+
+    //array of line names
+
 
 
 
@@ -13,24 +14,37 @@
 $form = "";
 $formButton = "";
 
-if($_SERVER['REQUEST_METHOD']=='POST') {
+$linename=getLines();
 
 
-    // IF the user had already chosen a Line to update
-    //Do something to get the station on the line 
-    if(isset($_POST['linename'])) 
-            $form="<div><h1>Result of Line deletion</h1></div>";
+if($linename===true) {
 
-    } else {
-    //IF the user access the page for the first time (the line was not chosen yet)
+    $form = "<div><h1>" . "empty Data Base" . "</h1></div>";
+}else{
 
 
-        $formButton = '<button class="btn btn-primary" type="submit" name="selectLineBtn">Delete Line</button>';
-        $form .='<select class="form-control" name="linename" form="deleteLine">';
-        foreach ($linename as $key => $value) {
-            $form .="<option value='{$key}'>{$key}</option>";
-        }     
-        $form .="</select>";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-}
+            // IF the user had already chosen a Line to update
+            //Do something to get the station on the line
+            if (isset($_POST['linename'])) {
+
+                $message = deleteLine($_POST['linename']);
+                $form = "<div><h1>" . $message . "</h1></div>";
+
+            }
+        } else {
+            //IF the user access the page for the first time (the line was not chosen yet)
+
+
+            $formButton = '<button class="btn btn-primary" type="submit" name="selectLineBtn">Delete Line</button>';
+            $form .= '<select class="form-control" name="linename" form="deleteLine">';
+            foreach ($linename as $value) {
+                $form .= "<option value='{$value}'>{$value}</option>";
+            }
+            $form .= "</select>";
+
+
+        }
+    }

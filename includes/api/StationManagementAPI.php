@@ -36,6 +36,11 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     if ( ! (($station1= getStationDB($name1,$line)) && ($station2= getStationDB($name2,$line)))) return "stations do not exist";
     if (getStationDB($name,$line)) return "station already exists";
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0fdf4d6100da2528f70eafdd32ca0182cf3f0eb9
     // calculate distance
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}
     else {$dist=$station1->getDist()+$distfromS1;}
@@ -64,7 +69,7 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
 
     //check if line exists
-    if (countStationsinLineDB($linename)) return "Line already exists";
+    if (countStationsinLineDB($linename)) return true;
 
     //create terminal stations;
     $station1 = new Station($name1,$linename,0,$price1);
@@ -150,6 +155,7 @@ function modifyStationDist($name,$linename,$dist){
 
 }
 
+
 function deleteStation($name,$line){
     
      //check if station exists
@@ -169,8 +175,12 @@ function deleteStation($name,$line){
     return false;
 }
 
+/**
+ * @param $line the line has been choosen from a select option
+ * @return resultat of delete
+ */
 function deleteLine($line){
-
+    if(!lineExists($line)){return true;}
     deleteLineDB($line);
     return false;
 }

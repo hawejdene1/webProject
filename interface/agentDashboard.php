@@ -41,7 +41,7 @@
           <button type="button" class="btn btn-default" href="#entryPanel" id="entryBtn">Station Entry</button>
         </div>
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default" id="exitBtn">Station Exit</button>
+          <button type="button" class="btn btn-default" id="exitBtn">Get Ticket</button>
         </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
           <div class="panel-body">
                 <form action="" method="post" class="entryForm">
                   <div class="form-group">
-                  <label for="selectCarType">Ticket Number</label>
+                  <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">
                     <option value="touristic">Touristic</option>
                     <option value="van">Van</option>
@@ -80,7 +80,7 @@
                     <option value="bus">Bus</option>
                     <option value="personal">Personal</option>
                   </select>
-                  <button type="submit" class="btn btn-default">Get Ticket</button>
+                  <button type="submit" class="btn btn-default">Station Exit</button>
                   </div>
                 </form>
           </div>
