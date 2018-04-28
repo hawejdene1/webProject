@@ -17,7 +17,7 @@
                 <h1>Add line <small>adding the initial stations that constitute the line</small></h1>
             </div>
    
-    <form method="post" action="../controller/creerLigne.php"> <!-- action="../controller/creerLigne.php" -->
+    <form method="post" action="../../includes/controller/CCreateLine.php"> <!-- action="../controller/creerLigne.php" -->
     <div class="panel panel-default">
             
             <div class="panel-body">
