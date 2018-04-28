@@ -166,7 +166,7 @@ function deleteStation($name,$line){
 
     deleteStationDB($station);
 
-    return false;
+      return "sation deleted ";;
 }
 
 function deleteLine($line){
@@ -183,6 +183,14 @@ function deleteLine($line){
 function getLines()
 {
     return allLineBD();
+}
+
+
+
+function getStationsInLine($line){
+
+    if(!lineExists($line)) return "line does not exist";
+    return getStationsInLineDB($line);
 }
 
 function lineExists($linename){
