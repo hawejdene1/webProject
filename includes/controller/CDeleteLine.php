@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
     // IF the user had already chosen a Line to update
     //Do something to get the station on the line 
+    
     if(isset($_POST['linename'])) 
             $form="<div><h1>Result of Line deletion</h1></div>";
 

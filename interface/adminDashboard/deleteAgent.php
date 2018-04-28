@@ -1,7 +1,7 @@
+<?php require_once "../../includes/controller/CDeleteAgent.php"; ?>
 
-<?php include "../../includes/controller/CDeleteAgent.php" ?>
 
-
+    
 <!DOCTYPE html>
   <html>
     <head>
@@ -19,7 +19,7 @@
             </div>
    
 
-            <form id="deleteAgent" action="" method="POST">
+            <form id="deleteAgent" action="" method="POST" class="form-horizontal">
             <div class="panel panel-default">
               
                 <div class="panel-body">
