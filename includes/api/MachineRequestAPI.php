@@ -41,16 +41,17 @@
             $log[$key]['Station']=$agent['station'];
             $log[$key]['AgentCIN']=$value['cin'];
         }
-
+        $log["machineid"]=$machineid;
         return $log;
     }
 
     function getAllMachineLogs(){
 
         /**
-         * returns associative array
-         * "machineID" ==> the history login requests concerning this machine
-         * 
+         * returns array
+         * 0 ==> the history login requests concerning first machine
+         * 1 ==> the history login requests concerning second machine
+         * etc
          * 
          * the history is an index array of request instances
          * 
@@ -61,17 +62,36 @@
          * "time" = Date and time of login (in milliseconds)
          * 
          * 
-         * getAllMachineLogs return = ( "machineID"=> [ { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,
-         *                                              { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc }, 
-         *                                              {} , {} etc  ] )
+         * getAllMachineLogs return = 
+         * ( 
+         *  [0] => [ "machineid" => firstmachine's id, 
+         *           [0]=> { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,      //first machine's first request
+         *           [1]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },    //first machine's second request
+         *           [2]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },   //first machine's third request
+         *           etc                                            
+         *         ]
+         * 
+         *  [1] => [ "machineid" => secondmachine's id, 
+         *           [0]=> { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,      //second machine's first request
+         *           [1]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },    //second machine's second request
+         *           [2]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },   //second machine's third request
+         *           etc                                            
+         *         ]
+         * 
+         *  [2] => ....
+         *  . 
+         *  .
+         * )
          * 
          */
 
 
         $logs = array();
         $machineIDS= getMachineRequestsDB();
+        $i=0;
         foreach ($machineIDS as $machineid){
-            $logs[$machineid]= getMachineLog($machineid);
+            $logs[$i]= getMachineLog($machineid);
+            $i=$i+1;
         }
         return $logs;
     }

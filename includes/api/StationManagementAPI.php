@@ -18,16 +18,15 @@ require_once dirname(dirname(dirname(__FILE__))) . "/src/StationModule/Utility.p
 
 
 
-
-
-function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
+function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
 
     /**
      * Parameters:
      * Name = the name of the new station you want to add.
      * line = the name of the line in which you will add the station.
      * name1 = name of the first station
-     * name2 = name of the second station
+     * name2 = name of the terminal station to determine direction
+     * 
      * distfromS1 = the distance of the new staion from name1
      * price = array of three ints 
      * 
@@ -36,8 +35,6 @@ function addStationBetween($name,$line,$name1,$name2,$distfromS1,$price=array(0,
     // check existance in Database, each station is identified by key pair (Nom, NomLigne)
     if ( ! (($station1= getStationDB($name1,$line)) && ($station2= getStationDB($name2,$line)))) return "stations do not exist";
     if (getStationDB($name,$line)) return "station already exists";
-
-
 
     // calculate distance
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}
@@ -67,7 +64,7 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
 
     //check if line exists
-    if (countStationsinLineDB($linename)) return true;
+    if (countStationsinLineDB($linename)) return "Line already exists";
 
     //create terminal stations;
     $station1 = new Station($name1,$linename,0,$price1);
@@ -80,13 +77,14 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
 }
 
+/**
+ * THIS FUNCTION IS REDUNDNAT, USE ADD MACHINE INSTEAD
+ */
 function appendTerminalStation($new,$old,$linename,$dist,$price=array(0,0,0)){
-     echo $old;
-     echo 'lin'.$linename;
+    
     //check if old terminal exists
     $oldterminal = getStationDB($old,$linename);
-    echo $oldterminal->toString();
-    //if (! $oldterminal) return "terminal to replace doesn't exist";
+    
 
     //check if old terminal is terminal
     if (! getisTerminalUtility($oldterminal)) return "station to replace is not terminal";
@@ -103,7 +101,6 @@ function appendTerminalStation($new,$old,$linename,$dist,$price=array(0,0,0)){
     insertStationDB($newterminal);
 
     return false;
-
 
 }
 
@@ -153,7 +150,6 @@ function modifyStationDist($name,$linename,$dist){
 
 }
 
-
 function deleteStation($name,$line){
     
      //check if station exists
@@ -173,12 +169,8 @@ function deleteStation($name,$line){
     return false;
 }
 
-/**
- * @param $line the line has been choosen from a select option
- * @return resultat of delete
- */
 function deleteLine($line){
-    if(!lineExists($line)){return true;}
+
     deleteLineDB($line);
     return false;
 }

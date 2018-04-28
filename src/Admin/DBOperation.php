@@ -2,10 +2,26 @@
 require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
 
 
-function verifyAdminDB($user,$pass){}
+function verifyAdminDB($username,$pass){
 
-function getAdminDB($user);
+    $bdd= Connection::getInstance();
+    $req = $bdd->prepare('SELECT `username`,`pass` FROM `admin` WHERE `username`=? AND `pass`=? ');
+    $req->execute(array($username,$pass));
+    return $req->fetch();
+}
 
-function addAdminDB($user,$pass){}
+function setAdminPassDB($newpass){
 
-function deleteAdminDB($user,$pass){}
+    $bdd= Connection::getInstance();
+    $req = $bdd->prepare('UPDATE `admin` SET `pass`=? WHERE 1');
+    $req->execute(array($newpass));
+
+}
+
+function setAdminUserNameDB($newusername){
+    
+    $bdd= Connection::getInstance();
+    $req = $bdd->prepare('UPDATE `admin` SET `username`=? WHERE 1');
+    $req->execute(array($newusername));
+
+}
