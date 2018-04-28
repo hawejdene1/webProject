@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 	if(isset($_POST['cinAgent'])) {	
      // show agent informations
 
-		if(is_numeric($_POST['cinAgent'])) {
+		if(filter_var($_POST['cinAgent'], FILTER_VALIDATE_INT)) {
 
 
 
@@ -39,25 +39,25 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 				$form .= formHorizantalInput("Station", "agentStation", "agentStation", $agent['station'], "disabled");
 
 
-
-							/*
-				$form .= '<div class="form-group"><input type="number"  class="form-control" id="agentCin" placeholder="'.$agent['cin'] .'" disabled></div>';
-
-			
-				$form .= '<div class="form-group"><input type="number"  class="form-control" id="agentName" placeholder="'.$agent['f_name'] .'" disabled></div>';
-
-		
-				$form .= '<div class="form-group"><input type="number"  class="form-control" id="agentLName" placeholder="'.$agent['l_name'] .'" disabled></div>';
-*/
+		} else {
+			$message = "Agent not found";
+			$formButton = "";
+			$form = "";
 		} 
-	} 
+
+	} else {
+		$_SESSION['errorMessage'] = "Unvalid number format";
+
+		header("location: ../../interface/adminDashboard/deleteAgent.php");
+
+	}
 
 
 	} else if (isset($_POST['deleteAgent'])){
 		//Confirm deletion or not !
 
 
-
+		unset($_SESSION['errorMessage']);
 
 	} else {
 		// there is some kind of an error, unauthorized access

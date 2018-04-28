@@ -46,3 +46,12 @@
     </body>
 </html>
 
+
+
+
+function formHorizantalInput($labelName, $name, $id, $placeholder, $type) { //This function's purpose is to make the code more visible
+    $string = '<div class="form_group">';
+    $string .='<label class="col-md-2" for="'.$id.'">'.$labelName.'</label>';
+    $string .= '<div class="col-md-10"><input type="'.$type.'" class="form-control" name="'.$name.'" id="'.$id.'" placeholder="'.$value.'" '.$additionalState.' ></div></div>';
+    return $string;
+}
