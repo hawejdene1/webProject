@@ -156,17 +156,16 @@ function deleteStation($name,$line){
     $station=getStationDB($name,$line);
     if (! $station) return "station does not exist";
 
-    //check if station is terminal 
-    if ( getisTerminalUtility($station) ){
+    //check if station is terminal
+    $stations=getStationsInLine($line);
+    if ( $stations!=false ){
+         if (sizeof(($stations))==2) return "cant delet only two stations in line";
 
-         $newterminal= getNearestStationUtility($station);
-
-         if (getisTerminalUtility($newterminal)) return "Can't delete line";
-        }
+        }else{
 
     deleteStationDB($station);
 
-      return "sation deleted ";;
+      return "sation deleted ";}
 }
 
 function deleteLine($line){
@@ -189,7 +188,7 @@ function getLines()
 
 function getStationsInLine($line){
 
-    if(!lineExists($line)) return "line does not exist";
+    if(!lineExists($line)) return "false";
     return getStationsInLineDB($line);
 }
 
