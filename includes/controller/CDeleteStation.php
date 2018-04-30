@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         $formButton = '<button class="btn btn-primary" name="deleteStationBtn" type="submit">Delete Station</button>';
         $form .= "<div class='radio'>";
         //var_dump($_POST['linename']);
-        $stations= getStationsInLineDB($_POST['linename']);
+        $stations=getStationsInLine($_POST['linename']);
         foreach ($stations as $value) {
             $form .= "<label class='checkbox list-group-item'>
                   <input name='optionsStation' type='radio' value='{$value}'> {$value}
