@@ -1,5 +1,5 @@
 
-<?php include "../../includes/controller/CAddStation.php" ?>
+<?php require "../../includes/controller/CAddStation.php" ?>
 
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
                 
                     <!--Selectionner Ligne-->
                     <!--Afficher les anciens peages possibles  POUR SELECTIONNER UN -->
-                    <!--Saisir distance avec cette station -->
+                    <!--Saisir distance avec cette station et direction -->
                     <!--Définir prix des différentes catégories  -->
                     <!--Submission-->
 
@@ -48,10 +48,3 @@
 
 
 
-
-function formHorizantalInput($labelName, $name, $id, $placeholder, $type) { //This function's purpose is to make the code more visible
-    $string = '<div class="form_group">';
-    $string .='<label class="col-md-2" for="'.$id.'">'.$labelName.'</label>';
-    $string .= '<div class="col-md-10"><input type="'.$type.'" class="form-control" name="'.$name.'" id="'.$id.'" placeholder="'.$value.'" '.$additionalState.' ></div></div>';
-    return $string;
-}
