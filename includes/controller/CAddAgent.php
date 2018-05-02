@@ -9,6 +9,12 @@ $formButton = "";
 $form = "";
 
 
+
+
+
+
+
+
 if($_SERVER['REQUEST_METHOD']=='POST') {
 	//Manage the request sent by the admin
 

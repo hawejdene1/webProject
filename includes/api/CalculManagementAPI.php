@@ -14,10 +14,10 @@ require_once dirname(dirname(dirname(__FILE__))) . "/src/StationModule/Utility.p
  * @param $name1
  * @param $name2
  * @param $cat
- * @return prix total , distance total , stations parcouru
+ * @return stations nom et distance parcouru dans un tableau associative array('nom' => $station['name'], 'distance' => $distanceParcour)
  */
 
-function caluculPrixDistance($line,$nameStart,$nameEnd,$cat){
+function caluculDistance($line,$nameStart,$nameEnd){
 
 
     if ( ! (($stationStart= getStationDB($nameStart,$line)) && ($stationEnd= getStationDB($nameEnd,$line)))) return "stations do not exist";
@@ -27,7 +27,7 @@ function caluculPrixDistance($line,$nameStart,$nameEnd,$cat){
     else  $keyword='DESC';
 
 
-    $array =calculPrixDistance($stationStart,$stationEnd,$keyword,$cat);
+    $array =calculDistanceDB($stationStart,$stationEnd,$keyword);
     return $array;
 }
 
@@ -45,7 +45,8 @@ function caluculPrix($line,$nameStart,$nameEnd,$cat){
     else  $keyword='DESC';
 
 
-    $array =calculPrix($stationStart,$stationEnd,$keyword,$cat);
+
+    $array =calculPrixDB($stationStart,$stationEnd,$keyword,$cat);
     return $array;
 }
 

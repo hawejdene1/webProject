@@ -1,13 +1,42 @@
 <?php
 
     require_once dirname(__FILE__) . "/MachineRequestAPI.php";
-    //require_once dirname(__FILE__) . "/AdminAPI.php";
+    require_once dirname(__FILE__) . "/AdminAPI.php";
 
-    session_start();   
+ /*DO NOT FORGET TO CALL session_start() ON EACH PAGE LIKE THIS :
 
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }
+     
+  */
+
+function authoriseAdmin($username,$pass){
+    $admin = verifyAdmin($username,$pass);
+    if (! $admin) return "Invalid Login";
+
+    if (isset($_SESSION)) {
+        
+        session_unset(); 
+        session_destroy(); 
+    }
+
+    session_start();
+    $_SESSION["SessionType"]="Admin";
+    setRecieveMachines(false);
+
+}
 
 function authoriseAgent($cin,$pass) {
-     
+
+if (isset($_SESSION)) {
+    session_unset(); 
+    session_destroy(); 
+
+}
+    session_start();
+
     $agent = checkAgent($cin,$pass);
     if (! $agent) return "unauthorised person";
 
@@ -15,12 +44,11 @@ function authoriseAgent($cin,$pass) {
     $agentstation= $agent['station'];
 
     if (isset($_COOKIE["machineid"])) {
+        
+        
+
         $machine= getComputer($_COOKIE["machineid"]);
 
-        echo "PLS ".$_COOKIE["machineid"]."<br>"; 
-
-        print_r($machine);
-        echo " PLS<br>";
         if (! $machine){ 
             if (! getRecieveMachines()) return "unregistred machine";
             $_SESSION['block']=false;
@@ -28,7 +56,8 @@ function authoriseAgent($cin,$pass) {
             return "Machine Waiting Approval";
                      }
 
-        if( ($machine['line']!=$agentline) && ($machine['station']!=$agentstation)) return "unauthorised location";
+        if( ($machine['line']!=$agentline) || ($machine['station']!=$agentstation)) return "unauthorised location";
+        
 
         $_SESSION['AgentFirstName']= $agent['f_name'];
         $_SESSION['AgentLastName']= $agent['l_name'];
@@ -36,22 +65,18 @@ function authoriseAgent($cin,$pass) {
         $_SESSION['Station']=$agent['station'];
         $_SESSION['AgentCIN']=$cin;
         $_SESSION['MachineID']=$_COOKIE["machineid"];
+        $_SESSION['SessionType']="Agent";
         return false;
     }
 
     if (! getRecieveMachines()) return "unregistred machine";
     $_SESSION['block']=false;
     machineRequest($cin);
+    
     return "Machine Waiting Approval";
 
 }
-/*
-function authoriseAdmin($user,$pass){
-    session_start();
-    $admin = getAdmin($user,$pass);
-    if (!$admin) return "false credentials";
-    else return false;
-}
-*/
+
+
 
 ?>
