@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(false/*$_SESSION['SessionType']!="Agent"*/) 
+  header("location: ../index.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

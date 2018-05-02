@@ -1,5 +1,18 @@
 
-<?php header('location: interface/login.php');?>
+<?php 
+  session_start();
+  if(!isset($_SESSION['SessionType'])){
+      header('location: interface/login.php');
+  } else {
+    if($_SESSION['SessionType'] == "Admin")
+      header('location: interface/adminDashboard.php');
+    else if($_SESSION['SessionType'] == "Agent")
+      header('location: interface/agentDashboard.php');
+    else 
+      header('location: interface/login.php');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
