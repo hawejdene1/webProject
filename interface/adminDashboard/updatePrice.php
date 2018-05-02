@@ -1,4 +1,4 @@
-<?php require_once "../../includes/controller/CAddAgent.php"; ?>
+<?php require_once "../../includes/controller/CUpdatePrice.php"; ?>
 
 
     

@@ -1,3 +1,8 @@
+<?php 
+session_start();
+if(false/*$_SESSION['SessionType']!="Admin"*/) 
+  header("location: ../index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,7 +82,7 @@
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-           <a href="administration/updatePrice.php"> <button type="button" class="btn btn-default choiceBtn" id="updatePrice">Update Price</button></a>
+           <a href="adminDashboard/updatePrice.php"> <button type="button" class="btn btn-default choiceBtn" id="updatePrice">Update Price</button></a>
           </div>
           <div class="btn-group" role="group">
             <a href="adminDashboard/updateGPrice.php"><button type="button" class="btn btn-default choiceBtn" id="updateGPrice">Update General Price</button></a>

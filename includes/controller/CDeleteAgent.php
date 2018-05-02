@@ -37,9 +37,6 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
      // show agent informations
 
 		if(filter_var($_POST['cinAgent'], FILTER_VALIDATE_INT)) {
-
-
-
 			
 			if(!empty($agent)){ // gonna be changed to if($agent = getAgent($_POST['cinAgent']) {}
 			echo $_POST['cinAgent'];
