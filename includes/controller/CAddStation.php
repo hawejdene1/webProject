@@ -44,7 +44,7 @@ if (true/*$_SESSION['SessionType']=="Admin"*/) {
         } else {
 
             $formButton = '<button class="btn btn-primary" type="submit" name="line">Select Line</button>';
-            $form .= formSelectInput($linename, "linename", "addStation");
+            $form .= formSelectInput($linename, "linename", "addStation", "Lines");
         }
     }
 } else {
@@ -63,7 +63,7 @@ function formSelectInput($list, $name, $formname, $labelName) {
         $string ='<label class="col-md-2" for="'.$name.'">'.$labelName.'</label>';
         $string .="<div class='col-md-10'><select class='form-control' id=".$name." name='".$name."' form='".$formname."'>";
         foreach ($list as $key => $value) {
-            $string .="<option value='".$key."'>".$value."</option>";
+            $string .="<option value='".$key."'>".$key."</option>";
         }     
         $string .="</select></div>";
 
