@@ -93,5 +93,5 @@ function formHorizantalInput($labelName, $name, $id, $value, $additionalState) {
 	$string .= '<div class="col-md-10"><input class="form-control" name="'.$name.'" id="'.$id.'" value="'.$value.'" '.$additionalState.' ></div></div>';
 	return $string;
 }
->>>>>>> 96c1fae99a209ed8d73e65a93efcd6f25a99afdc
+
 
