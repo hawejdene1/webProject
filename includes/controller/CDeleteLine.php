@@ -31,7 +31,7 @@ if($linename===true) {
             if (isset($_POST['linename'])) {
 
                 $message = deleteLine($_POST['linename']);
-                $form = "<div><h1>" . $message . "</h1></div>";
+                $form = "<div class='alert alert-success'> $message</div>";
 
             }
         } else {
