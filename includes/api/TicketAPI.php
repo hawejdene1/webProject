@@ -68,7 +68,8 @@ function getTicket($num)
 {
 
     $db = Connection::getInstance();
-    $details_request = $db->query("SELECT * FROM `ticket` WHERE `num`=$num");
+    $details_request = $db->prepare("SELECT * FROM `ticket` WHERE `num`=?");
+    $details_request->execute(array($num));
 
     if(!$details_request){
         die('Error : ').$db->errorInfo();
