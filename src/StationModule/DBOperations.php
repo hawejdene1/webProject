@@ -167,6 +167,20 @@ function stationBetweenDB($sationStart,$sationEnd,$keyword){
     return $staions;
 }
 
+function getStationsInLineDB($line){
+    $bdd= Connection::getInstance();
+    $req = $bdd->prepare('SELECT * FROM `stations` WHERE  linename=? ');
+    $req->execute(array($line));
+
+    $i=0;
+    while ($result = $req->fetch(PDO::FETCH_ASSOC)) {
+        $staions [$i] = $result['name'];
+        $i+=1;
+    }
+
+    return $staions;
+
+}
 
 
 

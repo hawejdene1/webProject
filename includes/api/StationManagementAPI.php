@@ -115,7 +115,7 @@ function modifyStationPrice($name,$linename,$price){
 
         updateStationPriceDB($station,$price);
 
-        return false;
+        return "The update was successful";
         
 }
 
