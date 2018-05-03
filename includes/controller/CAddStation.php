@@ -1,17 +1,17 @@
 <?php
-	
-    //Session Check
-    
+
+//Session Check
+
 session_start();
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
-if (true/*$_SESSION['SessionType']=="Admin"*/) { 
+if (true/*$_SESSION['SessionType']=="Admin"*/) {
 
     //$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
 
-	$form = "";
-	$formButton = "";
+    $form = "";
+    $formButton = "";
 
     $linename=getLines();
 
@@ -21,56 +21,56 @@ if (true/*$_SESSION['SessionType']=="Admin"*/) {
         $form = "<div><h1>" . "empty Data Base" . "</h1></div>";
     }else{
 
-    if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['linename'])) {
-        $_SESSION['linename'] = $_POST['linename'];
-        // IF the user had already chosen a Line to update
+        if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['linename'])) {
+            $_SESSION['linename'] = $_POST['linename'];
+            // IF the user had already chosen a Line to update
 
 
-        $formButton = '<button class="btn btn-primary" name="station" type="submit">Add Station</button>';
+            $formButton = '<button class="btn btn-primary" name="station" type="submit">Add Station</button>';
 
 
-        //Input NEW station name
-        $form .= formHorizantalInput("New Station Name", "stationName", "stationName", "New Station Name", "text");
+            //Input NEW station name
+            $form .= formHorizantalInput("New Station Name", "stationName", "stationName", "New Station Name", "text");
 
-        //Input Station direction that will be a terminal
-        $stations = getTerminalsNames($_POST['linename']);
+            //Input Station direction that will be a terminal
+            $stations = getTerminalsNames($_POST['linename']);
 
-        $form .= formSelectInput($stations, "stationDirection", "addStation", "Station direction");
+            $form .= formSelectInput($stations, "stationDirection", "addStation", "Station direction");
 
-        //Input Station that according to the admin will choose distance
-        $stations = getStationsInLine($_POST['linename']);
-        $_SESSION['linename'] = $_POST['linename'];
-        $form .= formSelectInput($stations, "stationReference", "addStation", "Station reference");
+            //Input Station that according to the admin will choose distance
+            $stations = getStationsInLine($_POST['linename']);
+            $_SESSION['linename'] = $_POST['linename'];
+            $form .= formSelectInput($stations, "stationReference", "addStation", "Station reference");
 
-        //Input Distance  between new station and reference one
-        $form .= formHorizantalInput("Distance", "distance", "distance", "Distance  between new station and reference one", "number");
+            //Input Distance  between new station and reference one
+            $form .= formHorizantalInput("Distance", "distance", "distance", "Distance  between new station and reference one", "number");
 
-        //Input station prices
-        $form .= formHorizantalInput("Category 1", "firstPrice", "firstPrice", "Category 1 Price", "number");
-        $form .= formHorizantalInput("Category 2", "secondPrice", "secondPrice", "Category 2 Price", "number");
-        $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price", "number");
+            //Input station prices
+            $form .= formHorizantalInput("Category 1", "firstPrice", "firstPrice", "Category 1 Price", "number");
+            $form .= formHorizantalInput("Category 2", "secondPrice", "secondPrice", "Category 2 Price", "number");
+            $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price", "number");
 
 
-    }else if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName']))     {
-        $name=htmlspecialchars($_POST['stationName']);
-        $message=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']));
+        }else if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName']))     {
+            $name=htmlspecialchars($_POST['stationName']);
+            $message=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']));
 
-        unset($_SESSION['linename']);
-        $form = "<div class='alert alert-success'> $message</div>";
-    } else {  
-    	
-        if(count($linename) == 0) {
-            $formButton = "";
-            $form .= '<div class="alert alert-warning">No line in database</div>'.
-            '<a>Get back to Homepage</a>';
-
+            unset($_SESSION['linename']);
+            $form = "<div class='alert alert-success'> $message</div>";
         } else {
 
-            $formButton = '<button class="btn btn-primary" type="submit" name="line">Select Line</button>';
-            $form .= formSelectInput($linename, "linename", "addStation","Lines");
+            if(count($linename) == 0) {
+                $formButton = "";
+                $form .= '<div class="alert alert-warning">No line in database</div>'.
+                    '<a>Get back to Homepage</a>';
+
+            } else {
+
+                $formButton = '<button class="btn btn-primary" type="submit" name="line">Select Line</button>';
+                $form .= formSelectInput($linename, "linename", "addStation","Lines");
+            }
         }
-    }
-}} else {
+    }} else {
     header("location: ../../index.php");
 }
 
@@ -83,12 +83,12 @@ function formHorizantalInput($labelName, $name, $id, $placeholder, $type) { //Th
 }
 
 function formSelectInput($list, $name, $formname, $labelName) {
-        $string ='<label class="col-md-2" for="'.$name.'">'.$labelName.'</label>';
-        $string .="<div class='col-md-10'><select class='form-control' id=".$name." name='".$name."' form='".$formname."'>";
-        foreach ($list as  $value) {
-            $string .="<option value='".$value."'>".$value."</option>";
-        }     
-        $string .="</select></div>";
+    $string ='<label class="col-md-2" for="'.$name.'">'.$labelName.'</label>';
+    $string .="<div class='col-md-10'><select class='form-control' id=".$name." name='".$name."' form='".$formname."'>";
+    foreach ($list as  $value) {
+        $string .="<option value='".$value."'>".$value."</option>";
+    }
+    $string .="</select></div>";
 
-        return $string;
+    return $string;
 }

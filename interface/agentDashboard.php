@@ -77,7 +77,7 @@ if(false/*$_SESSION['SessionType']!="Agent"*/)
           <div class="panel panel-default hidden" id="exitPanel">          
           <div class="panel-heading"> </div>
           <div class="panel-body">
-                <form action="" method="post" class="entryForm">
+                <form action="../includes/controller/CEntry.php" method="post" class="entryForm">
                   <div class="form-group">
                   <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">

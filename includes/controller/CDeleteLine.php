@@ -6,8 +6,6 @@ require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
     //array of line names
 
 
-
-
     //To make sure that we were in this page ulterierly, we 
     // will use a SESSION variable to test the last page 
 
