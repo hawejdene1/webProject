@@ -1,6 +1,6 @@
 <?php
 
-    //Session check
+    //Session  check
 
 
      //This rep is just for testing purposes 
