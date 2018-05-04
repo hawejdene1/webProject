@@ -46,7 +46,7 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     // we can now safely create and insert our station
     $newstation = new Station($name,$line,$dist,$price);
     insertStationDB($newstation);
-    return false;
+    return "station insert with succes";
 
 }
 
@@ -119,6 +119,13 @@ function modifyStationPrice($name,$linename,$price){
         
 }
 
+function updatePriceByPercent($percent){
+
+    updatePriceByPercentDB($percent);
+    return false;
+
+}
+
 function modifyStationDist($name,$linename,$dist){
 
     /**
@@ -154,24 +161,34 @@ function deleteStation($name,$line){
     
      //check if station exists
     $station=getStationDB($name,$line);
+
     if (! $station) return "station does not exist";
 
     //check if station is terminal
     $stations=getStationsInLine($line);
+
     if ( $stations!=false ){
          if (sizeof(($stations))==2) return "cant delet only two stations in line";
-
+        deleteStationDB($station);
         }else{
 
-    deleteStationDB($station);
 
-      return "sation deleted ";}
+
+     return "sation deleted ";
+    }
+}
+
+function stationExists($name,$line){
+    $station=getStationDB($name,$line);
+
+    if (! $station) return false;
+    return true;
 }
 
 function deleteLine($line){
-
+    //even if line does not exist it does'nt bother
     deleteLineDB($line);
-    return false;
+    return "line deleted";
 }
 
 
@@ -207,7 +224,7 @@ function getTerminalsNames($linename){
     $stations=getTerminalsStationsDB($linename);
     $i=0;
     foreach ($stations as $station){
-        $nameStations[$i]=$linename . ":" .$station->getName();
+        $nameStations[$i]=$station->getName();
         $i+=1;
     }
     return $nameStations;

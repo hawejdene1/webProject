@@ -44,10 +44,10 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
 
             //Write down weither the deleting succeeded or failed
-
-
-       $message=  deleteStation($_POST['optionsStation'],$_SESSION['linename']);
-
+   $message="erreer";
+if(isset($_SESSION['linename'])) {
+    $message = deleteStation($_POST['optionsStation'], $_SESSION['linename']);
+}
         unset($_SESSION['linename']);
             $form="<div><h1>".$message."</h1>";
 

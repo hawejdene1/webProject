@@ -9,7 +9,7 @@
   <body>
 
 
-    <form action="" method="post" class="loginForm">
+    <form action="../../webProject/includes/controller/Clogin.php" method="POST" class="loginForm">
     <div class="form-group">
     <div class="row">
       <label class="col-md-4" id="inputAgentLogin">Login</label>
@@ -25,16 +25,19 @@
       <div class="row">
         <label class="col-md-4">Privilèges</label>
         <div class="form-check col-md-4">
-          <input class="form-check-input" type="radio" name="radioPriviledges" id="radioAgent" checked>
+          <input class="form-check-input" type="radio" name="radioPriviledges" id="radioAgent" value="Agent" checked>
           <label class="form-check-label" for="radioAgent"> Agent</label>
         </div>
         <div class="form-check col-md-4">
-          <input class="form-check-input" type="radio" name="radioPriviledges" id="radioAdmin">
+          <input class="form-check-input" type="radio" name="radioPriviledges" id="radioAdmin" value="Admin">
           <label class="form-check-label" for="radioAdmin"> Admin</label>
         </div>
       </div>
-
+        <div class="panel-footer">
+            <div class="text-center"><button class="btn btn-primary" type="submit" value="submit">Sign in</button><br /><br/>
+        </div>
     </div>
+
 
 
     <?php

@@ -6,12 +6,13 @@
     require_once dirname(__FILE__) . "/ComputerAPI.php";
 
     function setRecieveMachines($b){
-        $_SESSION['addmachines']=$b;
+        if ($b) $val = 1;
+        else $val =0;
+        setRecieveMachinesDB($b);
     }
     
     function getRecieveMachines(){
-        if (isset($_SESSION['addmachines'])) return $_SESSION['addmachines'];
-        return false;
+        return getRecieveMachinesDB();
     }
 
     function acceptMachineRequest($machineid,$line,$station){

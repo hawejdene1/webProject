@@ -16,8 +16,10 @@ $req->execute(array($station->getName(),$station->getLineName(),$station->getDis
 
 function deleteStationDB($station){
     $bdd= Connection::getInstance();
-    $req = $bdd->prepare('DELETE FROM `stations` WHERE `stations`.`name` = ? AND `stations`.`linename` = ?');
+
+    $req = $bdd->prepare('DELETE FROM `stations` WHERE `name` = ? AND `linename` = ?');
     $req->execute(array($station->getName(),$station->getLineName()));
+
 }
 
 
@@ -38,6 +40,31 @@ function updateStationPriceDB($station,$price){
     $bdd= Connection::getInstance();
     $req = $bdd->prepare('UPDATE `stations` SET `pricecat1`=?,`pricecat2`=?,`pricecat3`=? WHERE name=? AND linename=?');
     $req->execute(array($price[0],$price[1],$price[2],$station->getName(),$station->getLineName()));
+
+}
+
+function updatePriceByPercentDB($percent){
+
+
+    $bdd= Connection::getInstance();
+    $req = $bdd->query('SELECT  `pricecat1`, `pricecat2`, `pricecat3`, `name`,`linename` FROM `stations` ');
+   while ( $prices=$req->fetch(PDO::FETCH_ASSOC)){
+
+    $prices['pricecat1']+=($prices['pricecat1']*$percent)/100;
+    $prices['pricecat2']+=($prices['pricecat2']*$percent)/100;
+    $prices['pricecat3']+=($prices['pricecat3']*$percent)/100;
+
+  //update price of each staition
+       $req1 = $bdd->prepare('UPDATE `stations` SET `pricecat1`=?,`pricecat2`=?,`pricecat3`=? WHERE name=? AND linename=?');
+       $req1->execute(array($prices['pricecat1'],$prices['pricecat2'],$prices['pricecat3'],$prices['name'],$prices['linename']));
+
+  }
+   return true;
+
+
+
+
+
 
 }
 

@@ -1,13 +1,13 @@
 <?php
 
 
- require_once dirname(__FILE__) . "/StationManagementAPI.php";
+    require_once  "MachineRequestAPI.php";
 
- require_once  dirname(__FILE__) ."/CalculManagementAPI.php";
+    echo getRecieveMachines();
+    setRecieveMachines(true);
+    echo getRecieveMachines();
+    setRecieveMachines(false);
+    echo getRecieveMachines();
 
- $sationParcour=caluculDistance("A2","beja","bizert","pricecat1");
- var_dump($sationParcour);
- $prix=caluculPrix("A2","beja","bizert","pricecat1");
 
-
- var_dump($prix);
+    ?>

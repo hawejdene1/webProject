@@ -5,7 +5,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-        <title>Add Line</title>
+        <title>delete line</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -19,11 +19,11 @@
             </div>
    
 
-<<<<<<< HEAD
+
             <form id="deleteAgent" action="" method="POST">
-=======
+
             <form id="deleteAgent" action="" method="POST" class="form-horizontal">
->>>>>>> 96c1fae99a209ed8d73e65a93efcd6f25a99afdc
+
             <div class="panel panel-default">
               
                 <div class="panel-body">

@@ -68,7 +68,8 @@ function getTicket($num)
 {
 
     $db = Connection::getInstance();
-    $details_request = $db->query("SELECT * FROM `ticket` WHERE `num`=$num");
+    $details_request = $db->prepare("SELECT * FROM `ticket` WHERE `num`=?");
+    $details_request->execute(array($num));
 
     if(!$details_request){
         die('Error : ').$db->errorInfo();
@@ -78,47 +79,73 @@ function getTicket($num)
     return $details;
 }
 
-function modifTicketSortie($num,$dateSortie){
+function modifTicketSortie($num){
 
-      $db=Connection::getInstance();
+    $db = Connection::getInstance();
+    $db->query("use webproject");
+    /*if (isset($_SESSION["Station"])) {
+        $nomStationArrivee = $_SESSION["Station"];*}*/
+        $nomStationArrivee ="sousse";
 
-      $sql=  "UPDATE `ticket`  SET `dateSortie`=$dateSortie  WHERE `num` =$num";
 
-      mysqli_query($db,$sql)  or die('Erreur SQL !'.$sql.'<br />'.
-        mysqli_error($db));
 
-      return "la date de sortie est ajoutée ";
+
+    $dateSortie = date('Y-m-d h:i:s');
+    $sql=$db->prepare("UPDATE `ticket`  SET `dateSortie`=?,`nomStationArrivee`=? WHERE `num` =?");
+    $sql->execute(array($dateSortie,$nomStationArrivee,$num));
+    if(!$sql){
+        die('Error : ').$db->errorInfo();
+    }
+       else
+      return($num);
 
 }
+
 function pay_ticket($num){
     $db=connection::getInstance();
+    $db->query("use webproject");
+    $sql =$db->prepare("UPDATE ticket SET payee='0'  WHERE `num` =?");
+    $sql->execute(array($num));
 
-    $sql ="UPDATE ticket SET payee='1'  WHERE `num` =$num";
+    if (!$sql) {
+        die('Error : ') . $db->errorInfo();
+    }
+    
 
-    mysqli_query($db,$sql) or die('Erreur SQL !'.$sql.'<br />'.mysqli_error($db));
 
-    mysqli_close($db);
     return"ticket payeé";
 
 }
 
-function verifier_ticket($num){
-    $db=Connection::getInstance();
+function verifier_ticket($num)
+{
+    $db = Connection::getInstance();
+    $db->query("use webproject");
 
-    $sql = "SELECT * FROM ticket WHERE `num` =$num AND payee='0' ";
-    $sql1 = "SELECT * FROM ticket WHERE `num` = $num AND payee='1' ";
+    $details = getTicket($num);
+    if ($details["payee"] == 1) {
+     pay_ticket($num);
+        modifTicketSortie($num);
 
-    $req = mysqli_query($db,$sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysqli_error($db));
-$req1 = mysqli_query($db,$sql1) or die('Erreur SQL !<br />'.$sql1.'<br />'.mysqli_error($db));
+    }
+       else if ($details["payee"] == 0)
+          {
+              return "ticket deja payee";
+          }
 
-if($req->num_rows > 0) {
-            return "ce ticket existe dans la base de données et non encore payé "; }
-        elseif($req1->num_rows > 0) {       
-            return 'ce ticket existe dans la base de données et déjà payé';}
-        else {
-            return ' ce ticket n`existe pas dans la base de données'; }
-// Déconnection de MySQL
-        mysqli_close($db);
+       else return"ticket n'existe pas";
+
+}
+
+
+
+function Reste($prix_donnee){
+
+   $prix_totale=caluculPrix($nomLigne,$nomStationDepart,$nomStationArrivee,$categorie);
+     if($prix_donne<$prix_totale){return("solde insuffisant!!");}
+     else
+    return($prix_totale-$prix_rendu);
+
 
 }
 ?>

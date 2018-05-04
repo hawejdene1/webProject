@@ -24,8 +24,8 @@ function authoriseAdmin($username,$pass){
 
     session_start();
     $_SESSION["SessionType"]="Admin";
-    setRecieveMachines(false);
-
+    setRecieveMachines(true);
+    return false;
 }
 
 function authoriseAgent($cin,$pass) {
