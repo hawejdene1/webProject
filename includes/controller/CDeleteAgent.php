@@ -1,16 +1,12 @@
 
 <?php
-
+   session_start();
 //Session  check
-
+require_once dirname(dirname(__FILE__)) . "/api/AgentAPI.php" ;
+require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
 //This rep is just for testing purposes
 $agent = array('cin' => 554, 'f_name' => "salma", 'l_name' => "rais", 'line' => "sousse", 'station'=> "Sousse");
-
-
-
-var_dump($agent);
-
 
 //To make sure that we were in this page ulterierly, we
 // will use a SESSION variable to test the last page
@@ -18,24 +14,22 @@ var_dump($agent);
 $form = "";
 $formButton = "";
 
-
-if($_SERVER['REQUEST_METHOD']=='POST') {
-    if(isset($_POST['cinAgent'])) {
-        // show agent informations
-
-//var_dump($_SERVER);
-
-
         if($_SERVER['REQUEST_METHOD']=='POST') {
-            var_dump($_POST);
+            //var_dump($_POST);
             if(isset($_POST['cinAgent'])) {
                 // show agent informations
 
                 if(filter_var($_POST['cinAgent'], FILTER_VALIDATE_INT)) {
 
-                    if(!empty($agent)){ // gonna be changed to if($agent = getAgent($_POST['cinAgent']) {}
-                        echo $_POST['cinAgent'];
 
+
+
+                        $agent = getAgent($_POST['cinAgent']);
+
+                        if(!empty($agent)){ // gonna be changed to if($agent = getAgent($_POST['cinAgent']) {}
+
+                            $_SESSION['cin']=$_POST['cinAgent'];
+                             echo $_SESSION['cin'];
                         $formButton = '<button class="btn btn-primary" type="submit" name="deleteAgent">Delete Agent</button>';
 
                         $form .= formHorizantalInput("Agent CIN", "agentCin", "agentCin", $agent['cin'], "disabled");
@@ -46,12 +40,13 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
                     } else {
                         $message = "Agent not found";
+                         $form.= '<div class="alert alert-warning">'.$message.'</div>';
                         $formButton = "";
-                        $form = "";
+
                     }
 
                 } else {
-                    $_SESSION['errorMessage'] = "Unvalid number format";
+                    //$_SESSION['errorMessage'] = "Unvalid number format";
 
                     header("location: ../../interface/adminDashboard/deleteAgent.php");
 
@@ -59,14 +54,16 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
 
 
             } else if (isset($_POST['deleteAgent'])){
-                //Confirm deletion or not !
 
+                deleteAgent( $_SESSION['cin']);
+                $message = "Agent deleted";
+                $form.= '<div class="alert alert-success">'.$message.'</div>';
 
-                unset($_SESSION['errorMessage']);
-
+                unset( $_SESSION['cin']);
 
             } else {
                 // there is some kind of an error, unauthorized access
+
                 header("location: ../../interface/errorPage.php");
             }
 
@@ -74,27 +71,17 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         } else {
 
 
-            $form .= '<input type="text" class="form-control" name="cinAgent" form="deleteAgent">
-
+            $form .= '<input type="text" class="form-control" name="cinAgent" form="deleteAgent">';
 
 }
+function formHorizantalInput($labelName, $name, $id, $value, $additionalState) {
 
 
-
-
-	 $formButton = '<button class="btn btn-primary" type="submit" name="searchCin">Delete Agent</button>';
-	$form .= '<input type="number" class="form-control" name="cinAgent" form="deleteAgent" placeholder="Cin Agent" required>';
-
- 
-}
-
-
-function formHorizantalInput($labelName, $name, $id, $value, $additionalState) { //This function's purpose is to make the code more visible
 	$string = '<div class="form_group">';
 	$string .='<label class="col-md-2" for="'.$id.'">'.$labelName.'</label>';
 	$string .= '<div class="col-md-10"><input class="form-control" name="'.$name.'" id="'.$id.'" value="'.$value.'" '.$additionalState.' ></div></div>';
 	return $string;
+
+
 }
-
-
 
