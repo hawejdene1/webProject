@@ -13,7 +13,7 @@ require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
  */
 
 
-function calculDistanceDB($stationStart,$stationEnd,$keyword)
+function calculDistanceDB($stationStart,$stationEnd,$keyword,$cat)
 {
 
     //liste of station between dep and arr
@@ -40,7 +40,8 @@ function calculDistanceDB($stationStart,$stationEnd,$keyword)
 
     while ($station = $req->fetch()) {
         $distanceParcour = abs(($station['dist']) - ($stationStart->getDist()));
-        $parcourStation[$i] = array('nom' => $station['name'], 'distance' => $distanceParcour);
+        $prix= $station[$cat];
+        $parcourStation[$i] = array('nom' => $station['name'], 'distance' => $distanceParcour,'prix'=>$prix);
         $i+=1;
 
     }
