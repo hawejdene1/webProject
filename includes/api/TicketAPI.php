@@ -46,7 +46,7 @@ function insertTicketDB($categorie)
     }
 
     if (isset($_SESSION["Line"])) {
-        $nomLigne = $_SESSION["Line"];
+        $nomLigne = $_SESSION["Line"];}
         $dateEntree = date('Y-m-d h:i:s');
 
         $db = Connection::getInstance();
@@ -61,7 +61,7 @@ function insertTicketDB($categorie)
         $lastInsertId = $db->lastInsertId();
         return $lastInsertId;
 
-    }
+    
 }
 
 function  setStationOut($nomStationSortie,$num){
