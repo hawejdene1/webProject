@@ -64,6 +64,13 @@ function insertTicketDB($categorie)
     }
 }
 
+function  setStationOut($nomStationSortie,$num){
+    $db = Connection::getInstance();
+    //$db->query("use webproject");
+    $request = $db->prepare('UPDATE `ticket` SET `nomStationArrivee`=? WHERE `num`=?');
+    $request->execute(array($nomStationSortie,$num));
+}
+
 function getTicket($num)
 {
 
@@ -75,7 +82,7 @@ function getTicket($num)
         die('Error : ').$db->errorInfo();
     }
 
-    $details = $details_request->fetch();
+    $details = $details_request->fetch(PDO::FETCH_ASSOC);
     return $details;
 }
 
@@ -123,17 +130,25 @@ function verifier_ticket($num)
     $db->query("use webproject");
 
     $details = getTicket($num);
+
+    if($details==null){
+        return"ticket n'existe pas";
+    }
+
+
     if ($details["payee"] == 1) {
      pay_ticket($num);
-        modifTicketSortie($num);
+     modifTicketSortie($num);
+     return true;
+
 
     }
-       else if ($details["payee"] == 0)
+     if ($details["payee"] == 0)
           {
-              return "ticket deja payee";
+              return "ticket already payed";
           }
 
-       else return"ticket n'existe pas";
+
 
 }
 
