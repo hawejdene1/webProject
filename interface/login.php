@@ -9,7 +9,7 @@
   <body>
 
 
-    <form action="../../includes/controller/Clogin.php" method="post" class="loginForm">
+    <form action="/webProject/includes/controller/Clogin.php" method="POST" class="loginForm">
     <div class="form-group">
     <div class="row">
       <label class="col-md-4" id="inputAgentLogin">Login</label>
@@ -33,8 +33,11 @@
           <label class="form-check-label" for="radioAdmin"> Admin</label>
         </div>
       </div>
-
+        <div class="panel-footer">
+            <div class="text-center"><button class="btn btn-primary" type="submit" value="submit">Sign in</button><br /><br/>
+        </div>
     </div>
+
 
 
     <?php
