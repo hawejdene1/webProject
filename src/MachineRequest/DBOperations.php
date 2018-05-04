@@ -47,7 +47,18 @@ require_once dirname(dirname(__FILE__)) . "\DBConnection.php";
         return $reqs;
     }
 
-   
+    function setRecieveMachinesDB($val){
+        $bdd= Connection::getInstance();
+        $req=$bdd->prepare('UPDATE `acceptmachines` SET `val`=? WHERE 1' );
+        $req->execute(array($val));
+    }
+
+    function getRecieveMachinesDB(){
+        $bdd= Connection::getInstance();
+        $req=$bdd->prepare('SELECT `val` FROM `acceptmachines` WHERE 1' );
+        $req->execute();
+        return $req->fetch()[0];
+    }
 
 
 ?>
