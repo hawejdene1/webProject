@@ -9,7 +9,7 @@
   <body>
 
 
-    <form action="/webProject/includes/controller/Clogin.php" method="POST" class="loginForm">
+    <form action="../../webProject/includes/controller/Clogin.php" method="POST" class="loginForm">
     <div class="form-group">
     <div class="row">
       <label class="col-md-4" id="inputAgentLogin">Login</label>
