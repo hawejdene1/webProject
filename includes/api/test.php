@@ -1,9 +1,13 @@
 <?php
 
 
- require_once dirname(__FILE__) . "/StationManagementAPI.php";
+    require_once  "MachineRequestAPI.php";
 
- require_once  dirname(__FILE__) ."/CalculManagementAPI.php";
+    echo getRecieveMachines();
+    setRecieveMachines(true);
+    echo getRecieveMachines();
+    setRecieveMachines(false);
+    echo getRecieveMachines();
 
 
-echo updatePriceByPercent(50);
+    ?>
