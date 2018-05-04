@@ -12,5 +12,5 @@ if($_SESSION['SessionType']=="Admin") {
 
 
 } else {
-	header("location:  ../../index.php")
+	header("location:  ../../index.php");
 }

@@ -3,7 +3,7 @@
 session_start();
 
 
-if($_SESSION['SessionType']=="Admin") {
+if( true /*$_SESSION['SessionType']=="Admin"*/) {
 
 
 	//$allMachines = getAllMachineLogs();
@@ -11,23 +11,29 @@ if($_SESSION['SessionType']=="Admin") {
 
 	//This array is for testing purposes
 
+	$form = "";
+	$formButton = "";
 
-
-	$allMachines = array('SBR5885' => array(
+	$allMachines = array('SBR5885' => array('0' => array(
 												'agentID' => "6545654654",
 												'agentname' => "Salma Rais",
 												'location' => "Djerba",
 												'time' => "12:04"),
-						'SBR55101' => array(
+											'1' => array(
+												'agentID' => "6545654654",
+												'agentname' => "Salma Rais",
+												'location' => "Djerba",
+												'time' => "12:04")),
+						'SBR55101' => array('0' => array(
 												'agentID' => "1000105",
 												'agentname' => "Iyadh Chaker",
 												'location' => "Kef",
-												'time' => "14:41"),
-						'DEF47754' => array(
+												'time' => "14:41")),
+						'DEF47754' => array('0' => array(
 												'agentID' => "15585200",
 												'agentname' => "Wej Haouari",
 												'location' => "Djerba",
-												'time' => "15:10")
+												'time' => "15:10"))
 					);
 
 
@@ -37,28 +43,34 @@ if($_SESSION['SessionType']=="Admin") {
 	
 	
 	foreach ($allMachines as $id => $machine) {
-		showMachineInfos($id ,$machine);
+		$form .= showMachineInfos($id ,$machine);
+
 	}
-
-
-
 
 
 } else {
 	header("location:  ../../index.php");
 }
 
+	
 
 
 
 function showMachineInfos($id, $machine) {
 
-
+	$string = "<button>";
+	                                                          
 	$string = "<ul class='list-group navbar navbar-default navbar-fixed-side'>";
-	$string .=" <li class='list-group-item list-group-item-info'>".$machine['']."</li>";
-	$string .=" <li class='list-group-item list-group-item-info'>".$machine['']."</li>";
-	$string .=" <li class='list-group-item list-group-item-info'>".$machine['']."</li>";
-	$string .=" <li class='list-group-item list-group-item-info'>".$machine['']."</li>";
+	$string .= "<li class='list-group-item list-group-item-info'>".$id."</li>";
+
+
+
+	foreach ($machine as $key => $value) {
+				
+
+
+	$string .=" <li class='list-group-item list-group-item-default'>".$value['agentID']." : ".$value['agentname']." : ".$value['location']." : ".$value['time']."</li>";
+	}
 
 	$string.="</ul>";
 	/*
@@ -71,5 +83,7 @@ function showMachineInfos($id, $machine) {
          * "time" = Date and time of login (in milliseconds)
          * 
     */
+
+    return $string;
 
 }
