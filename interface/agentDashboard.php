@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(false/*$_SESSION['SessionType']!="Agent"*/) 
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent") 
   header("location: ../index.php");
 ?>
 

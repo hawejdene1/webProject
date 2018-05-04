@@ -22,9 +22,11 @@
   <body>
 
 
-    <div class="container errorBox">
+    <div class="container successBox">
      <!-- your page content -->
-        <h1>Oupsy, seems like an error has occured !</h1>
+        <div class="successBox">
+          <h1 ><?=$_SESSION['message']?></h1>
+        </div>
 
         <a href="../index.php">Get to the homepage</a>
         

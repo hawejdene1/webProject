@@ -1,9 +1,10 @@
 <?php 
-
+//Session Check
 session_start();
 
-
-if( true /*$_SESSION['SessionType']=="Admin"*/) {
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
+	header("location: ../../index.php");
+} else {
 
 
 	//$allMachines = getAllMachineLogs();
@@ -48,9 +49,7 @@ if( true /*$_SESSION['SessionType']=="Admin"*/) {
 	}
 
 
-} else {
-	header("location:  ../../index.php");
-}
+} 
 
 	
 
@@ -64,15 +63,22 @@ function showMachineInfos($id, $machine) {
 	$string .= "<li class='list-group-item list-group-item-info'>".$id."</li>";
 
 
-
 	foreach ($machine as $key => $value) {
-				
+			
 
-
+	$string .= "
+		<div class='input-group'>
+	      <span class='input-group-addon'>
+	        <input type='checkbox' >
+	      </span>
+	      <input type='text' class='form-control'>
+	    </div><!-- /input-group -->
+    ";
 	$string .=" <li class='list-group-item list-group-item-default'>".$value['agentID']." : ".$value['agentname']." : ".$value['location']." : ".$value['time']."</li>";
 	}
 
 	$string.="</ul>";
+	$string .= "<button type='submit' form='".$id."Machine'>Accept Request</button>";
 	/*
 	* the history is an index array of request instances
          * 

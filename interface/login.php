@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -7,9 +10,8 @@
     <link rel="stylesheet" href="../res/css/styleForm.css">
   </head>
   <body>
-
-
-    <form action="../../webProject/includes/controller/Clogin.php" method="POST" class="loginForm">
+    
+    <form action="../includes/controller/Clogin.php" method="POST" class="loginForm">
     <div class="form-group">
     <div class="row">
       <label class="col-md-4" id="inputAgentLogin">Login</label>
@@ -41,10 +43,15 @@
 
 
     <?php
-        echo '
-        <div class="alert alert-danger" role="alert">
-                  Alert Messages;
-        </div>';
+      if(isset($_SESSION['errorMessages'])) {
+        echo "
+        <div class='alert alert-danger' role='alert'>
+                  ".$_SESSION['errorMessages']."
+        </div>";
+        
+      }
+
+      unset($_SESSION['errorMessages']);
     ?>
 
 
@@ -55,18 +62,15 @@
 
 
 
-<div class="panel">
+  </body>
+
+<div class="navbar nav panel">
+<div class="panel-header"> Dev tools for access </div>
 <div class="panel-body">
 <ul class="list-group">
     <li class="list-group-item"><a href="adminDashboard.php">AdminDashboard</a></li>
-    <li class="list-group-item"><a href="allAdminForms.html">AllAdminForms</a></li>
     <li class="list-group-item"><a href="agentDashboard.php">AgentDashboard</a></li>
-    <li class="list-group-item"><a href="entryButton.php">EntryButton</a></li>
-    <li class="list-group-item"><a href="exitButton.php">ExitButton</a></li>
-    <li class="list-group-item"><a href="login.php">Login</a></li>
 </ul>
 </div>
 </div>
-
-  </body>
 </html>

@@ -1,10 +1,16 @@
 <?php 
-
 session_start();
-require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
-if(true /*$_SESSION['SessionType']=="Admin"*/) {
 
+
+require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php";
+
+
+
+
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
+	header("location: ../../index.php");
+} else {
 	//$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
 
@@ -98,11 +104,7 @@ if(true /*$_SESSION['SessionType']=="Admin"*/) {
     }
 
 
-} }else {
-	header("location:  ../../index.php");
-}
-
-
+}}
 
 
 function formHorizantalInput($labelName, $name, $id, $value, $type) { //This function's purpose is to make the code more visible

@@ -1,8 +1,4 @@
-<?php 
-session_start();
-if(false/*$_SESSION['SessionType']!="Admin"*/) 
-  header("location: ../index.php");
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,6 +26,10 @@ if(false/*$_SESSION['SessionType']!="Admin"*/)
 
     <?php include "..\includes\interface\\navbar.php"; ?>
 
+<?php 
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin") 
+  header("location: ../index.php");
+?>
     <div class="container-fluid">
      <!-- your page content -->
         <h2>Welcome to the Highway administration page</h2>
@@ -40,17 +40,14 @@ if(false/*$_SESSION['SessionType']!="Admin"*/)
    
 <!-- Options for addind NEW STATIONS OR LINES -->
       <div class="panel panel-default">
-        <div class="panel-heading">New Stations/Lines</div>
+        <div class="panel-heading">Stations' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
-          <div class="btn-group" role="group">
-           <a href="adminDashboard/addLine.php"> <button type="button" class="btn btn-default choiceBtn" id="addLine">Add Line</button></a>
-          </div>
           <div class="btn-group" role="group">
             <a href="adminDashboard/addStation.php"><button type="button" class="btn btn-default choiceBtn" id="addStation">Add Station</button></a>
           </div>
           <div class="btn-group" role="group">
-            <a href="adminDashboard/addMachine.php"><button type="button" class="btn btn-default choiceBtn" id="addMachine">Add Machine</button></a>
+              <a href="adminDashboard/deleteStation.php"><button type="button" class="btn btn-default choiceBtn" id="deleteStation">Delete Station</button></a>
           </div>
         </div>
         </div>
@@ -59,11 +56,11 @@ if(false/*$_SESSION['SessionType']!="Admin"*/)
 
 <!-- Options to manae existing STATIONS OR LINES-->
       <div class="panel panel-default">
-        <div class="panel-heading">New Stations/Lines</div>
+        <div class="panel-heading">Lines' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
-              <a href="adminDashboard/deleteStation.php"><button type="button" class="btn btn-default choiceBtn" id="deleteStation">Delete Station</button></a>
+           <a href="adminDashboard/addLine.php"> <button type="button" class="btn btn-default choiceBtn" id="addLine">Add Line</button></a>
           </div>
           <div class="btn-group" role="group">
             <a href="adminDashboard/deleteLine.php"><button type="button" class="btn btn-default choiceBtn" id="deleteLine">Delete Line</button></a>
@@ -78,7 +75,20 @@ if(false/*$_SESSION['SessionType']!="Admin"*/)
 
 <!-- Options to manage the prices-->
 <div class="panel panel-default">
-        <div class="panel-heading">Prices management</div>
+        <div class="panel-heading">Machines' management</div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+              <a href="adminDashboard/addMachine.php"><button type="button" class="btn btn-default choiceBtn" id="addMachine">Add Machine</button></a>
+            </div>     
+        </div>
+        </div>
+</div>
+      
+
+<!-- Options to update prices -->
+<div class="panel panel-default">
+        <div class="panel-heading">Prices' management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
           <div class="btn-group" role="group">
@@ -91,10 +101,9 @@ if(false/*$_SESSION['SessionType']!="Admin"*/)
         </div>
       </div>
 
-
 <!-- Options to manage AGENTS -->
       <div class="panel panel-default">
-        <div class="panel-heading">New Stations/Lines</div>
+        <div class="panel-heading">Agents' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
             <div class="btn-group" role="group">

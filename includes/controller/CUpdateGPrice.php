@@ -2,12 +2,15 @@
 
 session_start();
 
+
 require_once  dirname(dirname(__FILE__)) . "/API/StationManagementAPI.php";
 
-if(true/*$_SESSION['SessionType']=="Admin"*/) {
-
-$form = "";
-$formButton = "";
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
+	header("location: ../../index.php");
+} else {
+	
+	$form = "";
+	$formButton = "";
 
 
 	if(isset($_POST['pricePercentage'])) {
@@ -27,7 +30,4 @@ $formButton = "";
         $formButton = '<button class="btn btn-primary" name="priceBtn" type="submit">Update Prices</button>';
 	
 	}
-
-} else {
-	header("location:  ../../index.php");
 }

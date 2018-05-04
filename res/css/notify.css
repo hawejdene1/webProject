@@ -5,14 +5,14 @@ body {
 }
 
 
-h1 {
+.errorBox h1 {
 	font-family: 'Russo One', sans-serif;
 	text-align: left;
-	color: #ddd;
-	font-size: 7em;
 	font-weight: 100px;
 	margin-top: 100px;
 	text-transform: uppercase;
+	color: #ddd;
+	font-size: 7em;
 
 }
 
@@ -21,12 +21,27 @@ h1 {
 	margin-left: 50px; 
 }
 
-@media screen and (min-width: 1600px) and (min-height: 1050px) {
+
+.successBox h1{
+	max-width: 40%;
+	font-size: 4em;
+	color: #458756;
+	background-color: #458269;
+
+}
+
+
+@media screen and (min-width: 1400) and (min-height: 1050px) {
 	body {
 	background: #2c3e50; }
 
-	h1 {
+	.errorBox h1 {
 	font-size: 10em;
-}
+	}
+
+
+	.successBox h1 {
+	font-size: 7em;
+	}
 
 }

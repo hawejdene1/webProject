@@ -1,6 +1,8 @@
 
 <?php 
   session_start();
+
+  
   if(!isset($_SESSION['SessionType'])){
       header('location: interface/login.php');
   } else {
@@ -21,16 +23,16 @@
   </head>
   <body>
 
-<ul>
-    <li><a href="interface/adminDashboard.php">AdminDashboard</a></li>
-    <li><a href="interface/allAdminForms.html">AllAdminForms</a></li>
-    <li><a href="interface/agentDashboard.php">AgentDashboard</a></li>
-    <li><a href="interface/entryButton.php">EntryButton</a></li>
-    <li><a href="interface/exitButton.php">ExitButton</a></li>
-    <li><a href="interface/login.php">Login</a></li>
+
+<div class ="panel panel-default">
+  
 
 
-
-</ul>
+  <p class="panel-header"></p>
+  <ul class="panel-body">
+      <li><a href="interface/adminDashboard.php">AdminDashboard</a></li>
+      <li><a href="interface/agentDashboard.php">AgentDashboard</a></li>
+  </ul>
+</div>
   </body>
 </html>

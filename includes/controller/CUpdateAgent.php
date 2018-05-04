@@ -1,10 +1,15 @@
 <?php 
 
-session_start();
-
 require_once dirname(dirname(__FILE__)) . "/api/AgentAPI.php" ;
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
-if(true/*$_SESSION['SessionType']=="Admin"*/) {
+
+session_start();
+
+
+
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
+	header("location: ../../index.php");
+} else {
 
 	$form = "";
 	$formButton = "";
@@ -85,14 +90,9 @@ if(true/*$_SESSION['SessionType']=="Admin"*/) {
 	
 
 	}
-	 
+	 }
 
 
-
-
-} else {
-	header("location:  ../../index.php");
-}
 
 
 
