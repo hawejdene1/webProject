@@ -178,6 +178,13 @@ function deleteStation($name,$line){
     }
 }
 
+function stationExists($name,$line){
+    $station=getStationDB($name,$line);
+
+    if (! $station) return false;
+    return true;
+}
+
 function deleteLine($line){
     //even if line does not exist it does'nt bother
     deleteLineDB($line);

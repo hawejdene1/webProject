@@ -1,4 +1,7 @@
-<?php require_once "../../includes/controller/CUpdateAgent.php"; ?>
+<?php
+
+require_once "../../includes/controller/CUpdateAgent.php";
+?>
 
 
     
@@ -34,7 +37,7 @@
                     <?php if(isset($_SESSION['errorMessage'])) 
                         echo '<div class="alert alert-warning">'.$_SESSION['errorMessage'].'</div>';
                         if(isset($_SESSION['message'])) 
-                        echo '<div class="alert alert-warning">'.$_SESSION['errorMessage'].'</div>';
+                        echo '<div class="alert alert-warning">'.$_SESSION['message'].'</div>';
                     ?>
                 </div>
 

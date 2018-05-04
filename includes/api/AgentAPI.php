@@ -24,6 +24,15 @@ function getAgent($cin){
   return $rep;
 }
 
+function getPassAgent($cin){
+    $db = Connection::getInstance();
+    $req= $db->prepare("SELECT  `pass` FROM `agent` WHERE `cin`=? ");
+    $req->execute(array($cin));
+    $rep = $req->fetch();
+
+    return $rep['pass'];
+}
+
 function addAgent($cin,$l_name,$f_name,$line,$station,$pass){
 
   $db = Connection::getInstance();
@@ -50,12 +59,12 @@ function deleteAgent($cin){
 
 }
 
-function changeAgentLocation($cin,$line,$station){
+function changeAgentLocation($cin,$line,$station,$pass){
   
   $db = Connection::getInstance();
 
-  $request = $db->prepare('UPDATE agent SET station = ? ,`line`=? WHERE cin = ?');
-  $response = $request->execute(array($station,$line,$cin));
+  $request = $db->prepare('UPDATE agent SET station = ? ,`line`=? ,`pass`=? WHERE cin = ?');
+  $response = $request->execute(array($station,$line,$pass,$cin));
 
   if(!$response){
     die('Error : ').$db->errorInfo();
