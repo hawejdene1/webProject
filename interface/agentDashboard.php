@@ -1,5 +1,6 @@
 <?php
-session_start();
+ require_once "../includes/controller/Cout.php";
+//session_start();
 if(false/*$_SESSION['SessionType']!="Agent"*/) 
   header("location: ../index.php");
 ?>
@@ -43,7 +44,7 @@ if(false/*$_SESSION['SessionType']!="Agent"*/)
         <h1><!-- getNomPeage()--> Sousse </h1>
 
         <p>Choose one of the functionnalities</p>
-        <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
+        <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="..." >
         <div class="btn-group" role="group">  
           <button type="button" class="btn btn-default" href="#entryPanel" id="entryBtn">Station Entry</button>
         </div>
@@ -54,6 +55,14 @@ if(false/*$_SESSION['SessionType']!="Agent"*/)
       </div>
       </div>
     </div>
+<?php
+
+if(isset($form)){
+    echo $form;
+
+}
+?>
+
 
 
 
@@ -64,12 +73,14 @@ if(false/*$_SESSION['SessionType']!="Agent"*/)
         <div class="panel panel-default hidden" id="entryPanel">          
           <div class="panel-heading"></div>
           <div class="panel-body">
-                <form action="" method="post" class="exitForm">
+                <form action=" " method="post" class="exitForm">
                   <div class="form-group">
                   <label for="ticketNum">Ticket Number</label>
-                  <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" />
-                  <button type="submit" class="btn btn-success">Check Ticket</button>
-                  <button type="reset" class="btn btn-default">Reset</button>
+                  <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
+                  <button type="submit" class="btn btn-success" name="exit">Check Ticket</button>
+
+                  <!--<button type="reset" class="btn btn-default">Reset</button>-->
+
                   </div>
                 </form>
           </div>
@@ -81,13 +92,11 @@ if(false/*$_SESSION['SessionType']!="Agent"*/)
                   <div class="form-group">
                   <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">
-                    <option value="touristic">Touristic</option>
-                    <option value="van">Van</option>
-                    <option value="truck">Truck</option>
-                    <option value="bus">Bus</option>
-                    <option value="personal">Personal</option>
+                    <option value="">Motos</option>
+                    <option value="van">Vehicles with 2 axles</option>
+                    <option value="truck">Vehicles with 3 axles</option>
                   </select>
-                  <button type="submit" class="btn btn-default">Station Exit</button>
+                  <button type="submit" class="btn btn-default" name="entry">Station Exit</button>
                   </div>
                 </form>
           </div>
