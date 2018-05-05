@@ -17,7 +17,7 @@ require_once dirname(dirname(dirname(__FILE__))) . "/src/StationModule/Utility.p
  * @return stations nom et distance parcouru dans un tableau associative array('nom' => $station['name'], 'distance' => $distanceParcour)
  */
 
-function caluculDistance($line,$nameStart,$nameEnd){
+function caluculDistance($line,$nameStart,$nameEnd,$cat){
 
 
     if ( ! (($stationStart= getStationDB($nameStart,$line)) && ($stationEnd= getStationDB($nameEnd,$line)))) return "stations do not exist";
@@ -27,7 +27,7 @@ function caluculDistance($line,$nameStart,$nameEnd){
     else  $keyword='DESC';
 
 
-    $array =calculDistanceDB($stationStart,$stationEnd,$keyword);
+    $array =calculDistanceDB($stationStart,$stationEnd,$keyword,$cat);
     return $array;
 }
 
