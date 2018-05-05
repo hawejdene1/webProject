@@ -92,9 +92,9 @@ if(isset($form)){
                   <div class="form-group">
                   <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">
-                    <option value="">Motos</option>
-                    <option value="van">Vehicles with 2 axles</option>
-                    <option value="truck">Vehicles with 3 axles</option>
+                    <option value="Motos">Motos</option>
+                    <option value="twoAxles">Vehicles with 2 axles</option>
+                    <option value="treeAxles">Vehicles with 3 axles</option>
                   </select>
                   <button type="submit" class="btn btn-default" name="entry">Station Exit</button>
                   </div>

@@ -28,22 +28,34 @@ if($verif!==true){
      setStationOut($nomStationSortie,$ticketNum);
      */
      //info about ticket
-
+    setStationOut('tunis',$ticketNum);
     $details=getTicket($_POST["ticketNum"]);
 
 
      pay_ticket($_POST["ticketNum"]);
+     $cat=$details['categorie'];
 
 
+    switch ($cat) {
+        case 'Motos':
+            $categorie='pricecat1';
+            break;
+        case 'twoAxles':
+            $categorie='pricecat2';
+            break;
+        case 'treeAxles':
+           $categorie='pricecat3';
+            break;
+    }
 
-    $detailsParcour=caluculDistance( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],'pricecat1');
-    $priceTotal=caluculPrix( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],'pricecat1');
+    $detailsParcour=caluculDistance( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
+    $priceTotal=caluculPrix( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
 
 
 
             //afficher details de ticket
             if(isset($detailsParcour)){
-                $form="<table>";
+                $form="<table class='table'>";
                 $form.='<tr>
        <th>station name</th>
        <th>distance traveled</th>
