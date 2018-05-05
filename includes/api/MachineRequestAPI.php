@@ -48,44 +48,6 @@
 
     function getAllMachineLogs(){
 
-        /**
-         * returns array
-         * 0 ==> the history login requests concerning first machine
-         * 1 ==> the history login requests concerning second machine
-         * etc
-         * 
-         * the history is an index array of request instances
-         * 
-         * a request instance is an associative array:
-         * "agentID"   = ID of agent requesting Login
-         * "agentname" = Name of agent requesting Login
-         * "location" = Location of agent requesting Login  (==> Location of the machine)
-         * "time" = Date and time of login (in milliseconds)
-         * 
-         * 
-         * getAllMachineLogs return = 
-         * ( 
-         *  [0] => [ "machineid" => firstmachine's id, 
-         *           [0]=> { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,      //first machine's first request
-         *           [1]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },    //first machine's second request
-         *           [2]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },   //first machine's third request
-         *           etc                                            
-         *         ]
-         * 
-         *  [1] => [ "machineid" => secondmachine's id, 
-         *           [0]=> { "agentname"=>"Hammadi", "location"=>"Sfax" , etc } ,      //second machine's first request
-         *           [1]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },    //second machine's second request
-         *           [2]=> { "agentname"=>"3eljeyya", "location"=>"Gafsa" , etc },   //second machine's third request
-         *           etc                                            
-         *         ]
-         * 
-         *  [2] => ....
-         *  . 
-         *  .
-         * )
-         * 
-         */
-
 
         $logs = array();
         $machineIDS= getMachineRequestsDB();

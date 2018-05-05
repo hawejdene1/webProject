@@ -2,109 +2,76 @@
 //Session Check
 session_start();
 
+require_once dirname(dirname(__FILE__)) . "/API/MachineRequestAPI.php";
+
 if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
 	header("location: ../../index.php");
 } else {
 
 
-	//$allMachines = getAllMachineLogs();
-
-
-	//This array is for testing purposes
-
 	$form = "";
 	$formButton = "";
 
-	$allMachines = array('SBR5885' => array('0' => array(
-												'agentID' => "6545654654",
-												'agentname' => "Salma Rais",
-												'line' => "Djerba",
-												'station)' => "Djerba",
-												'time' => "12:04"),
-											'1' => array(
-												'agentID' => "6545654654",
-												'agentname' => "Salma Rais",'line' => "Djerba",
-												'station)' => "Djerba",
-												'time' => "12:04")),
-						'SBR55101' => array('0' => array(
-												'agentID' => "1000105",
-												'agentname' => "Iyadh Chaker",
-												'line' => "Djerba",
-												'station)' => "Djerba",
-												'time' => "14:41")),
-						'DEF47754' => array('0' => array(
-												'agentID' => "15585200",
-												'agentname' => "Wej Haouari",
-												'line' => "Djerba",
-												'station)' => "Djerba",
-												'time' => "15:10"))
-					);
+	if($_SERVER['REQUEST_METHOD'] == "POST") {
+		if(isset($_POST['deleteMachine'])) {
+			
+			denyMachineRequest($_POST['deleteMachine']);
+		//	echo "//delete the machine request ". $_POST['deleteMachine'];
+		
 
+		} else if(isset($_POST['addMachine'])) {
 
-
-	array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
-
-	
-	
-	foreach ($allMachines as $id => $machine) {
-		$form .= showMachineInfos($id ,$machine);
-
+		//	acceptMachineRequest($machineid,$line,$station);
+			acceptMachineRequest($_POST['addMachine'], $_POST['line'], $_POST['station']);
+			//echo "accept the request that's : ".$_POST['addMachine'];
+			
+		}
+			
 	}
 
+	
+	$allMachines = getAllMachineLogs();
 
+		$form .="<form method='POST' action='' id='addMachine'>";
+		foreach ($allMachines as $id => $machine) {
+			$form .= showMachineInfos($machine['machineid'] ,$machine);
+		}
+		$form .= "</form>";
 } 
 
 	
 
 
 
+
+
 function showMachineInfos($id, $machine) {
 	
 
-
-	$string = "<div class='panel panel-default'>";
-	$string .= "<div class'panel-heading'><h3 class='panel-title'>".$id."</h3></div>
-				<div class='panel-body'><table class='table'>";
-	$string .= "<tr><th>Agent ID</th><th>Agent name</th><th>Line</th><th>Station</th><th>Time</th><tr>Accepted</tr>";
+	$string = "<div class='panel panel-info'>";
+	$string .="<div class='panel-heading'>
+	<h3 style='text-align: right'> Machine ID | ".$id."    <button class='btn exitButton'  name='deleteMachine' value='".$id."'><span>    &#x2716</span></button> </h3> 
+	</div>
+	<div class='panel-body'><table class='table'>";
+	$string .= "<tr><th>Agent CIN</th><th>Agent name</th><th>Line</th><th>Station</th><th>Time</th><th>Accepted</th></tr>";
 
 	foreach ($machine as $key => $value) {
 			
-/*
-			$string .= "
-				<div class='input-group'>
-			      <span class='input-group-addon'>
-			        <input type='checkbox' >
-			      </span>
-			      <div>".$value['agentID']."</div><div>".$value['agentname']."</div><div>".$value['location']."</div><div>".$value['time']."</div>
-			    </div><!-- /input-group -->
-		    ";
 
-*/    
+
+    if($key!='machineid')
 		$string .= "<tr>
-						<td>".$value['agentID']."</td>
-						<td>".$value['agentname']."</td>
-						<td>".$value['location']."</td>
-						<td>".$value['time']."</td>
+						<td><input type='text'  name='agentID' class='disabledInput form-control'  form='addMachine' value='".$value['AgentCIN']."' readonly></td>
+						<td><input type='text' 	 name='agentname' class='disabledInput form-control' form='addMachine'  value='".$value['AgentFirstName']."' readonly></td>
+						<td><input type='text'  name='line' class='disabledInput form-control' form='addMachine'  value='".$value['Line']."' readonly></td>
+						<td><input type='text'  name='station' class='disabledInput form-control' form='addMachine'  value='".$value['Station']."' readonly></td>
+						<td><input type='text'  name='time' class='disabledInput form-control' form='addMachine' value='".$value['time']."' readonly></td>
+						<td><button type='submit' name='addMachine' value='".$machine['machineid']."' class='btn btn-default' form='addMachine'>Accept</button></td>
+						
 		</tr>";
-	//$string .=" <li class='list-group-item list-group-item-default'>".$value['agentID']." : ".$value['agentname']." : ".$value['location']." : ".$value['time']."</li>";
 	}
 
-	$string .= "</table></div>
-				<div class='panel-footer'>
-					<button type='submit' form='".$id."Machine'>Accept Request</button>
-				</div>
-	</div>";
-	/*
-	* the history is an index array of request instances
-         * 
-         * a request instance is an associative array:
-         * "agentID"   = ID of agent requesting Login
-         * "agentname" = Name of agent requesting Login
-         * "location" = Location of agent requesting Login  (==> Location of the machine)
-         * "time" = Date and time of login (in milliseconds)
-         * 
-    */
-
+	$string .= "</table></div></div>";
     return $string;
 
 }

@@ -8,9 +8,9 @@
     <meta charset="utf-8">
     <title>Login Agent</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="../res/css/styleForm.css">
+    <link rel="stylesheet" href="../res/css/myStyle.css">
   </head>
-  <body>
+  <body class="loginBody">
     
     <form action="../includes/controller/Clogin.php" method="POST" class="loginForm">
     <div class="form-group">

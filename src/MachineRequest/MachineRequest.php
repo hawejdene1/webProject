@@ -13,7 +13,7 @@ function machineRequest($cin){
     else{
 
         //$machineid = substr(com_create_guid(),1,-2);
-        $machineid='5';
+        $machineid='6';
         setcookie( "machineid", $machineid, time()+(365 * 24 * 60 * 60),"/"); 
        // require "SET.php";
        

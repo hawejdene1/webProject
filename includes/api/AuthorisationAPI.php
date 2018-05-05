@@ -53,7 +53,7 @@ if (isset($_SESSION)) {
             if (! getRecieveMachines()) return "unregistred machine";
             $_SESSION['block']=false;
             machineRequest($cin);
-            return "Machine Waiting Approval";
+            return "Machine Waiting Approval1";
                      }
 
         if( ($machine['line']!=$agentline) || ($machine['station']!=$agentstation)) return "unauthorised location";
@@ -73,7 +73,7 @@ if (isset($_SESSION)) {
     $_SESSION['block']=false;
     machineRequest($cin);
     
-    return "Machine Waiting Approval";
+    return "Machine Waiting Approval2";
 
 }
 

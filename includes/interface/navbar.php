@@ -16,7 +16,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="http://localhost/3_projet_gestion_autoroute/index.php">Brand</a>
+        <a class="navbar-brand" href="/webProject/index.php">Brand</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +27,7 @@
                echo  '<li><a href="#">User Profile</a></li>';
         else if($_SESSION['SessionType'] == "Admin")
                echo  '<li><a href="#">Admin configs</a></li>';
-        echo  '<li><a href="../includes/controller/disconnect.php">Disconnect</a></li>
+        echo  '<li><a href="/webProject/includes/controller/disconnect.php">Disconnect</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

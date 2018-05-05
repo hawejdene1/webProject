@@ -1,4 +1,4 @@
-body {
+.loginBody {
   background: #34495e;
 }
 
@@ -26,4 +26,19 @@ body {
 
 .input-group {
   margin: 2px ;
+}
+
+
+input.disabledInput {
+  border: 0;
+  text-align: left;
+  background:rgba(255,255,255,0.1) ;
+}
+
+
+.exitButton {
+  top: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.1); 
+  font-size: 1.5em;
 }
