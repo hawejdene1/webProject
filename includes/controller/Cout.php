@@ -18,33 +18,44 @@ if($verif!==true){
     $form= '<div class="alert alert-warning">'.$verif.'</div>';
 
 }else{
-    //$line= $_SESSION["Line"];
-   // $nomStationSortie=$_SESSION['Station'];
+    $line= $_SESSION["Line"];
+   $nomStationSortie=$_SESSION['Station'];
 
     //for adding the out station into data base
 
-    /*
-     * this method shoud be decoment when the session work
+
+     // this method shoud be decoment when the session work
      setStationOut($nomStationSortie,$ticketNum);
-     */
+
      //info about ticket
 
     $details=getTicket($_POST["ticketNum"]);
 
 
      pay_ticket($_POST["ticketNum"]);
+     $cat=$details['categorie'];
 
 
+    switch ($cat) {
+        case 'Motos':
+            $categorie='pricecat1';
+            break;
+        case 'twoAxles':
+            $categorie='pricecat2';
+            break;
+        case 'treeAxles':
+           $categorie='pricecat3';
+            break;
+    }
 
-    $detailsParcour=caluculDistance( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],'pricecat1');
-    $priceTotal=caluculPrix( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],'pricecat1');
+    $detailsParcour=caluculDistance( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
 
-
+    $priceTotal=caluculPrix( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
 
             //afficher details de ticket
-            if(isset($detailsParcour)){
-                $form="<table>";
-                $form.='<tr>
+       if(isset($detailsParcour)){
+        $form="<table class='table'>";
+         $form.='<tr>
        <th>station name</th>
        <th>distance traveled</th>
        <th>prix</th>

@@ -5,12 +5,18 @@ session_start();
 
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
+<<<<<<< HEAD
 
 if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
     header("location: ../../index.php");
 } else {
     
     //$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
+=======
+if ($_SESSION['SessionType']=="Admin") {
+
+
+>>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
 
 
     $form = "";
@@ -54,7 +60,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
             $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price", "number");
 
 
-        }else if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName']))     {
+        }else if(($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName'])) && isset($_SESSION['linename']))     {
             $name=htmlspecialchars($_POST['stationName']);
             $message=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']));
 

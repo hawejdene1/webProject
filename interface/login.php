@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <?php session_start(); ?>
 
+=======
+<?php
+
+?>
+>>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
 
 <!DOCTYPE html>
+
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -64,13 +71,4 @@
 
   </body>
 
-<div class="navbar nav panel">
-<div class="panel-header"> Dev tools for access </div>
-<div class="panel-body">
-<ul class="list-group">
-    <li class="list-group-item"><a href="adminDashboard.php">AdminDashboard</a></li>
-    <li class="list-group-item"><a href="agentDashboard.php">AgentDashboard</a></li>
-</ul>
-</div>
-</div>
 </html>

@@ -12,12 +12,13 @@ function machineRequest($cin){
     if(isset($_COOKIE['machineid'])) {$machineid = $_COOKIE['machineid'];}
     else{
 
-        $machineid = substr(com_create_guid(),1,-2);
-
+        //$machineid = substr(com_create_guid(),1,-2);
+        $machineid='5';
         setcookie( "machineid", $machineid, time()+(365 * 24 * 60 * 60),"/"); 
        // require "SET.php";
        
        $_COOKIE['machineid'] = $machineid;
+
     }
 
     //logs request

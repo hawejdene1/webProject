@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 
+=======
+<?php 
+session_start();
+
+if($_SESSION['SessionType']!="Admin")
+  header("location: ../index.php");
+?>
+>>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
 <!DOCTYPE html>
 <html lang="en">
   <head>

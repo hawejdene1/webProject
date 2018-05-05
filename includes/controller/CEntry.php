@@ -3,13 +3,19 @@ session_start();
 
 require_once dirname(dirname(dirname(__FILE__)))."/includes/API/TicketAPI.php" ;
 
- if(isset($_POST["carType"]))
-       $categorie=$_POST["carType"];
-     if( isset($_SESSION['Station'])&&isset($_SESSION['Line'])) {
+ if(isset($_POST["carType"])){
+
+$categorie = $_POST["carType"];
+
+if (isset($_SESSION['Station']) && isset($_SESSION['Line'])) {
+
+
 $nomStationDepart = $_SESSION['Station'];
 $nomLigne = $_SESSION['Line'];
 
 
+//$nomLigne='A2';
+echo "ee" .$categorie;
 $numTicket = insertTicket($categorie, $nomStationDepart, $nomLigne);
 
 $details = getTicket($numTicket);
@@ -62,10 +68,10 @@ $details = getTicket($numTicket);
 
 
 <?php
-}else{
+} else {
 
 }
-
+}
          ?>
 
 

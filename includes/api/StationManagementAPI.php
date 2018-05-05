@@ -9,7 +9,7 @@ require_once dirname(dirname(dirname(__FILE__))) . "/src/StationModule/Utility.p
 * This file is what you will use for managing stations
 * it acts as an 'interface' between the database and required functionality
 * Only use funtions defined in this file to prevent data corruption, the code will handle everything else
-* you can infer what each function does by its name 
+* you can infer what each function does by its name
 *
 *
 * if there are any bugs, corner cases or missing functionality let me know.
@@ -26,10 +26,10 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
      * line = the name of the line in which you will add the station.
      * name1 = name of the first station
      * name2 = name of the terminal station to determine direction
-     * 
+     *
      * distfromS1 = the distance of the new staion from name1
-     * price = array of three ints 
-     * 
+     * price = array of three ints
+     *
      */
 
     // check existance in Database, each station is identified by key pair (Nom, NomLigne)
@@ -40,8 +40,8 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}
     else {$dist=$station1->getDist()+$distfromS1;}
 
-    // check if new station is not in the location of an existing station 
-    if (getStationByDistDB($dist,$line)) return "invalid distance";
+    // check if new station is not in the location of an existing station
+    if ($sationExist=getStationByDistDB($dist,$line)) return "station :".$sationExist->getName().'there is already a station in that place ';
 
     // we can now safely create and insert our station
     $newstation = new Station($name,$line,$dist,$price);
@@ -53,15 +53,16 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
 
 
 function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=array(0,0,0)){
-    
+
     /**
      * a line is simply two terminal stations with the same linename attribute
      * defining a data structure for line is redundant
-     * 
-     * linename = new line name 
-     * 
+     *
+     * linename = new line name
+     *
      */
 
+     if ($name1==$name2) return "Stations must be differant";
 
     //check if line exists
     if (countStationsinLineDB($linename)) return "Line already exists";
@@ -81,10 +82,10 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
  * THIS FUNCTION IS REDUNDNAT, USE ADD MACHINE INSTEAD
  */
 function appendTerminalStation($new,$old,$linename,$dist,$price=array(0,0,0)){
-    
+
     //check if old terminal exists
     $oldterminal = getStationDB($old,$linename);
-    
+
 
     //check if old terminal is terminal
     if (! getisTerminalUtility($oldterminal)) return "station to replace is not terminal";
@@ -116,7 +117,7 @@ function modifyStationPrice($name,$linename,$price){
         updateStationPriceDB($station,$price);
 
         return "The update was successful";
-        
+
 }
 
 function updatePriceByPercent($percent){
@@ -147,8 +148,8 @@ function modifyStationDist($name,$linename,$dist){
     //second terminal case
     if (!$nextstation) {updateStationDistDB($station,$prevstation->getDist()+$dist); return true;}
 
- 
-    // check if new dist is not in the location of an existing station 
+
+    // check if new dist is not in the location of an existing station
     $dist = $prevstation->getDist()+$dist;
     if (getStationByDistDB($dist,$linename)) return "invalid distance";
 
@@ -158,7 +159,7 @@ function modifyStationDist($name,$linename,$dist){
 }
 
 function deleteStation($name,$line){
-    
+
      //check if station exists
     $station=getStationDB($name,$line);
 
@@ -233,19 +234,19 @@ function getTerminalsNames($linename){
 
 
 function getStationBetween($line,$name1,$name2){
-    
+
         if ( ! (($stationStart= getStationDB($name1,$line)) && ($stationEnd= getStationDB($name2,$line)))) return "stations do not exist";
-    
+
         //check direction
         if ($stationStart->getDist()>$stationEnd->getDist()) $keyword='DESC' ;
         else  $keyword='ASC';
-    
+
         $stations=stationBetweenDB($stationStart,$stationEnd,$keyword);
         $result = array();
         foreach($stations as $station){
             array_push($result,$line.":".$station->getName());
         }
         return $result;
-    
-    
+
+
     }
