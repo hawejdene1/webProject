@@ -1,18 +1,14 @@
 <?php
-<<<<<<< HEAD
+
 
 require_once "../includes/controller/Cout.php";
 
-if(/*!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent"*/false) 
-=======
+if(/*!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent"*/false);
  require_once "../includes/controller/Cout.php";
 
 //session_start();
 if($_SESSION['SessionType']!="Agent")
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
   header("location: ../index.php");
-
-
 ?>
 
 
@@ -69,8 +65,8 @@ if($_SESSION['SessionType']!="Agent")
 
 if(isset($form)){
     echo $form;
-
 }
+
 ?>
 
 

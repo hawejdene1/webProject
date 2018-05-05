@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-
-=======
 <?php 
 session_start();
 
 if($_SESSION['SessionType']!="Admin")
   header("location: ../index.php");
 ?>
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,7 +40,6 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
     <div class="container-fluid">
      <!-- your page content -->
         <h2>Welcome to the Highway administration page</h2>
-
         <p>Choose one of the functionnalities</p>
         
      
