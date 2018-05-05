@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: ASUS
@@ -37,22 +37,18 @@ function deleteTicket($num)
 
 
 
-function insertTicketDB($categorie)
+function insertTicket($categorie,$nomStationDepart,$nomLigne)
 {
 
 
-    if (isset($_SESSION["Station"])) {
-        $nomStationDepart = $_SESSION["Station"];
-    }
 
-    if (isset($_SESSION["Line"])) {
-        $nomLigne = $_SESSION["Line"];}
+
         $dateEntree = date('Y-m-d h:i:s');
 
         $db = Connection::getInstance();
         //$db->query("use webproject");
         $request = $db->prepare('INSERT INTO `ticket`(`categorie`, `payee`, `nomStationDepart`,`dateEntree`, `nomLigne`) VALUES (?,?,?,?,?)');
-        $request->execute(array($categorie, true, $nomStationDepart, $dateEntree, $nomLigne));
+        $request->execute(array($categorie, 1, $nomStationDepart, $dateEntree, $nomLigne));
 
         if (!$request) {
             die('Error : ') . $db->errorInfo();
@@ -61,7 +57,7 @@ function insertTicketDB($categorie)
         $lastInsertId = $db->lastInsertId();
         return $lastInsertId;
 
-    
+
 }
 
 function  setStationOut($nomStationSortie,$num){
