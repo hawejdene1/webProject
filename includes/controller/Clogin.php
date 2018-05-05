@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+header("Refresh:0");
 
 require_once  dirname(dirname(__FILE__)) . "/API/AuthorisationAPI.php";
 
