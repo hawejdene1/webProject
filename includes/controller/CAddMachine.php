@@ -56,29 +56,41 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 
 function showMachineInfos($id, $machine) {
+	
 
-	$string = "<button>";
-	                                                          
-	$string = "<ul class='list-group navbar navbar-default navbar-fixed-side'>";
-	$string .= "<li class='list-group-item list-group-item-info'>".$id."</li>";
 
+	$string = "<div class='panel panel-default'>";
+	$string .= "<div class'panel-heading'><h3 class='panel-title'>".$id."</h3></div>
+				<div class='panel-body'><table class='table'>";
+	$string .= "<tr><th>Agent ID</th><th>Agent name</th><th>Location</th><th>Time</th></tr>";
 
 	foreach ($machine as $key => $value) {
 			
+/*
+			$string .= "
+				<div class='input-group'>
+			      <span class='input-group-addon'>
+			        <input type='checkbox' >
+			      </span>
+			      <div>".$value['agentID']."</div><div>".$value['agentname']."</div><div>".$value['location']."</div><div>".$value['time']."</div>
+			    </div><!-- /input-group -->
+		    ";
 
-	$string .= "
-		<div class='input-group'>
-	      <span class='input-group-addon'>
-	        <input type='checkbox' >
-	      </span>
-	      <input type='text' class='form-control'>
-	    </div><!-- /input-group -->
-    ";
-	$string .=" <li class='list-group-item list-group-item-default'>".$value['agentID']." : ".$value['agentname']." : ".$value['location']." : ".$value['time']."</li>";
+*/    
+		$string .= "<tr>
+						<td>".$value['agentID']."</td>
+						<td>".$value['agentname']."</td>
+						<td>".$value['location']."</td>
+						<td>".$value['time']."</td>
+		</tr>";
+	//$string .=" <li class='list-group-item list-group-item-default'>".$value['agentID']." : ".$value['agentname']." : ".$value['location']." : ".$value['time']."</li>";
 	}
 
-	$string.="</ul>";
-	$string .= "<button type='submit' form='".$id."Machine'>Accept Request</button>";
+	$string .= "</table></div>
+				<div class='panel-footer'>
+					<button type='submit' form='".$id."Machine'>Accept Request</button>
+				</div>
+	</div>";
 	/*
 	* the history is an index array of request instances
          * 

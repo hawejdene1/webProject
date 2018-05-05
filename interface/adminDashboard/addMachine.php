@@ -20,9 +20,9 @@
    
 
             <form id="addMachine" action="" method="POST" class="form-horizontal">
-            <div class="panel panel-default">
+            <!--div class="panel panel-default">
               
-                <div class="panel-body">
+                <div class="panel-body">-->
                 
                     
                     <!--Selectionner Ligne-->
@@ -38,7 +38,7 @@
                         if(isset($_SESSION['message'])) 
                         echo '<div class="alert alert-warning">'.$_SESSION['errorMessage'].'</div>';
                     ?>
-                </div>
+              <!--  </div>
 
 
 
@@ -48,7 +48,7 @@
                     <br /><br />
                     <a class="text-center" href="../adminDashboard.php">Get back to the Homepage</a></div>
                 </div>
-            </div>
+            </div-->
             </form>
     </div>
 
