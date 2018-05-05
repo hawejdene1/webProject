@@ -10,9 +10,8 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
     header("location: ../../index.php");
 } else {
     
-    //$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
 
-if ($_SESSION['SessionType']=="Admin") {
+
 
 
 
@@ -61,10 +60,15 @@ if ($_SESSION['SessionType']=="Admin") {
 
         }else if(($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName'])) && isset($_SESSION['linename']))     {
             $name=htmlspecialchars($_POST['stationName']);
-            $message=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']));
+            $price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']);
+            $verif = false;
+            if (! $name) $verif = "Invalid name";
+            if ((! $verif)&& (strlen(implode($price))<3)) $verif = "Invalid Prices";
+            if (!$verif) $verif=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price);
 
             unset($_SESSION['linename']);
-            $form = "<div class='alert alert-success'> $message</div>";
+            if (!$verif) $form = "<div class='alert alert-success'> station successfully added </div>";
+            else $form = "<div class='alert alert-success'> $verif</div>";
         } else {
 
             if(count($linename) == 0) {

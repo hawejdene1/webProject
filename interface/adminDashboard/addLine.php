@@ -44,7 +44,7 @@ include "../../includes/controller/CCreateLine.php" ?>
                         
                          <label class="control-label col-sm-8" for="dist">distance de station 2 par rapport station 1</label>
                          <div class="col-sm-4 input-group"> 
-                            <input class="form-control" type="text" name="dist"> 
+                            <input class="form-control" type="number" name="dist">
                         </div>
                     </div>
                     </div>
