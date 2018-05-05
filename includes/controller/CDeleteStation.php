@@ -2,8 +2,8 @@
 session_start();
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
     //Session check
-    
 
+if ($_SESSION['SessionType']=="Admin") {
 
 
     //To make sure that we were in this page ulterierly, we 
@@ -69,3 +69,5 @@ if(isset($_SESSION['linename'])) {
 
 
 }}
+} else {
+    header("location: ../../index.php");}

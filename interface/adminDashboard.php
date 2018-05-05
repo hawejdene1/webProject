@@ -1,6 +1,7 @@
 <?php 
 session_start();
-if(false/*$_SESSION['SessionType']!="Admin"*/) 
+
+if($_SESSION['SessionType']!="Admin")
   header("location: ../index.php");
 ?>
 <!DOCTYPE html>

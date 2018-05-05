@@ -2,7 +2,7 @@
  require_once "../includes/controller/Cout.php";
 
 //session_start();
-if(false/*$_SESSION['SessionType']!="Agent"*/) 
+if($_SESSION['SessionType']!="Agent")
   header("location: ../index.php");
 ?>
 

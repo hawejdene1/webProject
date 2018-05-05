@@ -3,6 +3,9 @@
 
 require dirname(dirname(__FILE__)) . "/API/StationManagementAPI.php";
 
+if ($_SESSION['SessionType']=="Admin") {
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $linename=htmlspecialchars($_POST['linename']);
     $name1=htmlspecialchars($_POST['name1']);
@@ -14,14 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verif= addLine($linename,$name1,$name2,$dist,$price1,$price2);
 
     //if linename line exists errer
-    if($verif==false){
-    echo '<p>line deja exist merci de verifier </p>';
-    require '../view/IcreerLigne.php';}else
-    {
-        echo '<p>line ajouter avec succes</p>';
+    if($verif==true){
+
+    $message= '<div class="alert alert-warning">line already exist </div>';
+
+   }else
+
+    {   $message= '<div class="alert alert-success">line added</div>';
+
     }
-}else{
-
-    require '../view/IcreerLigne.php';
-
+}} else {
+    header("location: ../../index.php");
 }
+?>

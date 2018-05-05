@@ -49,14 +49,13 @@ if($verif!==true){
     }
 
     $detailsParcour=caluculDistance( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
+
     $priceTotal=caluculPrix( $details["nomLigne"],$details["nomStationDepart"],$details["nomStationArrivee"],$categorie);
 
-
-
             //afficher details de ticket
-            if(isset($detailsParcour)){
-                $form="<table class='table'>";
-                $form.='<tr>
+       if(isset($detailsParcour)){
+        $form="<table class='table'>";
+         $form.='<tr>
        <th>station name</th>
        <th>distance traveled</th>
        <th>prix</th>

@@ -41,7 +41,7 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     else {$dist=$station1->getDist()+$distfromS1;}
 
     // check if new station is not in the location of an existing station
-    if (getStationByDistDB($dist,$line)) return "invalid distance";
+    if ($sationExist=getStationByDistDB($dist,$line)) return "station :".$sationExist->getName().'there is already a station in that place ';
 
     // we can now safely create and insert our station
     $newstation = new Station($name,$line,$dist,$price);

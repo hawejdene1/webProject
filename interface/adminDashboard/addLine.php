@@ -1,3 +1,6 @@
+<?php
+
+include "../../includes/controller/creerLigne.php" ?>
 
 
 <!DOCTYPE html>
@@ -14,10 +17,11 @@
 
     <div class="container">
             <div class="page-header">
+                <?php if (isset($message)) echo $message ; ?>
                 <h1>Add line <small>adding the initial stations that constitute the line</small></h1>
             </div>
    
-    <form method="post" action="../../includes/controller/CCreateLine.php"> <!-- action="../controller/creerLigne.php" -->
+    <form method="post" action=" "> <!-- action="../controller/creerLigne.php" -->
     <div class="panel panel-default">
             
             <div class="panel-body">
@@ -93,7 +97,9 @@
                      </div>
             </div>
             <div class="panel-footer">
+
                 <div class="text-center"><button class="btn btn-primary" type="submit" value="addLine">Add line</button><br /><br />
+
                 <a class="text-center" href="../adminDashboard.php">Get back to the Homepage</a></div>
             </div>
     </div>
