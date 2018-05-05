@@ -5,18 +5,17 @@ session_start();
 
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
-<<<<<<< HEAD
 
 if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
     header("location: ../../index.php");
 } else {
     
     //$linename =  array('Sfax Tunis' => array('Sfax' ,'Tunis','Sousse'),'Tabarka Tunis2' => array('Tabarka' ,'Tunis2','Beja') ,'Sfax2 Mednine' => array('Sfax2' ,'Mednine','Gabes'));
-=======
+
 if ($_SESSION['SessionType']=="Admin") {
 
 
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
+
 
 
     $form = "";

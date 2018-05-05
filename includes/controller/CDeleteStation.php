@@ -1,11 +1,8 @@
 <?php
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
     //Session check
-<<<<<<< HEAD
     
 session_start();
-=======
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
 
 if ($_SESSION['SessionType']=="Admin") {
 
@@ -78,11 +75,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
     }}
 
-<<<<<<< HEAD
     
 }
-=======
-}}
 } else {
     header("location: ../../index.php");}
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0

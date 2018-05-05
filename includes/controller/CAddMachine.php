@@ -18,22 +18,25 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 	$allMachines = array('SBR5885' => array('0' => array(
 												'agentID' => "6545654654",
 												'agentname' => "Salma Rais",
-												'location' => "Djerba",
+												'line' => "Djerba",
+												'station)' => "Djerba",
 												'time' => "12:04"),
 											'1' => array(
 												'agentID' => "6545654654",
-												'agentname' => "Salma Rais",
-												'location' => "Djerba",
+												'agentname' => "Salma Rais",'line' => "Djerba",
+												'station)' => "Djerba",
 												'time' => "12:04")),
 						'SBR55101' => array('0' => array(
 												'agentID' => "1000105",
 												'agentname' => "Iyadh Chaker",
-												'location' => "Kef",
+												'line' => "Djerba",
+												'station)' => "Djerba",
 												'time' => "14:41")),
 						'DEF47754' => array('0' => array(
 												'agentID' => "15585200",
 												'agentname' => "Wej Haouari",
-												'location' => "Djerba",
+												'line' => "Djerba",
+												'station)' => "Djerba",
 												'time' => "15:10"))
 					);
 
@@ -62,7 +65,7 @@ function showMachineInfos($id, $machine) {
 	$string = "<div class='panel panel-default'>";
 	$string .= "<div class'panel-heading'><h3 class='panel-title'>".$id."</h3></div>
 				<div class='panel-body'><table class='table'>";
-	$string .= "<tr><th>Agent ID</th><th>Agent name</th><th>Location</th><th>Time</th></tr>";
+	$string .= "<tr><th>Agent ID</th><th>Agent name</th><th>Line</th><th>Station</th><th>Time</th><tr>Accepted</tr>";
 
 	foreach ($machine as $key => $value) {
 			

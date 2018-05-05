@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 <?php session_start(); ?>
 
-=======
-<?php
-
-?>
->>>>>>> c99c6d51d02914fca9e91f5a0812812ebddc7bf0
 
 <!DOCTYPE html>
 
@@ -59,7 +53,7 @@
       }
 
       unset($_SESSION['errorMessages']);
-    ?>
+    ?>  
 
 
 

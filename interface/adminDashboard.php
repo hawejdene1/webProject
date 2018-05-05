@@ -71,10 +71,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
           <div class="btn-group" role="group">
             <a href="adminDashboard/deleteLine.php"><button type="button" class="btn btn-default choiceBtn" id="deleteLine">Delete Line</button></a>
           </div>
-          <div class="btn-group" role="group">
-            <a href="adminDashboard/updateDistance.php"><button type="button" class="btn btn-default choiceBtn" id="updateDistance">Update Distance</button></a>
-          </div>
-        </div>
+                  </div>
         </div>
       </div>
 
