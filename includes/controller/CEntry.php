@@ -1,38 +1,36 @@
-<?php
+﻿<?php
 session_start();
 
 require_once dirname(dirname(dirname(__FILE__)))."/includes/API/TicketAPI.php" ;
 
  if(isset($_POST["carType"]))
        $categorie=$_POST["carType"];
+     if( isset($_SESSION['Station'])&&isset($_SESSION['Line'])) {
+$nomStationDepart = $_SESSION['Station'];
+$nomLigne = $_SESSION['Line'];
 
 
+$numTicket = insertTicket($categorie, $nomStationDepart, $nomLigne);
 
-
-
-$numTicket =insertTicketDB($categorie);
-
-$details=getTicket($numTicket);
+$details = getTicket($numTicket);
 //require_once dirname(dirname(dirname(__FILE__)))."/interface/PrintTicket.php" ;
 ?>
 
 <style>
-    #page
-    {
-        position:absolute;
-        top:50%;
-        left:50%;
-        width:400px;
-        height:400px;
-        margin-left:-150px;
-        margin-top:-100px;
-        backface-visibility:visible;
+    #page {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 400px;
+        margin-left: -150px;
+        margin-top: -100px;
+        backface-visibility: visible;
 
     }
 </style>
 <html>
 <div id="page">
-
 
 
     num ticket :
@@ -61,6 +59,14 @@ $details=getTicket($numTicket);
 
     <button type="submit" value="imprimer" onClick="window.print()">imprimer</button>
 </div>
+
+
+<?php
+}else{
+
+}
+
+         ?>
 
 
 
