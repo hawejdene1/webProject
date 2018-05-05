@@ -3,11 +3,8 @@
 
     require_once  "MachineRequestAPI.php";
 
-    echo getRecieveMachines();
-    setRecieveMachines(true);
-    echo getRecieveMachines();
-    setRecieveMachines(false);
-    echo getRecieveMachines();
 
+   setRecieveMachines(true);
+acceptMachineRequest($machineid,$line,$station)
 
     ?>

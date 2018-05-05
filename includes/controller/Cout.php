@@ -18,17 +18,17 @@ if($verif!==true){
     $form= '<div class="alert alert-warning">'.$verif.'</div>';
 
 }else{
-    //$line= $_SESSION["Line"];
-   // $nomStationSortie=$_SESSION['Station'];
+    $line= $_SESSION["Line"];
+   $nomStationSortie=$_SESSION['Station'];
 
     //for adding the out station into data base
 
-    /*
-     * this method shoud be decoment when the session work
+
+     // this method shoud be decoment when the session work
      setStationOut($nomStationSortie,$ticketNum);
-     */
+
      //info about ticket
-    setStationOut('tunis',$ticketNum);
+
     $details=getTicket($_POST["ticketNum"]);
 
 
