@@ -16,9 +16,9 @@ if($_SESSION['SessionType']!="Admin")
     <title>Admin Dashboard</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="/webProject/res/css/styleDashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../res/css/styleDashboard.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,6 +26,9 @@ if($_SESSION['SessionType']!="Admin")
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+    
+    </style>
   </head>
   <body>
 
@@ -37,14 +40,19 @@ if($_SESSION['SessionType']!="Admin")
 if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin") 
   header("location: ../index.php");
 ?>
-    <div class="container-fluid">
+    <div class="container">
+    <div class="jumbotron" id="adminJumbotron" style="background: url('/webProject/res/css/images/highway_bg2.jpg') center no-repeat stretch">
+      <h1>Welcome to the Highway Administration system</h1>
+      <p>     </p>
+    </div> 
+
+
      <!-- your page content -->
-        <h2>Highway Administration Manager</h2>
         
      
    
 <!-- Options for addind NEW STATIONS OR LINES -->
-      <div class="panel panel-default">
+      <div class="panel panel-default adminPanel">
         <div class="panel-heading">Stations' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
@@ -60,7 +68,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
      
 
 <!-- Options to manae existing STATIONS OR LINES-->
-      <div class="panel panel-default">
+      <div class="panel panel-default adminPanel">
         <div class="panel-heading">Lines' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
@@ -76,7 +84,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
 
 
 <!-- Options to manage the prices-->
-<div class="panel panel-default">
+<div class="panel panel-default adminPanel">
         <div class="panel-heading">Machines' management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
@@ -89,7 +97,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
       
 
 <!-- Options to update prices -->
-<div class="panel panel-default">
+<div class="panel panel-default adminPanel">
         <div class="panel-heading">Prices' management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
@@ -104,7 +112,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
       </div>
 
 <!-- Options to manage AGENTS -->
-      <div class="panel panel-default">
+      <div class="panel panel-default adminPanel">
         <div class="panel-heading">Agents' Management</div>
         <div class="panel-body">
           <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="...">
@@ -147,8 +155,8 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
 
     <script src="../res/js/adminDashboard.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../res/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/webProject/res/js/bootstrap.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
   </body>
 </html>

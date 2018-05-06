@@ -54,7 +54,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
           <button type="button" class="btn btn-danger" href="#exitPanel" id="exitBtn">Station Exit</button>
         </div>
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-success" id="entryBtn">Get Ticket</button>
+          <button type="button" class="btn btn-success" href="#entryPanel" id="entryBtn">Get Ticket</button>
         </div>
         </div>
       </div>
@@ -63,48 +63,47 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
 
 
 
-  <div class="container-fluid row">
-        <div class="col-md-4"></div>
-        <!--This panel is for creating and printing a ticket-->
-        <div class="col-md-4">
-        <div class="panel panel-default hidden" id="exitPanel">          
-          <div class="panel-heading"></div>
-          <div class="panel-body">
-                <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" class="exitForm">
-                  <div class="form-group">
-                  <label for="ticketNum">Ticket Number</label>
-                  <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
-                  <button type="submit" class="btn btn-success" name="exit">Check Ticket</button>
-
-                  <!--<button type="reset" class="btn btn-default">Reset</button>-->
-
-                  </div>
-                </form>
+    <div class="container-fluid row">
+          <div class="col-md-4"></div>
+          <!--This panel is for creating and printing a ticket-->
+          <div class="col-md-4">
+            <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" id="exitForm" class="exitForm">
+          <div class="panel panel-default hidden" id="exitPanel">          
+            <div class="panel-body">
+                    <div class="form-group">
+                      <label for="ticketNum">Ticket Number</label>
+                      <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
+                    </div>
+            </div>
+            <div class="panel-footer">
+             <button type="submit" class="btn btn-danger" form="exitForm" id="checkTicket" name="exit">Check Ticket</button>
+           </div>
           </div>
-         </div>
-         <!--The Panel for entring the ticket number and exiting the station-->
-          <div class="panel panel-default hidden" id="entryPanel">          
-          <div class="panel-heading"> </div>
-          <div class="panel-body">
-                <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm">
-                  <div class="form-group">
+           </form>
+                
+            <!-- Panel End -->
+      
+           <!--The Panel for entring the ticket number and exiting the station-->
+            <div class="panel panel-default hidden" id="entryPanel">          
+            <div class="panel-body">
+            <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm" id="entryForm">
+              <div class="form-group">
                   <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">
                     <option value="Motos">Motos</option>
                     <option value="twoAxles">Vehicles with 2 axles</option>
                     <option value="treeAxles">Vehicles with 3 axles</option>
                   </select>
-                  <button type="submit" class="btn btn-default" name="entry">Get Ticket</button>
-                  </div>
-                </form>
-          </div>
+              </div>
+             </form>
+           </div>
+              <div class="panel-footer">      
+                <button type="submit" class="btn btn-success" form="entryForm" id="getTicket" name="entry">Get Ticket</button>
+              </div>
+            </div>  <!-- Panel end -->
+            <div class="col-md-4"></div>
+          </div><!--container end -->
         </div>
-        <!--The Panel is for displaying the final price-->
-        <div class="col-md-4"></div>
-        </div>
-    </div>  
-
-</div>
 
 
       

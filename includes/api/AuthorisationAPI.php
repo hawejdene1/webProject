@@ -39,7 +39,7 @@ if (isset($_SESSION)) {
 
     $agent = checkAgent($cin,$pass);
     var_dump($agent);
-    if (! $agent) return "unauthorised person";
+    if (! $agent) return "Unauthorised person";
 
     $agentline= $agent['line'];
     $agentstation= $agent['station'];
@@ -51,13 +51,13 @@ if (isset($_SESSION)) {
         $machine= getComputer($_COOKIE["machineid"]);
 
         if (! $machine){ 
-            if (! getRecieveMachines()) return "unregistred machine";
+            if (! getRecieveMachines()) return "Unregistred machine";
             $_SESSION['block']=false;
             machineRequest($cin);
-            return "Machine Waiting Approval1";
+            return "Waiting for Machine Approval";
                      }
 
-        if( ($machine['line']!=$agentline) || ($machine['station']!=$agentstation)) return "unauthorised location";
+        if( ($machine['line']!=$agentline) || ($machine['station']!=$agentstation)) return "Unauthorised location";
         
 
         $_SESSION['AgentFirstName']= $agent['f_name'];
@@ -70,11 +70,11 @@ if (isset($_SESSION)) {
         return false;
     }
 
-    if (! getRecieveMachines()) return "unregistred machine";
+    if (! getRecieveMachines()) return "Unregistred machine";
     $_SESSION['block']=false;
     machineRequest($cin);
     
-    return "Machine Waiting Approval2 you shoud reconnect after admin aproval";
+    return "Machine Waiting for Approval: <br> Please wait for the admin approval";
 
 }
 

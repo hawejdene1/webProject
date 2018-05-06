@@ -22,9 +22,13 @@
 
             <form id="addMachine" action="" method="POST" class="form-horizontal">
             <div class="panel panel-default">
-              
+                <div class="panel-heading">
+                    <form action="/webProject/includes/controller/CAddMachine.php" method="POST">
+                    <button class="btn btn-danger" name="stopRequests" value="false">Stop Accepting Requests</button>
+                    <button class="btn btn-success" name="startRequests" value="true">Start Accepting Requests</button></form>
+                </div>
                 <div class="panel-body">
-                
+            
                     
                     <!--Selectionner Ligne-->
                     <!--Selection Station-->

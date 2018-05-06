@@ -2,8 +2,6 @@ entryBtn = document.getElementById("entryBtn");
 exitBtn = document.getElementById("exitBtn");
 entryPanel = document.getElementById("entryPanel");
 exitPanel = document.getElementById("exitPanel");
-infosTable = document.getElementById("infosTable");
-closeBoxBtn = document.getElementById("closeBoxBtn");
 
 
 
@@ -19,30 +17,27 @@ exitBtn.addEventListener('click', function(event) {
 	
 
 
+	exitPanel.classList.remove("hidden");
+	entryPanel.classList.add("hidden");
 
-	entryPanel.classList.remove("hidden");
-	exitPanel.classList.add("hidden");
-
-	infosTable.classList.remove('hidden');
+	document.getElementById("checkTicket").focus();
 
 });
 
 
 entryBtn.addEventListener('click', function() {
+
+	event.preventDefault();
+
+	console.log("clicked Entry");
 	this.classList.add("active");
-	exitPanel.classList.remove("active");
+	exitBtn.classList.remove("active");
 
 
 	entryPanel.classList.remove("hidden");
 	exitPanel.classList.add("hidden"); 
-	infosTable.classList.add("hidden");
+	document.getElementById("getTicket").focus();
 	
 
 });
 
-
-
-closeBoxBtn.addEventListener('click', function()) {
-	console.log("Click");
-	infosTable.classList.toggle('hidden');
-}

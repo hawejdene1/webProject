@@ -38,8 +38,28 @@ h1, h2 {
 }
 
 
+#entryPanel, #exitPanel {
+	margin-top: 50px;
+	margin-bottom: 100px;
+
+}
+
+
 @media only screen and (max-width: 380px)  {
 	button {
 		font-size:  10px !important ;
 }
 
+#checkTicket, #getTicket {
+	padding: 50px	 !important;
+}
+
+
+h2 {
+	margin-top: 50px !important;
+	margin-bottom: 50px;
+}
+
+#adminJumbotron {
+	background-image: url('/webProject/res/css/images/highway_bg2.jpg') !important;
+}

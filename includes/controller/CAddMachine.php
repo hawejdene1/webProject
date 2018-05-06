@@ -13,7 +13,13 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 	$formButton = "";
 
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
-		if(isset($_POST['deleteMachine'])) {
+
+
+		if(isset($_POST['stopRequests'])) {
+			setRecieveMachines(false);
+		} else if(isset($_POST['startRequests'])) {
+			setRecieveMachines(true);
+		} else if(isset($_POST['deleteMachine'])) {
 
 			
 			denyMachineRequest($_POST['deleteMachine']);
@@ -26,7 +32,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 			acceptMachineRequest($_POST['addMachine'], $_POST['line'], $_POST['station']);
 			//echo "accept the request that's : ".$_POST['addMachine'];
 			
-		}
+		} 
 			
 	}
 
