@@ -20,10 +20,10 @@ exitBtn.addEventListener('click', function(event) {
 
 
 
-	entryPanel.classList.remove("hidden");
-	exitPanel.classList.add("hidden");
+	entryPanel.classList.add("hidden");
+	exitPanel.classList.remove("hidden");
 
-	infosTable.classList.remove('hidden');
+
 
 });
 
@@ -35,14 +35,9 @@ entryBtn.addEventListener('click', function() {
 
 	entryPanel.classList.remove("hidden");
 	exitPanel.classList.add("hidden"); 
-	infosTable.classList.add("hidden");
+
 	
 
 });
 
 
-
-closeBoxBtn.addEventListener('click', function()) {
-	console.log("Click");
-	infosTable.classList.toggle('hidden');
-}
