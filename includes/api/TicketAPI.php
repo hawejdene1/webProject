@@ -65,7 +65,7 @@ function insertTicket($categorie,$nomStationDepart,$nomLigne)
 
 function  setStationOut($nomStationSortie,$num){
     $db = Connection::getInstance();
-    //$db->query("use webproject");
+
     $request = $db->prepare('UPDATE `ticket` SET `nomStationArrivee`=? WHERE `num`=?');
     $request->execute(array($nomStationSortie,$num));
 }
@@ -88,7 +88,7 @@ function getTicket($num)
 function modifTicketSortie($num){
 
     $db = Connection::getInstance();
-    $db->query("use webproject");
+
     /*if (isset($_SESSION["Station"])) {
         $nomStationArrivee = $_SESSION["Station"];*}*/
         $nomStationArrivee ="sousse";
@@ -109,7 +109,7 @@ function modifTicketSortie($num){
 
 function pay_ticket($num){
     $db=connection::getInstance();
-    $db->query("use webproject");
+
     $sql =$db->prepare("UPDATE ticket SET payee='0'  WHERE `num` =?");
     $sql->execute(array($num));
 
@@ -126,7 +126,7 @@ function pay_ticket($num){
 function verifier_ticket($num)
 {
     $db = Connection::getInstance();
-    $db->query("use webproject");
+
 
     $details = getTicket($num);
 
