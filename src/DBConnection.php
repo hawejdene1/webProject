@@ -5,7 +5,7 @@
 
 class Connection
 {
-    private static $_dbname = "webproject";
+    private static $_dbname = "GL2_autoroute";
     private static $_user = "root";
     private static $_pwd = "";
     private static $_host = "localhost";
