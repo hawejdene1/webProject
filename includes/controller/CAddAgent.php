@@ -53,7 +53,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
                 }} else {
 
-              
+
 
 
 
@@ -150,7 +150,7 @@ function formSelectInput($list, $name, $formname, $labelName) {
 
 
 	function inputVerification($postRequest) {
-    var_dump($postRequest);
+ 
 		$_SESSION['message'] = "";
 		$verification = true;
 		if(!isset($postRequest['cinAgent'])||(strlen ( $postRequest['cinAgent'])===0)) {
