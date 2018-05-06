@@ -30,7 +30,7 @@ function machineRequest($cin){
 
 
 
-
+//Apparently, the fonction com_create_guid() doesn't always works, so I used this fonction instead
 function getGUID(){
     if (function_exists('com_create_guid')){
         return com_create_guid();
