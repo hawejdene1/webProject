@@ -92,8 +92,8 @@ function countStationsinLineDB($linename){
 function getNextStationDB($station){
 
     $bdd= Connection::getInstance();
-    $req= $bdd->prepare('SELECT * FROM stations WHERE dist=(SELECT MIN(dist) FROM stations WHERE (dist>?)) ');
-    $req->execute(array($station->getDist()));
+    $req= $bdd->prepare('SELECT * FROM stations WHERE dist=(SELECT MIN(dist) FROM stations WHERE (dist>?) AND linename=? ) ');
+    $req->execute(array($station->getDist(),$station->getLineName()));
     $result= $req->fetch();
     if (! $result[0]) {return false;}
     $result = new Station($result[0],$result[1],$result[2],array($result[3],$result[4],$result[5]));
@@ -104,8 +104,8 @@ function getNextStationDB($station){
 function getPreviousStationDB($station){
     
         $bdd= Connection::getInstance();
-        $req= $bdd->prepare('SELECT * FROM stations WHERE dist=(SELECT MAX(dist) FROM stations WHERE (dist<?))');
-        $req->execute(array($station->getDist()));
+        $req= $bdd->prepare('SELECT * FROM stations WHERE dist=(SELECT MAX(dist) FROM stations WHERE (dist<?)  AND linename=? )');
+        $req->execute(array($station->getDist(),$station->getLineName()));
         $result= $req->fetch();
         if (! $result[0]) {return false;}
         $result = new Station($result[0],$result[1],$result[2],array($result[3],$result[4],$result[5]));
