@@ -53,9 +53,9 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
             $form .= formHorizantalInput("Distance", "distance", "distance", "Distance  between new station and reference one", "number");
 
             //Input station prices
-            $form .= formHorizantalInput("Category 1", "firstPrice", "firstPrice", "Category 1 Price", "number");
-            $form .= formHorizantalInput("Category 2", "secondPrice", "secondPrice", "Category 2 Price", "number");
-            $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price", "number");
+            $form .= formHorizantalInput("Category 1", "firstPrice", "firstPrice", "Category 1 Price in millime", "number");
+            $form .= formHorizantalInput("Category 2", "secondPrice", "secondPrice", "Category 2 Price in millime", "number");
+            $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price in millime", "number");
 
 
 

@@ -54,19 +54,19 @@ include "../../includes/controller/CCreateLine.php" ?>
                         <div class="panel-body">
                             <label class="control-label col-sm-8" for="priceCat1St1">prix cat 1</label>
                             <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="number" name="priceCat1St1"> 
+                                <input class="form-control" type="number" name="priceCat1St1" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span>
                             </div>
                             
-                            <label class="control-label col-sm-8" for="priceCat2St1">prix cat 2</label>
+                            <label class="control-label col-sm-8" for="priceCat2St1" >prix cat 2</label>
                             <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="number" name="priceCat2St1"> 
+                                <input class="form-control" type="number" name="priceCat2St1" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span>
                             </div>
                             
                             <label class="control-label col-sm-8" for="priceCat3St1">prix cat 3</label>
                             <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="number" name="priceCat3St1"> 
+                                <input class="form-control" type="number" name="priceCat3St1" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span>
                             </div>
                         </div>
@@ -78,19 +78,19 @@ include "../../includes/controller/CCreateLine.php" ?>
                             
                              <label class="control-label col-sm-8" for="priceCat1St2">prix cat 1</label>
                              <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="text" name="priceCat1St2"> 
+                                <input class="form-control" type="text" name="priceCat1St2" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span>
                             </div>
                             
                              <label class="control-label col-sm-8" for="priceCat2St2">prix cat 2</label>
                              <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="text" name="priceCat2St2"> 
+                                <input class="form-control" type="text" name="priceCat2St2" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span>
                             </div>
                             
                              <label class="control-label col-sm-8" for="priceCat3St2">prix cat 3</label>
                              <div class="col-sm-4 input-group"> 
-                                <input class="form-control" type="text" name="priceCat3St2">
+                                <input class="form-control" type="text" name="priceCat3St2" placeholder="price in millime">
                                 <span class="input-group-addon">TND</span> 
                             </div>
                         </div>
