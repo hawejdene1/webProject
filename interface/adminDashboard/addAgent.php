@@ -19,7 +19,7 @@
             </div>
    
 
-            <form id="addAgent" action="" method="POST" class="form-horizontal">
+            <form id="addAgent" action=" " method="POST" class="form-horizontal">
             <div class="panel panel-default">
               
                 <div class="panel-body">
@@ -30,11 +30,7 @@
                     <?=$form?>
 
 
-                    <?php if(isset($_SESSION['errorMessage'])) 
-                        echo '<div class="alert alert-warning">'.$_SESSION['errorMessage'].'</div>';
-                        if(isset($_SESSION['message'])) 
-                        echo '<div class="alert alert-warning">'.$_SESSION['errorMessage'].'</div>';
-                    ?>
+
                 </div>
 
 
@@ -49,6 +45,8 @@
             </form>
     </div>
 
+
+    <script src="showstaion.js"></script>
     </body>
 </html>
 

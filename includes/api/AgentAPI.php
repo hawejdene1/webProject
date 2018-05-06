@@ -21,6 +21,7 @@ function getAgent($cin){
   $req= $db->prepare("SELECT `cin`,`f_name`,`l_name`,`station`,`line` FROM `agent` WHERE `cin`=? ");
   $req->execute(array($cin));
   $rep = $req->fetch(PDO::FETCH_ASSOC);
+  if(!$rep) return false;
   return $rep;
 }
 
@@ -41,8 +42,9 @@ function addAgent($cin,$l_name,$f_name,$line,$station,$pass){
   $response = $request->execute(array($cin,$l_name,$f_name,$station,$line,$pass));
 
   if(!$response){
-    die(print_r('Error : '.$db->errorInfo()));
+    return false;
   }
+  return true;
 
 }
 

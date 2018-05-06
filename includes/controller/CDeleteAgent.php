@@ -87,6 +87,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
     }
     
 }
+
 function formHorizantalInput($labelName, $name, $id, $value, $additionalState) {
 
 
