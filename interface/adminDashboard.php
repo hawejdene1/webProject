@@ -39,8 +39,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Admin")
 ?>
     <div class="container-fluid">
      <!-- your page content -->
-        <h2>Welcome to the Highway administration page</h2>
-        <p>Choose one of the functionnalities</p>
+        <h2>Highway Administration Manager</h2>
         
      
    

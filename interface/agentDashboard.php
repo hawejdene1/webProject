@@ -104,18 +104,6 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
         </div>
     </div>  
 
-        <div class="panel panel-default hidden" id="infosTable">           
-          <div class="panel-heading"><button id='closeBoxBtn' class='btn btn-default '><span aria-hidden="true">&times;</span></button></div>
-          <div class="panel-body">
-
-                      <?php
-                        if(isset($form))
-                            echo $form;
-                      ?>
-                
-          </div>
-         </div>
-
 </div>
 
 

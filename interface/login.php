@@ -1,8 +1,8 @@
 <?php session_start(); 
   if(isset($_SESSION['SessionType'])) {
-    if($_SESSION['SessionType']) == "Admin") 
+    if($_SESSION['SessionType']=== "Admin") 
         header('location :/webProject/interface/adminDashboard.php');
-    if($_SESSION['SessionType']) == "Agent") 
+    else if($_SESSION['SessionType']=== "Agent") 
         header('location :/webProject/interface/agentDashboard.php');
   }
 
