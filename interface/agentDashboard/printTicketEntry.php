@@ -44,21 +44,24 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                         <h3 class="panel-title">Ticket Details</h3>
                   <div class="modal-body">
                     <div id="page">
-                            <label>N° Ticket :</label> <?=$details["num"]?>
+                            <label>Ticket N°:</label> <?=$details["num"]?>
                             <br>
 
-                            <label>heure d'enregistrement :</label><?=$details["dateEntree"]?>
+                            <label>Entry time:</label><?=$details["dateEntree"]?>
                             <br>
 
-                            <label>Catégorie :</label>
+                            <label>Category:</label>
                             <?=$details["categorie"]?>
 
                             <br>
 
-                            <label>Station d'entrée :</label>
+                            <label>Entry station:</label>
                             <?=$details["nomStationDepart"]?>
                             <br>
 
+                            <label>Line:</label>
+                            <?=$nomLigne?>
+                            <br>
                         </div>
                   </div>
                   <div class="modal-footer">
