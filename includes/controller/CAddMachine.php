@@ -14,7 +14,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 		if(isset($_POST['deleteMachine'])) {
-			var_dump($_POST['deleteMachine']);
+
 			
 			denyMachineRequest($_POST['deleteMachine']);
 		//	echo "//delete the machine request ". $_POST['deleteMachine'];
@@ -32,13 +32,18 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 	
 	$allMachines = getAllMachineLogs();
-	//var_dump($allMachines);
+
+
+	if($allMachines==null){
+        $form='<div class="alert alert-success">no machine request</div>';
+
+    }else{
 		$form .="<form method='POST' action='' id='addMachine'>";
 		foreach ($allMachines as $id => $machine) {
 			$form .= showMachineInfos($machine['machineid'] ,$machine);
 		}
 		$form .= "</form>";
-} 
+} }
 
 	
 
@@ -57,10 +62,10 @@ function showMachineInfos($id, $machine) {
 	$string .= "<tr><th>Agent CIN</th><th>Agent name</th><th>Line</th><th>Station</th><th>Time</th><th>Accepted</th></tr>";
 
 	foreach ($machine as $key => $value) {
-	var_dump($key);		echo "------------------------- ";
+	//var_dump($key);		echo "------------------------- ";
 
     if($key !== 'machineid') {
-    		echo "ALBALAM";
+
     		$string .= "<tr>
     						<td><input type='text'  name='agentID' class='disabledInput form-control'  form='addMachine' value='".$value['AgentCIN']."' readonly></td>
     						<td><input type='text' 	 name='agentname' class='disabledInput form-control' form='addMachine'  value='".$value['AgentFirstName']."' readonly></td>
