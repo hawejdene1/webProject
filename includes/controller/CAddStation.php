@@ -58,13 +58,21 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
             $form .= formHorizantalInput("Category 3", "thirdPrice", "thirdPrice", "Category 3 Price", "number");
 
 
+
+
         }else if(($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['stationName'])) && isset($_SESSION['linename']))     {
             $name=htmlspecialchars($_POST['stationName']);
             $price=array($_POST['firstPrice'],$_POST['secondPrice'],$_POST['thirdPrice']);
             $verif = false;
             if (! $name) $verif = "Invalid name";
             if ((! $verif)&& (strlen(implode($price))<3)) $verif = "Invalid Prices";
-            if (!$verif) $verif=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price);
+
+
+
+            if (!$verif)
+
+$verif=  addStation($name, $_SESSION['linename'],$_POST['stationReference'],$_POST['stationDirection'],$_POST['distance'],$price);
+
 
             unset($_SESSION['linename']);
             if (!$verif) $form = "<div class='alert alert-success'> station successfully added </div>";

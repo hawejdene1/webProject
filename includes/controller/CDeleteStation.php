@@ -1,5 +1,7 @@
 <?php
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
+require_once dirname(dirname(__FILE__)) . "/api/AgentAPI.php" ;
+require_once dirname(dirname(__FILE__)) . "/API/MachineRequestAPI.php";
     //Session check
     
 session_start();
@@ -37,7 +39,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
             $formButton = '<button class="btn btn-primary" name="deleteStationBtn" type="submit">Delete Station</button>';
             $form .= "<div class='radio'>";
-            //var_dump($_POST['linename']);
+
             $stations=getStationsInLine($_POST['linename']);
             foreach ($stations as $value) {
                 $form .= "<label class='checkbox list-group-item'>
@@ -49,15 +51,20 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 
                 //Write down weither the deleting succeeded or failed
-       $message="erreer";
-    if(isset($_SESSION['linename'])) {
+
+        if(isset($_SESSION['linename'])) {
+
+         deleteAgentInStation( $_POST['optionsStation'],$_SESSION['linename']);
+            deleteComputerInStation( $_POST['optionsStation'],$_SESSION['linename']);
+
         $message = deleteStation($_POST['optionsStation'], $_SESSION['linename']);
+
+        unset($_SESSION['linename']);
+
+            $form .= '<div class="alert alert-warning">' . $message . '</div>';
+
+
     }
-            unset($_SESSION['linename']);
-              if($message===true){ $form .= '<div class="alert alert-success">deleting with success</div>';}
-              else{$form .= '<div class="alert alert-warning">'.$message.'</div>' ;}
-
-
 
         } else {
             header("location: ../../interface/errorPage.php");

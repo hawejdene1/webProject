@@ -36,9 +36,14 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     if ( ! (($station1= getStationDB($name1,$line)) && ($station2= getStationDB($name2,$line)))) return "stations do not exist";
     if (getStationDB($name,$line)) return "station already exists";
 
+
     // calculate distance
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}
-    else {$dist=$station1->getDist()+$distfromS1;}
+    else if ($station1->getDist() < $station2->getDist()) {$dist=$station1->getDist()+$distfromS1;}
+    else {
+        $dist=$station1->getDist() + $distfromS1 * getisTerminalUtility($station2);
+
+    }
 
     // check if new station is not in the location of an existing station
     if (getStationByDistDB($dist,$line)) return "invalid distance";
@@ -71,7 +76,10 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
     //add to DB
     insertStationDB($station1);
+
     insertStationDB($station2);
+
+
     return false;
 
 }
@@ -156,27 +164,23 @@ function modifyStationDist($name,$linename,$dist){
 
 }
 
-function deleteStation($name,$line){
+function deleteStation($name,$line)
+{
 
     //check if station exists
-    $station=getStationDB($name,$line);
+    $station = getStationDB($name, $line);
 
-    if (! $station) return "station does not exist";
+    if (!$station) return "station does not exist";
 
     //check if station is terminal
-    $stations=getStationsInLine($line);
+    $stations = getStationsInLine($line);
 
-    if ( $stations!=false ){
-        if (sizeof(($stations))==2) return "There are only two stations in the selected line. Try delete line instead";
+    if ($stations != false) {
+        if (sizeof(($stations)) == 2) return "There are only two stations in the selected line. Try delete line instead";
         deleteStationDB($station);
-    }else{
-
-
-
-        return true;
+        return "deleting with success";
     }
 }
-
 function stationExists($name,$line){
     $station=getStationDB($name,$line);
 

@@ -5,6 +5,7 @@
  * Date: 16/04/2018
  * Time: 23:16
  */
+require_once dirname(dirname(dirname(__FILE__)))."/src/StationModule/DBOperations.php";
 require_once dirname(dirname(dirname(__FILE__)))."/src/DBConnection.php";
 require_once dirname(dirname(dirname(__FILE__)))."/src/TicketManagement/Ticket.php";
 
@@ -46,6 +47,8 @@ function insertTicket($categorie,$nomStationDepart,$nomLigne)
         $dateEntree = date('Y-m-d h:i:s');
 
         $db = Connection::getInstance();
+    if (getStationDB($nomStationDepart,$nomLigne)===false) {return false;}
+    else {
         //$db->query("use webproject");
         $request = $db->prepare('INSERT INTO `ticket`(`categorie`, `payee`, `nomStationDepart`,`dateEntree`, `nomLigne`) VALUES (?,?,?,?,?)');
         $request->execute(array($categorie, 1, $nomStationDepart, $dateEntree, $nomLigne));
@@ -56,7 +59,7 @@ function insertTicket($categorie,$nomStationDepart,$nomLigne)
 
         $lastInsertId = $db->lastInsertId();
         return $lastInsertId;
-
+    }
 
 }
 

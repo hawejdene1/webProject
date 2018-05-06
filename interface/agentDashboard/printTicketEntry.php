@@ -44,24 +44,34 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                         <h3 class="panel-title">Ticket Details</h3>
                   <div class="modal-body">
                     <div id="page">
-                            <label>Ticket N°:</label> <?=$details["num"]?>
+                        <?php
+                        if($details!=false) {
+
+
+                            ?>
+                            <label>Ticket N°:</label> <?= $details["num"] ?>
                             <br>
 
-                            <label>Entry time:</label><?=$details["dateEntree"]?>
+                            <label>Entry time:</label><?= $details["dateEntree"] ?>
                             <br>
 
                             <label>Category:</label>
-                            <?=$details["categorie"]?>
+                            <?= $details["categorie"] ?>
 
                             <br>
 
                             <label>Entry station:</label>
-                            <?=$details["nomStationDepart"]?>
+                            <?= $details["nomStationDepart"] ?>
                             <br>
 
                             <label>Line:</label>
-                            <?=$nomLigne?>
+                            <?= $nomLigne ?>
                             <br>
+
+                            <?php
+                        }
+                        else echo "<div class='alert alert-danger'> station does not exist </div>";
+                        ?>
                         </div>
                   </div>
                   <div class="modal-footer">

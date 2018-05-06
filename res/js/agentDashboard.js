@@ -20,7 +20,14 @@ exitBtn.addEventListener('click', function(event) {
 	exitPanel.classList.remove("hidden");
 	entryPanel.classList.add("hidden");
 
+<<<<<<< HEAD
 	document.getElementById("checkTicket").focus();
+=======
+	entryPanel.classList.add("hidden");
+	exitPanel.classList.remove("hidden");
+
+
+>>>>>>> 455377a5f377a33c5b236bf67b3308f554107842
 
 });
 
@@ -36,8 +43,16 @@ entryBtn.addEventListener('click', function() {
 
 	entryPanel.classList.remove("hidden");
 	exitPanel.classList.add("hidden"); 
+<<<<<<< HEAD
 	document.getElementById("getTicket").focus();
+=======
+
+>>>>>>> 455377a5f377a33c5b236bf67b3308f554107842
 	
 
 });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 455377a5f377a33c5b236bf67b3308f554107842

@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once dirname(dirname(dirname(__FILE__)))."/interface/adminDashboard/addLine.php";
 
     } else {   //after a success add its gone show this message and a hypertzxt to the dashboard page
-        $message="<div class='alert alert-success'> line ajouter avec succes</div>";
+        $message="<div class='alert alert-success'> line successfully added  </div>";
         header('../../interface/operationSuccess');
     }
 } else {
