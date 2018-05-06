@@ -69,10 +69,10 @@ if($verif!==true){
 
                     }}
 
+                $form.='<tr>
+                          <th col-span="2"> Total prix</th>
+                          <td>'.$priceTotal.'</td></tr>';
                 $form.='</table>';
-                $form.='<table>
-       <th> Total prix</th>
-       <tr><td>'.$priceTotal.'</td></tr>';
 
                 }else{
                 $form="";
@@ -82,9 +82,6 @@ if($verif!==true){
 
         }
     }
-
-
-
 
 
 

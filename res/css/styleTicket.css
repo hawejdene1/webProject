@@ -1,0 +1,18 @@
+h3.panel-title {
+	text-align: center;
+}
+
+button {
+	min-width: 100px !important; 
+
+}
+
+.modal-footer {
+	align-content: center;
+}
+
+
+#ticketPrint {
+	max-width: 60%;
+	margin-top: 50px;
+}

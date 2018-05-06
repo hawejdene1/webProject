@@ -3,9 +3,10 @@ exitBtn = document.getElementById("exitBtn");
 entryPanel = document.getElementById("entryPanel");
 exitPanel = document.getElementById("exitPanel");
 infosTable = document.getElementById("infosTable");
+closeBoxBtn = document.getElementById("closeBoxBtn");
 
 
-console.log("dashboard opened");
+
 
 
 exitBtn.addEventListener('click', function(event) {
@@ -22,7 +23,7 @@ exitBtn.addEventListener('click', function(event) {
 	entryPanel.classList.remove("hidden");
 	exitPanel.classList.add("hidden");
 
-	infosTable.innerText = 	" " ;
+	infosTable.classList.remove('hidden');
 
 });
 
@@ -34,9 +35,14 @@ entryBtn.addEventListener('click', function() {
 
 	entryPanel.classList.remove("hidden");
 	exitPanel.classList.add("hidden"); 
-	infosTable.innerText = 	" " ;
+	infosTable.classList.add("hidden");
 	
 
 });
 
 
+
+closeBoxBtn.addEventListener('click', function()) {
+	console.log("Click");
+	infosTable.classList.toggle('hidden');
+}

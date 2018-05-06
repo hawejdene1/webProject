@@ -70,11 +70,11 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
         <div class="panel panel-default hidden" id="exitPanel">          
           <div class="panel-heading"></div>
           <div class="panel-body">
-                <form action=" " method="post" class="exitForm">
+                <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" class="exitForm">
                   <div class="form-group">
                   <label for="ticketNum">Ticket Number</label>
                   <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
-                  <button type="submit" class="btn btn-success" name="entry">Check Ticket</button>
+                  <button type="submit" class="btn btn-success" name="exit">Check Ticket</button>
 
                   <!--<button type="reset" class="btn btn-default">Reset</button>-->
 
@@ -86,7 +86,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
           <div class="panel panel-default hidden" id="entryPanel">          
           <div class="panel-heading"> </div>
           <div class="panel-body">
-                <form action="../includes/controller/CEntry.php" method="post" class="entryForm">
+                <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm">
                   <div class="form-group">
                   <label for="selectCarType">Car Category</label>
                   <select name="carType" id="selectCarType" class="form-control">
@@ -94,15 +94,19 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                     <option value="twoAxles">Vehicles with 2 axles</option>
                     <option value="treeAxles">Vehicles with 3 axles</option>
                   </select>
-                  <button type="submit" class="btn btn-default" name="exit">Station Exit</button>
+                  <button type="submit" class="btn btn-default" name="entry">Get Ticket</button>
                   </div>
                 </form>
           </div>
         </div>
         <!--The Panel is for displaying the final price-->
-        <div class="panel panel-default" >          
-          
-          <div class="panel-body" id="infosTable">
+        <div class="col-md-4"></div>
+        </div>
+    </div>  
+
+        <div class="panel panel-default hidden" id="infosTable">           
+          <div class="panel-heading"><button id='closeBoxBtn' class='btn btn-default '><span aria-hidden="true">&times;</span></button></div>
+          <div class="panel-body">
 
                       <?php
                         if(isset($form))
@@ -111,54 +115,15 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                 
           </div>
          </div>
-        <div class="col-md-4"></div>
-        </div>
-    </div>  
-
 
 </div>
 
 
       
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade">
-  <div id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-</div>
-
-
-
-
-</div>
-
-
-
-
-
     <script src="../res/js/bootstrap.min.js"></script> 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--script src="../res/js/agentDashboard.js"></script-->
+    <script src="../res/js/agentDashboard.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
   </body>
