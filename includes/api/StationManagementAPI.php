@@ -36,10 +36,6 @@ function addStation($name,$line,$name1,$name2,$distfromS1,$price=array(0,0,0)){
     if ( ! (($station1= getStationDB($name1,$line)) && ($station2= getStationDB($name2,$line)))) return "stations do not exist";
     if (getStationDB($name,$line)) return "station already exists";
 
-    var_dump(getNextStationDB($station1));
-    var_dump(getPreviousStationDB($station1));
-    var_dump(getNextStationDB($station2));
-    var_dump(getPreviousStationDB($station2));
 
     // calculate distance
     if ($station1->getDist() > $station2->getDist()) {$dist=$station1->getDist()-$distfromS1;}
@@ -83,8 +79,7 @@ function addLine($linename,$name1,$name2,$dist,$price1=array(0,0,0),$price2=arra
 
     insertStationDB($station2);
 
-    var_dump(getisTerminalUtility($station1));
-    var_dump(getisTerminalUtility($station2));
+
     return false;
 
 }

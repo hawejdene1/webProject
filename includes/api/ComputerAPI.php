@@ -13,15 +13,37 @@ function addComputer($id,$line,$station){
 
 }
 
-function deleteComputer($id){
+function deleteComputerInLine($line){
   $db = Connection::getInstance();
 
-  $request = $db->prepare('DELETE FROM computer WHERE `id` = ?');
-  $response = $request->execute(array($id));
+  $request = $db->prepare('DELETE FROM computer WHERE `line` = ?');
+  $response = $request->execute(array($line));
 
   if(!$response){
     die('Error : ').$db->errorInfo();
   }
+}
+
+function deleteComputerInStation($station,$line){
+    $db = Connection::getInstance();
+
+    $request = $db->prepare('DELETE FROM computer WHERE `line` = ? AND station=?');
+    $response = $request->execute(array($line,$station));
+
+    if(!$response){
+        die('Error : ').$db->errorInfo();
+    }
+}
+
+function deleteComputer($id){
+    $db = Connection::getInstance();
+
+    $request = $db->prepare('DELETE FROM computer WHERE `id` = ?');
+    $response = $request->execute(array($id));
+
+    if(!$response){
+        die('Error : ').$db->errorInfo();
+    }
 }
 
   function getComputer($id){

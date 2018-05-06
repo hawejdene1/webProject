@@ -1,5 +1,7 @@
 <?php
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
+require_once dirname(dirname(__FILE__)) . "/api/AgentAPI.php" ;
+require_once dirname(dirname(__FILE__)) . "/API/MachineRequestAPI.php";
     //Session check
     
 session_start();
@@ -51,6 +53,10 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
                 //Write down weither the deleting succeeded or failed
 
         if(isset($_SESSION['linename'])) {
+
+         deleteAgentInStation( $_POST['optionsStation'],$_SESSION['linename']);
+            deleteComputerInStation( $_POST['optionsStation'],$_SESSION['linename']);
+
         $message = deleteStation($_POST['optionsStation'], $_SESSION['linename']);
 
         unset($_SESSION['linename']);

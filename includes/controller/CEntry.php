@@ -17,8 +17,12 @@ if (isset($_SESSION['Station']) && isset($_SESSION['Line'])) {
     $nomLigne = $_SESSION['Line'];
 
     $numTicket = insertTicket($categorie, $nomStationDepart, $nomLigne);
-    $details = getTicket($numTicket);
 
+    if($numTicket===false){
+        $details=false;
+    }else {
+        $details = getTicket($numTicket);
+    }
     }
 }
 ?>

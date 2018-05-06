@@ -15,6 +15,29 @@ function checkAgent($cin,$pass){
   return $rep;
 }
 
+function deleteAgentInLine($line){
+    $db = Connection::getInstance();
+
+    $request = $db->prepare('DELETE FROM agent WHERE `line` = ?');
+    $response = $request->execute(array($line));
+
+    if(!$response){
+       return null;
+    }
+
+}
+
+function deleteAgentInStation($station,$line){
+    $db = Connection::getInstance();
+
+    $request = $db->prepare('DELETE FROM agent WHERE `line` = ? AND `station`=?');
+    $response = $request->execute(array($line,$station));
+
+    if(!$response){
+        return null;
+    }
+}
+
 function getAgent($cin){
   
   $db = Connection::getInstance();
