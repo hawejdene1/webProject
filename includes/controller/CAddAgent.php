@@ -150,7 +150,7 @@ function formSelectInput($list, $name, $formname, $labelName) {
 
 
 	function inputVerification($postRequest) {
- 
+
 		$_SESSION['message'] = "";
 		$verification = true;
 		if(!isset($postRequest['cinAgent'])||(strlen ( $postRequest['cinAgent'])===0)) {
