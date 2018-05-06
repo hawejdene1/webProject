@@ -38,6 +38,7 @@ if (isset($_SESSION)) {
     session_start();
 
     $agent = checkAgent($cin,$pass);
+    var_dump($agent);
     if (! $agent) return "unauthorised person";
 
     $agentline= $agent['line'];
@@ -73,7 +74,7 @@ if (isset($_SESSION)) {
     $_SESSION['block']=false;
     machineRequest($cin);
     
-    return "Machine Waiting Approval2";
+    return "Machine Waiting Approval2 you shoud reconnect after admin aproval";
 
 }
 

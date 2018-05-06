@@ -50,7 +50,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
                     }
 
                 } else {
-                    
+
 
                     header("location: ../../interface/adminDashboard/deleteAgent.php");
 

@@ -60,7 +60,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 
                     if (!getAgent($_SESSION['addAgentcin'])) {
-                        $addingRequestResponse = addAgent($_SESSION['addAgentcin'], $_SESSION['addAgentLname'], $_SESSION['addAgentFname'], $_SESSION['addAgentLname'], $_POST['stationAgent'], $_SESSION['addAgentpass']);
+                        $addingRequestResponse = addAgent($_SESSION['addAgentcin'], $_SESSION['addAgentLname'], $_SESSION['addAgentFname'], $_SESSION['addAgentLine'], $_POST['stationAgent'], $_SESSION['addAgentpass']);
                         //This variable describes the adding result;
                     } else {
                         $addingRequestResponse = false;
