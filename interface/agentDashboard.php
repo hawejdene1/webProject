@@ -3,13 +3,11 @@
 
 require_once "../includes/controller/Cout.php";
 
-if(/*!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent"*/false);
- require_once "../includes/controller/Cout.php";
-
-//session_start();
-if($_SESSION['SessionType']!="Agent")
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent") 
   header("location: ../index.php");
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -22,9 +20,9 @@ if($_SESSION['SessionType']!="Agent")
     <title>Agent Dashboard</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../res/css/styleDashboard.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../res/css/styleDashboard.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,6 +38,7 @@ if($_SESSION['SessionType']!="Agent")
    
 
     <div class="container-fluid">
+      
       <div class="row">
       <div class="col-sm-3 col-lg-2">
          <?php include "..\includes\interface\\sideNavAgentInfo.php"; ?>     
@@ -47,43 +46,35 @@ if($_SESSION['SessionType']!="Agent")
       <div class="col-sm-9 col-lg-10 ">
       <!-- your page content -->
         <h2>Welcome to the Highway Station</h2>
-        <h1><!-- getNomPeage()--> Sousse </h1>
+        <h1><?=$_SESSION['Station']?> </h1>
 
         <p>Choose one of the functionnalities</p>
         <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="..." >
         <div class="btn-group" role="group">  
-          <button type="button" class="btn btn-default" href="#entryPanel" id="entryBtn">Station Entry</button>
+          <button type="button" class="btn btn-danger" href="#exitPanel" id="exitBtn">Station Exit</button>
         </div>
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default" id="exitBtn">Get Ticket</button>
+          <button type="button" class="btn btn-success" id="entryBtn">Get Ticket</button>
         </div>
         </div>
       </div>
       </div>
-    </div>
-<?php
-
-if(isset($form)){
-    echo $form;
-}
-
-?>
-
+     
 
 
 
   <div class="container-fluid row">
         <div class="col-md-4"></div>
-        <!--Form that's going to be here-->
+        <!--This panel is for creating and printing a ticket-->
         <div class="col-md-4">
-        <div class="panel panel-default hidden" id="entryPanel">          
+        <div class="panel panel-default hidden" id="exitPanel">          
           <div class="panel-heading"></div>
           <div class="panel-body">
                 <form action=" " method="post" class="exitForm">
                   <div class="form-group">
                   <label for="ticketNum">Ticket Number</label>
                   <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
-                  <button type="submit" class="btn btn-success" name="exit">Check Ticket</button>
+                  <button type="submit" class="btn btn-success" name="entry">Check Ticket</button>
 
                   <!--<button type="reset" class="btn btn-default">Reset</button>-->
 
@@ -91,7 +82,8 @@ if(isset($form)){
                 </form>
           </div>
          </div>
-          <div class="panel panel-default hidden" id="exitPanel">          
+         <!--The Panel for entring the ticket number and exiting the station-->
+          <div class="panel panel-default hidden" id="entryPanel">          
           <div class="panel-heading"> </div>
           <div class="panel-body">
                 <form action="../includes/controller/CEntry.php" method="post" class="entryForm">
@@ -102,25 +94,72 @@ if(isset($form)){
                     <option value="twoAxles">Vehicles with 2 axles</option>
                     <option value="treeAxles">Vehicles with 3 axles</option>
                   </select>
-                  <button type="submit" class="btn btn-default" name="entry">Station Exit</button>
+                  <button type="submit" class="btn btn-default" name="exit">Station Exit</button>
                   </div>
                 </form>
           </div>
         </div>
-       <div class="col-md-4"></div>
+        <!--The Panel is for displaying the final price-->
+        <div class="panel panel-default" >          
+          
+          <div class="panel-body" id="infosTable">
+
+                      <?php
+                        if(isset($form))
+                            echo $form;
+                      ?>
+                
+          </div>
+         </div>
+        <div class="col-md-4"></div>
         </div>
-    </div> 
-      
+    </div>  
+
+
+</div>
+
 
       
-     
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
 
-    
+<!-- Modal -->
+<div class="modal fade">
+  <div id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+</div>
 
+
+
+
+</div>
+
+
+
+
+
+    <script src="../res/js/bootstrap.min.js"></script> 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../res/js/agentDashboard.js"></script>
-  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../res/js/bootstrap.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--script src="../res/js/agentDashboard.js"></script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
   </body>
 </html>

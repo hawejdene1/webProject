@@ -23,10 +23,6 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               
         <ul class="nav navbar-nav navbar-right">';
-        if($_SESSION["SessionType"] == "Agent")
-               echo  '<li><a href="#">User Profile</a></li>';
-        else if($_SESSION['SessionType'] == "Admin")
-               echo  '<li><a href="#">Admin configs</a></li>';
         echo  '<li><a href="/webProject/includes/controller/disconnect.php">Disconnect</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

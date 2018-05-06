@@ -7,7 +7,10 @@
 
     function setRecieveMachines($b){
         if ($b) $val = 1;
-        else $val =0;
+        else {
+            $val =0; 
+            clearMachineLog();
+        }
         setRecieveMachinesDB($b);
     }
     

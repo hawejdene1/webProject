@@ -54,7 +54,7 @@ if($verif!==true){
 
             //afficher details de ticket
        if(isset($detailsParcour)){
-        $form="<table class='table'>";
+        $form="<table  class='table'>";
          $form.='<tr>
        <th>station name</th>
        <th>distance traveled</th>

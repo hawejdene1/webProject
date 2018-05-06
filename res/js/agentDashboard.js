@@ -2,35 +2,41 @@ entryBtn = document.getElementById("entryBtn");
 exitBtn = document.getElementById("exitBtn");
 entryPanel = document.getElementById("entryPanel");
 exitPanel = document.getElementById("exitPanel");
+infosTable = document.getElementById("infosTable");
 
 
 console.log("dashboard opened");
 
 
-entryBtn.addEventListener('click', function(event) {
+exitBtn.addEventListener('click', function(event) {
 
 	event.preventDefault();
 
 	
-	
-	this.classList.add("active");
-	exitBtn.classList.remove("active");
-	console.log("Click");
-
-
-
-	entryPanel.classList.remove("hidden");console.log(entryPanel.classList);
-	exitPanel.classList.add("hidden");
-});
-
-
-
-
-exitBtn.addEventListener('click', function() {
 	this.classList.add("active");
 	entryBtn.classList.remove("active");
+	
 
 
-	entryPanel.classList.add("hidden");
-	exitPanel.classList.remove("hidden"); console.log(exitPanel.classList);
+
+	entryPanel.classList.remove("hidden");
+	exitPanel.classList.add("hidden");
+
+	infosTable.innerText = 	" " ;
+
 });
+
+
+entryBtn.addEventListener('click', function() {
+	this.classList.add("active");
+	exitPanel.classList.remove("active");
+
+
+	entryPanel.classList.remove("hidden");
+	exitPanel.classList.add("hidden"); 
+	infosTable.innerText = 	" " ;
+	
+
+});
+
+

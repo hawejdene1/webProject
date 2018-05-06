@@ -34,7 +34,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 					$form .= formHorizantalInput("Agent CIN", "cinAgent", "cinAgent", $agent['cin'], "disabled");
 					$form .= formHorizantalInput("Name", "agentName", "agentName", $agent['f_name'], "disabled");
 					$form .= formHorizantalInput("Lastname", "agentLName", "agentLName", $agent['l_name'], "disabled");
-                    $form .= formHorizantalInputValue("password", "pass", "pass",".$pass.", "");
+                    $form .= formHorizantalInputValue("password", "pass", "pass", $pass , "");
 					$form .= formHorizantalInputValue("Station", "agentStation", "agentStation", $agent['station'], "");
                     $form .= formHorizantalInputValue("line", "agentLine", "agentLine", $agent['line'], "");
 
