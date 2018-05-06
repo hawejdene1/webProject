@@ -173,7 +173,7 @@ function deleteStation($name,$line){
 
 
 
-        return "sation deleted ";
+        return true;
     }
 }
 

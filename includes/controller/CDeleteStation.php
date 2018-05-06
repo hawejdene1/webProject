@@ -54,7 +54,9 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
         $message = deleteStation($_POST['optionsStation'], $_SESSION['linename']);
     }
             unset($_SESSION['linename']);
-                $form="<div><h1>".$message."</h1>";
+              if($message===true){ $form .= '<div class="alert alert-success">deleting with success</div>';}
+              else{$form .= '<div class="alert alert-warning">'.$message.'</div>' ;}
+
 
 
         } else {
