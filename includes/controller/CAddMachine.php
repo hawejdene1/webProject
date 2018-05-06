@@ -16,22 +16,17 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 
 		if(isset($_POST['stopRequests'])) {
+		//Sets accepting requests to false
 			setRecieveMachines(false);
 		} else if(isset($_POST['startRequests'])) {
+		//Sets accepting requests to true
 			setRecieveMachines(true);
 		} else if(isset($_POST['deleteMachine'])) {
-
-			
+		//delete all the machine requests
 			denyMachineRequest($_POST['deleteMachine']);
-		//	echo "//delete the machine request ". $_POST['deleteMachine'];
-		
-
 		} else if(isset($_POST['addMachine'])) {
-
-		//	acceptMachineRequest($machineid,$line,$station);
+		//accept one single Machine Request
 			acceptMachineRequest($_POST['addMachine'], $_POST['line'], $_POST['station']);
-			//echo "accept the request that's : ".$_POST['addMachine'];
-			
 		} 
 			
 	}
@@ -41,10 +36,12 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
 
 
 	if($allMachines==null){
-        $form='<div class="alert alert-success">no machine request</div>';
+        $form='<div class="alert alert-success"> No machine request </div>';
 
     }else{
 		$form .="<form method='POST' action='' id='addMachine'>";
+
+		//Displaying each machine that had requested an entry
 		foreach ($allMachines as $id => $machine) {
 			$form .= showMachineInfos($machine['machineid'] ,$machine);
 		}
@@ -67,8 +64,9 @@ function showMachineInfos($id, $machine) {
 	<div class='panel-body'><table class='table'>";
 	$string .= "<tr><th>Agent CIN</th><th>Agent name</th><th>Line</th><th>Station</th><th>Time</th><th>Accepted</th></tr>";
 
+
+	//Displaying each request of the machine
 	foreach ($machine as $key => $value) {
-	//var_dump($key);		echo "------------------------- ";
 
     if($key !== 'machineid') {
 
