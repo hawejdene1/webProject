@@ -6,10 +6,10 @@ session_start();
 require_once dirname(dirname(__FILE__)) . "/api/StationManagementAPI.php" ;
 
 
-if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") { 
+if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
     header("location: ../../index.php");
 } else {
-    
+
 
 
 

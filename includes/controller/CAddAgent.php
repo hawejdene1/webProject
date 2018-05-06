@@ -27,38 +27,37 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (isset($_POST['lineAgent'])) {
-
                 if (!inputVerification($_POST)) {
-                    header('Location: '.$_SERVER['PHP_SELF']);;}
+                    header('Location: '.$_SERVER['PHP_SELF']);;}else {
 
                     $stations = getStationsInLine($_POST['lineAgent']);
 
 
-                $form .= formHorizantalInputState("Agent CIN", "cinAgent", "agentCin", $_POST['cinAgent'], "disabled", "addAgent");
-                $form .= formHorizantalInputState("Name", "fnameAgent", "agentName", $_POST['fnameAgent'], "disabled", "addAgent");
-                $form .= formHorizantalInputState("Lastname", "lnameAgent", "agentLName", $_POST['lnameAgent'], "disabled", "addAgent");
-                $form .= formHorizantalInputState("Line", "lineAgent", "line", $_POST['lineAgent'], "disabled", "addAgent");
-                $form .= formHorizantalInputState("password", "pwdAgent", "agentpass", $_POST['pwdAgent'], "disabled", "addAgent");
-                $form .= formSelectInput($stations, "stationAgent", "addAgent", "station");
+                    $form .= formHorizantalInputState("Agent CIN", "cinAgent", "agentCin", $_POST['cinAgent'], "disabled", "addAgent");
+                    $form .= formHorizantalInputState("Name", "fnameAgent", "agentName", $_POST['fnameAgent'], "disabled", "addAgent");
+                    $form .= formHorizantalInputState("Lastname", "lnameAgent", "agentLName", $_POST['lnameAgent'], "disabled", "addAgent");
+                    $form .= formHorizantalInputState("Line", "lineAgent", "line", $_POST['lineAgent'], "disabled", "addAgent");
+                    $form .= formHorizantalInputState("password", "pwdAgent", "agentpass", $_POST['pwdAgent'], "disabled", "addAgent");
+                    $form .= formSelectInput($stations, "stationAgent", "addAgent", "station");
 
 
-                //session that will concerve inforamtion for adding agent
-                $_SESSION['addAgentcin'] = $_POST['cinAgent'];
-                $_SESSION['addAgentFname'] = $_POST['fnameAgent'];
-                $_SESSION['addAgentLname'] = $_POST['lnameAgent'];
-                $_SESSION['addAgentLine'] = $_POST['lineAgent'];
-                $_SESSION['addAgentpass'] = $_POST['pwdAgent'];
+                    //session that will concerve inforamtion for adding agent
+                    $_SESSION['addAgentcin'] = $_POST['cinAgent'];
+                    $_SESSION['addAgentFname'] = $_POST['fnameAgent'];
+                    $_SESSION['addAgentLname'] = $_POST['lnameAgent'];
+                    $_SESSION['addAgentLine'] = $_POST['lineAgent'];
+                    $_SESSION['addAgentpass'] = $_POST['pwdAgent'];
 
 
-                $formButton = '<button class="btn btn-primary" type="submit" name="addAgent2">Add Agent</button>';
+                    $formButton = '<button class="btn btn-primary" type="submit" name="addAgent2">Add Agent</button>';
 
-            } else {
+                }} else {
+
+              
 
 
-                if (!inputVerification($_POST)) {
-                    header('Refresh:0');
 
-                } else {
+
 
                     if (!getAgent($_SESSION['addAgentcin'])) {
                         $addingRequestResponse = addAgent($_SESSION['addAgentcin'], $_SESSION['addAgentLname'], $_SESSION['addAgentFname'], $_SESSION['addAgentLname'], $_POST['stationAgent'], $_SESSION['addAgentpass']);
@@ -76,10 +75,9 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType'] != "Admin") {
                     }
 
 
-                }
+
             }
 
-            unset($_SESSION['addAgentcin'], $_SESSION['addAgentFname'], $_SESSION['addAgentLname'], $_SESSION['addAgentLine'], $_SESSION['addAgentpass']);
 
         } else {
             $linename = getLines();
@@ -152,16 +150,19 @@ function formSelectInput($list, $name, $formname, $labelName) {
 
 
 	function inputVerification($postRequest) {
+    var_dump($postRequest);
 		$_SESSION['message'] = "";
 		$verification = true;
-		if(!isset($postRequest['cinAgent'])) {
-			$_SESSION['errorMessage'] .= "Type in agent's CIN";
+		if(!isset($postRequest['cinAgent'])||(strlen ( $postRequest['cinAgent'])===0)) {
+
+			return false;
 		} else if (!filter_var($postRequest['cinAgent'], FILTER_VALIDATE_INT)) {
-			$_SESSION['errorMessage'] .= "Agent's CIN should all numbers";
-		} 
 
-		if(!isset($postRequest['lnameAgent']) || !isset($postRequest['fnameAgent']))
+			return false;
+		}
 
+		if(!isset($postRequest['lnameAgent']) || !isset($postRequest['fnameAgent'])||(strlen ( $postRequest['fnameAgent'])==0)||(strlen ( $postRequest['lnameAgent'])==0))
+           return false;
 
 
 		return $verification; //return boolean
