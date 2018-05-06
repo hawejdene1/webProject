@@ -36,35 +36,12 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
 
 <?php include "..\includes\interface\\navbar.php"; ?>
 
-   
-
-    <div class="container-fluid">
-      
-      <div class="row">
-      <div class="col-sm-3 col-lg-2">
-         <?php include "..\includes\interface\\sideNavAgentInfo.php"; ?>     
-      </div>
-      <div class="col-sm-9 col-lg-10 ">
-      <!-- your page content -->
-        <h2>Welcome to the Highway Station</h2>
-        <h1><?=$_SESSION['Station']?> </h1>
-
-        <p>Choose one of the functionnalities</p>
-        <div class="btn-group btn-group-justified agentButtons" role="group" aria-label="..." >
-        <div class="btn-group" role="group">  
-          <button type="button" class="btn btn-danger" href="#exitPanel" id="exitBtn">Station Exit</button>
-        </div>
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-success" href="#entryPanel" id="entryBtn">Get Ticket</button>
-
-
 
 <div class="container-fluid">
 
     <div class="row">
         <div class="col-sm-3 col-lg-2">
             <?php include "..\includes\interface\\sideNavAgentInfo.php"; ?>
-
         </div>
         <div class="col-sm-9 col-lg-10 ">
             <!-- your page content -->
@@ -77,7 +54,7 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                     <button type="button" class="btn btn-danger" href="#exitPanel" id="exitBtn">Station Exit</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-success" id="entryBtn">Get Ticket</button>
+                    <button type="button" class="btn btn-success" href="#entryPanel" id="entryBtn">Get Ticket</button>
                 </div>
             </div>
         </div>
@@ -85,74 +62,31 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
 
 
 
-<<<<<<< HEAD
-    <div class="container-fluid row">
-          <div class="col-md-4"></div>
-          <!--This panel is for creating and printing a ticket-->
-          <div class="col-md-4">
-            <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" id="exitForm" class="exitForm">
-          <div class="panel panel-default hidden" id="exitPanel">          
-            <div class="panel-body">
-                    <div class="form-group">
-                      <label for="ticketNum">Ticket Number</label>
-                      <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
-                    </div>
-            </div>
-            <div class="panel-footer">
-             <button type="submit" class="btn btn-danger" form="exitForm" id="checkTicket" name="exit">Check Ticket</button>
-           </div>
-          </div>
-           </form>
-                
-            <!-- Panel End -->
-      
-           <!--The Panel for entring the ticket number and exiting the station-->
-            <div class="panel panel-default hidden" id="entryPanel">          
-            <div class="panel-body">
-            <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm" id="entryForm">
-              <div class="form-group">
-                  <label for="selectCarType">Car Category</label>
-                  <select name="carType" id="selectCarType" class="form-control">
-                    <option value="Motos">Motos</option>
-                    <option value="twoAxles">Vehicles with 2 axles</option>
-                    <option value="treeAxles">Vehicles with 3 axles</option>
-                  </select>
-              </div>
-             </form>
-           </div>
-              <div class="panel-footer">      
-                <button type="submit" class="btn btn-success" form="entryForm" id="getTicket" name="entry">Get Ticket</button>
-              </div>
-            </div>  <!-- Panel end -->
-            <div class="col-md-4"></div>
-          </div><!--container end -->
-        </div>
-=======
 
     <div class="container-fluid row">
         <div class="col-md-4"></div>
         <!--This panel is for creating and printing a ticket-->
         <div class="col-md-4">
-            <div class="panel panel-default hidden" id="exitPanel">
-                <div class="panel-heading"></div>
-                <div class="panel-body">
-                    <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" class="exitForm">
+            <form action="/webProject/interface/agentDashboard/printTicketExit.php" method="post" id="exitForm" class="exitForm">
+                <div class="panel panel-default hidden" id="exitPanel">
+                    <div class="panel-body">
                         <div class="form-group">
                             <label for="ticketNum">Ticket Number</label>
                             <input type="text" name="ticketNum" class="form-control" id="ticketNum" placeholder="Ticket N°" required/>
-                            <button type="submit" class="btn btn-success" name="exit">Check Ticket</button>
-
-                            <!--<button type="reset" class="btn btn-default">Reset</button>-->
-
                         </div>
-                    </form>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="submit" class="btn btn-danger" form="exitForm" id="checkTicket" name="exit">Check Ticket</button>
+                    </div>
                 </div>
-            </div>
+            </form>
+
+            <!-- Panel End -->
+
             <!--The Panel for entring the ticket number and exiting the station-->
             <div class="panel panel-default hidden" id="entryPanel">
-                <div class="panel-heading"> </div>
                 <div class="panel-body">
-                    <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm">
+                    <form action="/webProject/interface/agentDashboard/printTicketEntry.php" method="post" class="entryForm" id="entryForm">
                         <div class="form-group">
                             <label for="selectCarType">Car Category</label>
                             <select name="carType" id="selectCarType" class="form-control">
@@ -160,26 +94,24 @@ if(!isset($_SESSION['SessionType']) || $_SESSION['SessionType']!="Agent")
                                 <option value="twoAxles">Vehicles with 2 axles</option>
                                 <option value="treeAxles">Vehicles with 3 axles</option>
                             </select>
-                            <button type="submit" class="btn btn-default" name="entry">Get Ticket</button>
                         </div>
                     </form>
                 </div>
-            </div>
-            <!--The Panel is for displaying the final price-->
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-success" form="entryForm" id="getTicket" name="entry">Get Ticket</button>
+                </div>
+            </div>  <!-- Panel end -->
             <div class="col-md-4"></div>
-        </div>
+        </div><!--container end -->
     </div>
 
-</div>
->>>>>>> 455377a5f377a33c5b236bf67b3308f554107842
 
 
-
-<script src="../res/js/bootstrap.min.js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../res/js/agentDashboard.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../res/js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../res/js/agentDashboard.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
 </body>
 </html>
